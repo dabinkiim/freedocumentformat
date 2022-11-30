@@ -9,34 +9,48 @@
     <!-- CSS -->
     <link href="../css/style.css" rel="stylesheet" type="text/css">
     <style>
+      h1 {
+        font-size: 4rem;
+      }
+  
+      section {
+        column-count: 2;
+        column-gap: 2rem;
+      }
+      #manifesto .fullP {
+        height: 30%;
+        margin-top: 15% !important;
+      }
+      p {
+        margin-bottom: 1.8rem;
+      }
       figure {
         max-width: 100% !important;
         margin: 0rem !important;
-        padding: 0 !important;
+        padding: 0rem !important;
       }
-      h1 { 
-        font-size: 3rem;
+      figcaption{
+        text-align: center;
       }
       .📖-running-header {
-        top: 6mm !important;
+        top:10mm !important;
       }
-      .📖-right .percentageMark {
-        bottom: 8mm !important;
+      .percentageMark {
+        bottom:10mm !important;
       }
-  
+      
     </style>
 
 </head>
  
 <body>
   <script src="/bindery.min.js"></script>
-  <script> 
+  <script>
   
-
     Bindery.makeBook({
       pageSetup: {
-        size: { width: '110mm', height: '160mm' },
-        margin: { top: '15mm', inner: '15mm', outer: '11mm', bottom: '12mm' },
+        size: { width: '200mm', height: '220mm' },
+        margin: { top: '22mm', inner: '25mm', outer: '20mm', bottom: '19mm'},
       },
       content: {
           url: '../text.html',
@@ -44,10 +58,9 @@
         },
         rules: [
           // 페이지 나누기
-          Bindery.PageBreak({ selector: '.toc', position: 'after', continue: 'next' }),
           Bindery.PageBreak({ selector: '.toc', position: 'before', continue: 'right' }),
+          Bindery.PageBreak({ selector: '.toc', position: 'after', continue: 'next' }),
           Bindery.PageBreak({ selector: 'h1, h2, h3', position: 'before', continue: 'next' }),
-          Bindery.PageBreak({ selector: 'h4, h5', position: 'avoid', continue: 'next'}),
 
           // 목차
           Bindery.PageReference({
@@ -104,7 +117,7 @@
           
           // 규칙 생성
         Bindery.createRule({
-          eachPage: function(page, book) {
+            eachPage: function(page, book) {
               // 사이드바 
               let percentage = Math.floor((page.number / book.pageCount) * 100);
               let sideBar = document.createElement("div");   
@@ -125,9 +138,8 @@
                   if (percentage < 100) {
                   sideBar.innerHTML += sideBarCount;
                 } ;
-                }  
-                
-
+                }
+            
               // 책면에 프린트 (우측 위 좌측 아래)
               let edgePaints = document.createElement("div");
                 if (page.isRight) {
@@ -170,8 +182,8 @@
                 bottom: 0,
                 });
                 page.element.appendChild(edgePaint);
-              
-          },
+ 
+            }
         }),
 
           //인덱스

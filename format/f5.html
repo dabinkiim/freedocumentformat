@@ -7,7 +7,7 @@
     <meta name="date" content="2022-11-22">
 
     <!-- CSS -->
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
     <style>
   
       section {
@@ -50,7 +50,7 @@
         margin: { top: '22mm', inner: '30mm', outer: '20mm', bottom: '19mm'},
       },
       content: {
-          url: '/text.html',
+          url: '../text.html',
           selector: "#content",
         },
         rules: [
@@ -140,12 +140,12 @@
               // 책면에 프린트 (우측 위 좌측 아래)
               let edgePaints = document.createElement("div");
                 if (page.isRight) {
-                edgePaints.style.background = "url('/img/side_top.svg') no-repeat";
+                edgePaints.style.background = "url('../img/side_top.svg') no-repeat";
                 edgePaints.style.top = "-3mm";
                 edgePaints.style.transform = "rotateX(180deg)";// 가로로 뒤집기 ;
                 }
                 else if (page.isLeft) {
-                  edgePaints.style.background = "url('/img/side_bottom.svg') no-repeat";
+                  edgePaints.style.background = "url('../img/side_bottom.svg') no-repeat";
                   edgePaints.style.bottom = "-3mm";
                   edgePaints.style.transform = "rotateY(180deg)";// 가로로 뒤집기 ;
                 }
@@ -163,11 +163,11 @@
               // 책면에 프린트 (옆)
               let edgePaint = document.createElement("div");
                 if (page.isRight) {
-                edgePaint.style.background = "url('/img/side_right.svg') no-repeat";
+                edgePaint.style.background = "url('../img/side_right.svg') no-repeat";
                 edgePaint.style.right = "-3mm";
                 }
                 else if (page.isLeft) {
-                  edgePaint.style.background = "url('/img/side_left.svg') no-repeat";
+                  edgePaint.style.background = "url('../img/side_left.svg') no-repeat";
                   edgePaint.style.left = "-3mm";
                 }
                 Object.assign(edgePaint.style, {
