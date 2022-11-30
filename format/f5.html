@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC>
+<html lang="en">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title> Part 1 </title>
+    <meta name="date" content="2022-11-22">
+
+    <!-- CSS -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <style>
+  
+      section {
+        column-count: 2;
+        column-gap: 2rem;
+      }
+      #manifesto .fullP {
+        height: 30%;
+        margin-top: 15% !important;
+      }
+      p {
+        margin-bottom: 1.8rem;
+      }
+      figure {
+        max-width: 100% !important;
+        margin: 0rem !important;
+        padding: 0rem !important;
+      }
+      figcaption{
+        text-align: center;
+      }
+      .📖-running-header {
+        top:10mm !important;
+      }
+      .percentageMark {
+        bottom:10mm !important;
+      }
+      
+    </style>
+
+</head>
+ 
+<body>
+  <script src="/bindery.min.js"></script>
+  <script>
+  
+    Bindery.makeBook({
+      pageSetup: {
+        size: { width: '220mm', height: '300mm' },
+        margin: { top: '22mm', inner: '30mm', outer: '20mm', bottom: '19mm'},
+      },
+      content: {
+          url: '/text.html',
+          selector: "#content",
+        },
+        rules: [
+          // 페이지 나누기
+          Bindery.PageBreak({ selector: '.toc', position: 'before', continue: 'right' }),
+          Bindery.PageBreak({ selector: '.toc', position: 'after', continue: 'next' }),
+          Bindery.PageBreak({ selector: 'h1, h2, h3', position: 'before', continue: 'next' }),
+
+          // 목차
+          Bindery.PageReference({
+            selector: ".toc a",
+            replace: (element, number) => {
+              let row = document.createElement('div');
+              row.innerHTML = `${element.textContent}`;
+              row.innerHTML += `<span style='float: right;'>${number}</span>`;
+              return row;
+            }
+          }),
+          // 문단 카운터
+          Bindery.Counter({
+            incrementEl: "p",
+            replaceEl: "p",
+            resetEl: "h2, h3",
+            replace: (el, counterValue) => {
+            el.insertAdjacentHTML('afterbegin', `<span class="paragraph-counter">${counterValue}</span>`);
+            return el;
+            }
+        }),
+        
+          // 각주, 측주
+          Bindery.Footnote({
+              selector: ".n1",
+              render: (el, number) => 
+              `<span class="footnote"><sup>${number}</sup> ${el.innerHTML} </span>`,
+              // <span class="n1"><span class="n2"></span></span>
+          }),
+
+          // 이미지 자르기
+          Bindery.FullBleedPage({ selector: '.fullpage', continue: 'next' }),
+          Bindery.FullBleedSpread({ selector: '.spread', continue: 'same' }),
+          Bindery.FullBleedSpread({ selector: '.big-figure' }),
+
+          // 헤더 & 페이지네이션
+          Bindery.RunningHeader({
+              render: (page) => {
+                  if (page.isLeft) return `<span class="page-number">${page.number}</span> ${page.heading.h2 || ''}`;
+                  else if (page.isRight) return `${page.heading.h3 || ''} <span class="page-number">${page.number}</span>`;
+              },
+          }),
+
+          // 카운터 
+          Bindery.Counter({
+          incrementEl: "figcaption",
+          replaceEl: "figcaption",
+          resetEl: ".post-header",
+          replace: (el, counterValue) => {
+            el.insertAdjacentHTML('afterbegin', `<span class="figcaption-counter">Fig.${counterValue}.</span>`);
+            return el;
+          }
+        }),
+          
+          // 규칙 생성
+        Bindery.createRule({
+            eachPage: function(page, book) {
+              // 사이드바 
+              let percentage = Math.floor((page.number / book.pageCount) * 100);
+              let sideBar = document.createElement("div");   
+              let sideBarCount = `
+              <div class="sidebar">
+                <div class="progressBar"><div class="progressMarker" style="width:${percentage}%">.</div></div>
+                <div class="percentageMark">${percentage}%</div>                  
+                </div>`;
+
+              page.element.appendChild(sideBar);
+              console.log(percentage); 
+                if (page.isRight) {
+                  if (percentage < 100) {
+                  sideBar.innerHTML += sideBarCount;
+                } ;
+                }  
+                else if (page.isLeft) {
+                  if (percentage < 100) {
+                  sideBar.innerHTML += sideBarCount;
+                } ;
+                }
+            
+              // 책면에 프린트 (우측 위 좌측 아래)
+              let edgePaints = document.createElement("div");
+                if (page.isRight) {
+                edgePaints.style.background = "url('/img/side_top.svg') no-repeat";
+                edgePaints.style.top = "-3mm";
+                edgePaints.style.transform = "rotateX(180deg)";// 가로로 뒤집기 ;
+                }
+                else if (page.isLeft) {
+                  edgePaints.style.background = "url('/img/side_bottom.svg') no-repeat";
+                  edgePaints.style.bottom = "-3mm";
+                  edgePaints.style.transform = "rotateY(180deg)";// 가로로 뒤집기 ;
+                }
+                Object.assign(edgePaints.style, {
+                backgroundPosition: ( "0 " + (page.number / book.pageCount) * 100) + "%",
+                backgroundSize: "cover",
+        
+                height: "6mm",
+                position: "absolute",
+                left: 0,
+                right: 0,
+                });
+                page.element.appendChild(edgePaints);
+
+              // 책면에 프린트 (옆)
+              let edgePaint = document.createElement("div");
+                if (page.isRight) {
+                edgePaint.style.background = "url('/img/side_right.svg') no-repeat";
+                edgePaint.style.right = "-3mm";
+                }
+                else if (page.isLeft) {
+                  edgePaint.style.background = "url('/img/side_left.svg') no-repeat";
+                  edgePaint.style.left = "-3mm";
+                }
+                Object.assign(edgePaint.style, {
+                backgroundPosition: ((page.number / book.pageCount) * 100) + "% 0",
+                backgroundSize: "cover",
+                width: "6mm",
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                });
+                page.element.appendChild(edgePaint);
+ 
+            }
+        }),
+
+          //인덱스
+          Bindery.PageReference({
+            selector: '.index-content li',
+            createTest: (element) => {
+              let term = element.textContent.toLowerCase().trim();
+              return (page) => {
+                let txt = page.querySelector('#content');
+                if (txt) return txt.textContent.toLowerCase().includes(term);
+                return false;
+              }
+            },
+          })
+        ],
+      });
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC>
+<html lang="en">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title> $title$ </title>
+    <meta name="date" content="$date-meta$">
+
+    <!-- CSS -->
+    <link href="css/pagedjs/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/pagedjs/pagedjs.css" rel="stylesheet" type="text/css">
+    <link id="style-screen" href="css/style-screen.css" rel="stylesheet" type="text/css">
+
+    <!-- paged.js -->
+    <script src="js/paged.polyfill.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/handlers.js"></script>
+    <script type="module" id="module-reload" src="js/reload-in-place.js"></script>
+    
+    <!-- createToc javascript: -->
+    <script type="text/javascript" src="js/createToc.js"></script>
+
+    <script>
+        class handlers extends Paged.Handler {
+          constructor(chunker, polisher, caller) {
+            super(chunker, polisher, caller);
+          }
+  
+          beforeParsed(content){          
+            createToc({
+              content: content,
+              tocElement: '#my-toc-content',
+              titleElements: [ '.mw-content-ltr h2', 'h3' ]
+            });
+          }
+         
+        }
+        Paged.registerHandlers(handlers);
+      </script>
+  
+</head>
+
+<body>
+    $body$
+</body>
+</html>

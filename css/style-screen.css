@@ -1,0 +1,152 @@
+:root {
+    --font-size-s:0.8rem;
+    --colorA: #898989; 
+    --colorB: #C9CACA;
+    --bindery-bleed: 3mm;
+    --bindery-mark-length: 5mm;
+}
+
+html {
+    font-size: 15px;
+    word-break: keep-all;
+    background: #f4f4f4;
+}
+body{
+    font-family: Compagnon, Eulyoo1945; /* Compagnon, Eulyoo1945-Regular */
+    font-weight: 400;
+    line-height: 1.8;
+}
+h1, h2, h3, h4, h5, #head-text {
+    font-family: Compagnon, HY타자전각L; 
+    font-weight: 400;  
+}
+h1 {
+    font-size: 6rem; 
+    transform: skewY(10deg); 
+    text-align: center;
+}
+h2 {
+    font-size: 4rem;
+}
+h3, .h3 {
+    font-size: 3rem; 
+    font-family: Compagnon, HY타자전각L; 
+    text-align: left !important;
+}
+h4 {
+    font-size: 2rem;
+}
+h5, #head-text {
+    font-size: 1.5rem;
+}
+ul, li {
+padding:0;
+}
+ul {
+padding-left: 5%;
+margin: 0;
+list-style: none;
+}
+a {color: var(--colorA); word-break: break-all;}
+a:visited {color: var(--colorA);}
+p {
+margin-top: 0;
+margin-bottom: 1rem;
+}
+section h4:first-child {
+margin-top: 0 !important;
+}
+.indent {
+padding-left:2rem;
+}
+.indent2 {
+padding-left:4rem;
+}
+#en {
+font-size: 11px;
+line-height: 1.4;
+}
+#en h1 {font-size: 5rem;}
+#en h2 {font-size: 3rem;}
+#en h3, #en .h3 {font-size: 2.5rem;}
+#en h4 {font-size: 1.8rem;}
+#en h5 {font-size: 1.5rem;}
+
+
+/* 컨텐츠 */
+#content{
+    position: absolute;
+    right: 0;
+    width: 60%;
+    padding: 0 5% 0 0;
+}
+ul.toc {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 1rem;
+    z-index: 999;
+}
+ul#format {    
+    padding: 2rem;
+}
+#format li {
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    background: black;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+#format li:hover {
+    background: white;
+}
+
+#format li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* 이미지 */ 
+figure {
+    max-width: 50%;
+    margin: 0 1rem;
+    float: right;
+  }
+figure.fullpage {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .fullpage img {
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100%;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: contrast(110%) brightness(103%) grayscale(100%);
+    padding-bottom: .5rem;
+  }
+  figcaption {
+    font-size: var(--font-size-s);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .figcaption-counter {
+    margin-right: 1rem;
+  }
+
+  figure.screenshot {
+    float: none;
+  }
+
+
