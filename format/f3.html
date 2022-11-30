@@ -3,51 +3,41 @@
 <head>  
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Format 5</title>
+    <title>Format 3</title>
     <meta name="date" content="2022-11-22">
 
     <!-- CSS -->
     <link href="../css/style.css" rel="stylesheet" type="text/css">
     <style>
-  
-      section {
-        column-count: 2;
-        column-gap: 2rem;
-      }
-      #manifesto .fullP {
-        height: 30%;
-        margin-top: 15% !important;
-      }
-      p {
-        margin-bottom: 1.8rem;
-      }
       figure {
         max-width: 100% !important;
         margin: 0rem !important;
-        padding: 0rem !important;
+        padding: 0 !important;
       }
-      figcaption{
-        text-align: center;
+      h1 { 
+        font-size: 4rem;
       }
       .📖-running-header {
-        top:10mm !important;
+        top: 8mm !important;
       }
-      .percentageMark {
-        bottom:10mm !important;
+      .📖-right .percentageMark {
+        bottom: 11mm !important;
       }
-      
+
+  
     </style>
 
 </head>
  
 <body>
   <script src="../bindery.min.js"></script>
-  <script>
+  <script> 
   
+
     Bindery.makeBook({
       pageSetup: {
-        size: { width: '220mm', height: '300mm' },
-        margin: { top: '22mm', inner: '30mm', outer: '20mm', bottom: '19mm'},
+        size: { width: '160mm', height: '220mm' },
+        margin: { top: '18mm', inner: '23mm', outer: '16mm', bottom: '17mm' },
       },
       content: {
           url: '../text.html',
@@ -55,9 +45,10 @@
         },
         rules: [
           // 페이지 나누기
-          Bindery.PageBreak({ selector: '.toc', position: 'before', continue: 'right' }),
           Bindery.PageBreak({ selector: '.toc', position: 'after', continue: 'next' }),
+          Bindery.PageBreak({ selector: '.toc', position: 'before', continue: 'right' }),
           Bindery.PageBreak({ selector: 'h1, h2, h3', position: 'before', continue: 'next' }),
+          Bindery.PageBreak({ selector: 'h4, h5', position: 'avoid', continue: 'next'}),
 
           // 목차
           Bindery.PageReference({
@@ -114,7 +105,7 @@
           
           // 규칙 생성
         Bindery.createRule({
-            eachPage: function(page, book) {
+          eachPage: function(page, book) {
               // 사이드바 
               let percentage = Math.floor((page.number / book.pageCount) * 100);
               let sideBar = document.createElement("div");   
@@ -135,8 +126,9 @@
                   if (percentage < 100) {
                   sideBar.innerHTML += sideBarCount;
                 } ;
-                }
-            
+                }  
+                
+
               // 책면에 프린트 (우측 위 좌측 아래)
               let edgePaints = document.createElement("div");
                 if (page.isRight) {
@@ -179,8 +171,8 @@
                 bottom: 0,
                 });
                 page.element.appendChild(edgePaint);
- 
-            }
+              
+          },
         }),
 
           //인덱스

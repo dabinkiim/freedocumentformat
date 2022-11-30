@@ -9,6 +9,7 @@
 html {
     font-size: 13px;
     word-break: keep-all;
+    word-spacing: -0.05rem;
 }
 body{
   font-family: Compagnon, Eulyoo1945; /* Compagnon, Eulyoo1945-Regular */
@@ -60,8 +61,7 @@ section h4:first-child {
   padding-left:20%;
 }
 #en {
-  font-size: 11px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 #en h1 {font-size: 5rem;}
 #en h2 {font-size: 3rem;}
