@@ -30,13 +30,14 @@
  
 <body>
   <script src="../bindery.min.js"></script>
+  <script src="../arena.js"></script>
   <script> 
   
 
     Bindery.makeBook({
       pageSetup: {
         size: { width: '110mm', height: '160mm' },
-        margin: { top: '15mm', inner: '15mm', outer: '11mm', bottom: '12mm' },
+        margin: { top: '15mm', inner: '16mm', outer: '10mm', bottom: '12mm' },
       },
       content: {
           url: '../text.html',
@@ -46,6 +47,7 @@
           // 페이지 나누기
           Bindery.PageBreak({ selector: '.toc', position: 'after', continue: 'next' }),
           Bindery.PageBreak({ selector: '.toc', position: 'before', continue: 'right' }),
+          Bindery.PageBreak({ selector: '#info', position: 'before', continue: 'left' }),
           Bindery.PageBreak({ selector: 'h1, h2, h3', position: 'before', continue: 'next' }),
           Bindery.PageBreak({ selector: 'h4, h5', position: 'avoid', continue: 'next'}),
 
@@ -154,11 +156,12 @@
               // 책면에 프린트 (옆)
               let edgePaint = document.createElement("div");
                 if (page.isRight) {
+                
                 edgePaint.style.background = "url('../img/side_right.svg') no-repeat";
                 edgePaint.style.right = "-3mm";
                 }
                 else if (page.isLeft) {
-                  edgePaint.style.background = "url('../img/side_left.svg') no-repeat";
+                  edgePaint.style.background = "url('../img/side_left.svg') center no-repeat";
                   edgePaint.style.left = "-3mm";
                 }
                 Object.assign(edgePaint.style, {

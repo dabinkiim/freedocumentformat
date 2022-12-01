@@ -6,8 +6,19 @@
   --bindery-mark-length: 5mm;
 }
 
+@font-face {
+  font-family: Eulyoo1945;
+  src: url('../font/Eulyoo1945-Regular.woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Compagnon;
+  src: url('../font/Compagnon-Roman.woff');
+}
+
 html {
-    font-size: 13px;
+    font-size: 12.5px;
     word-break: keep-all;
     word-spacing: -0.05rem;
 }
@@ -61,6 +72,7 @@ section h4:first-child {
   padding-left:20%;
 }
 #en {
+  font-size: 13px;
   line-height: 1.45;
 }
 #en h1 {font-size: 5rem;}
@@ -83,48 +95,6 @@ section h4:first-child {
   transform: translateY(0rem);
 }
 
-
-/* 챕터별 스타일 */
-ul.toc {
-  list-style-type: none;
-  padding: 0;
-  font-family: Compagnon, HY타자전각L;
-}
-ul.toc li {
-  border-bottom: 1px solid;
-}
-.toc_head {
-  padding: 0; 
-  margin: 0;
-}
-#maintext .paragraph-counter {
-  display: inline-block;
-}
-
-#manifesto p {
-  height: 90%;
-  display: flex;
-}
-
-#manifesto .fullP, .fullP {
-  font-family: Compagnon, HY타자전각L; 
-  font-size: 3rem;   
-  text-align: center;
-  margin: auto 0;
-}
-#en #manifesto .fullP, #en .fullP {
-  font-size: 2.5rem;
-}
-.tools p {
-  border-top: 1px dotted;
-  padding-left: 1rem;
-}
-.tools p.📖-continuation {
-  border: none;
-}
-.tools ul {
-  padding-bottom: 1rem;
-}
 
 
 /* 프레임 */ 
@@ -252,6 +222,9 @@ figcaption.fullP span {
 .📖-page.📖-right .📖-running-header .page-number {
   margin-left:1rem;
 }
+.📖-running-header:last-child {
+  display: none;
+}
 
 /* 각주 */
 .footnote {
@@ -268,5 +241,55 @@ figcaption.fullP span {
   
 
 
+/* 챕터별 스타일 */
+ul.toc {
+  list-style-type: none;
+  padding: 0;
+  font-family: Compagnon, HY타자전각L;
+}
+ul.toc li {
+  border-bottom: 1px solid;
+}
+.toc_head {
+  padding: 0; 
+  margin: 0;
+}
+#maintext .paragraph-counter {
+  display: inline-block;
+}
+
+#manifesto p {
+  height: 90%;
+  display: flex;
+}
+
+#manifesto .fullP, .fullP {
+  font-family: Compagnon, HY타자전각L; 
+  font-size: 3rem;   
+  text-align: center;
+  margin: auto 0;
+}
+#en #manifesto .fullP, #en .fullP {
+  font-size: 2.5rem;
+}
+.tools p {
+  border-top: 1px dotted;
+  padding-left: 1rem;
+}
+.tools p.📖-continuation {
+  border: none;
+}
+.tools ul {
+  padding-bottom: 1rem;
+}
+#info {
+  font-size: var(--font-size-s);
+  margin-top: 100%;
+  column-count: 2;
+  display: flex;
+}
+.kr {
+  margin-right: 1rem;
+}
 
 /*  인쇄 설정  */
