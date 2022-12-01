@@ -6,16 +6,6 @@
   --bindery-mark-length: 5mm;
 }
 
-@font-face {
-  font-family: Eulyoo1945;
-  src: url('../font/Eulyoo1945-Regular.woff');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: Compagnon;
-  src: url('../font/Compagnon-Roman.woff');
-}
 
 html {
     font-size: 12.5px;
