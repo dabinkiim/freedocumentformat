@@ -1,0 +1,992 @@
+<!DOCTYPE html PUBLIC>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title> text </title>
+    <style>
+        #content {
+            margin: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;
+        }
+
+        figure {
+            display: none !important;
+        }
+
+        body {
+            font-family: Compagnon, HY타자전각L, Eulyoo1945;
+            /* Compagnon, Eulyoo1945-Regular */
+            font-weight: 400;
+            line-height: 1.8;
+            word-break: keep-all;
+            font-size: 15px;
+            padding-right:2.5%;
+            border-right: 1px dotted #eaeaea;
+        }
+        p:nth-child(even) {
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: 3rem;
+            transform: skewY(10deg);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3,
+        .h3 {
+            font-size: 2rem;
+            font-family: var(--font-family-A);
+            margin-block-end: 1em;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+
+        h5,
+        #head-text {
+            font-size: 1.3rem;
+        }
+
+        h2,
+        h3 {
+            margin-top: 0;
+            transform: translateY(-1rem);
+        }
+
+        h3,
+        h4,
+        h5 {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        ul,
+        li {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul {
+            padding-left: 10%;
+            margin-top: 0;
+            padding-bottom: 2rem;
+        }
+
+        a {
+            color: var(--colorA);
+            word-break: break-all;
+        }
+
+        a:visited {
+            color: var(--colorA);
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        section h4:first-child {
+            margin-top: 0 !important;
+        }
+
+        .indent {
+            padding-left: 5%;
+        }
+
+        .indent2 {
+            padding-left: 10%;
+        }
+
+        #en h1 {
+            font-size: 5rem;
+        }
+
+        #en h2 {
+            font-size: 3rem;
+        }
+
+        #en h3,
+        #en .h3 {
+            font-size: 2.5rem;
+        }
+
+        #en h4 {
+            font-size: 1.8rem;
+        }
+
+        #en h5 {
+            font-size: 1.5rem;
+        }
+
+        .index-content {
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+        }
+
+        .index-content li {
+            margin-left: 0;
+        }
+
+        .n1,
+        .n2 {
+            display: none;
+        }
+        .fullP {
+            text-align: center;
+            max-width: 80%;
+            padding-left: 10%;
+            text-align: center;
+            font-size: 1.3rem !important;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="content">
+
+        <h1>
+            프리 도큐먼트 포맷
+        </h1>
+
+        <h1>
+            Free Document Format
+        </h1>
+        <!-- 
+        <h5 class="toc_head">목차</h5>
+        <h5 class="toc_head">Contents</h5>
+        -->
+
+        <ul class="toc">
+            <li><a href="#section1">들어가며</a></li>
+
+            <li><a href="#section2">상상한 미래</a></li>
+
+            <li class="indent"><a href="#section2-1">선언문</a></li>
+
+            <li><a href="#section3">자유로운 문서에 대한 이론</a></li>
+            <li class="indent"><a href="#section3-1">단 하나의 문서</a></li>
+            <li class="indent2"><a href="#section3-1-1">뿌리의 재전유</a></li>
+            <li class="indent2"><a href="#section3-1-2">하이브리드 이후</a></li>
+
+            <li class="indent"><a href="#section3-2">흐르는 문서</a></li>
+            <li class="indent2"><a href="#section3-2-1">유리 아래의 종이</a></li>
+            <li class="indent2"><a href="#section3-2-2">액체 레이아웃</a></li>
+            <li class="indent2"><a href="#section3-2-3">어도비의 유체화</a></li>
+            <li class="indent2"><a href="#section3-2-4">흐르기 시작한 후에는</a></li>
+
+            <li class="indent"><a href="#section3-3">연결된 문서</a></li>
+            <li class="indent2"><a href="#section3-3-1">하이퍼텍스트: 표류하고, 부유하고, 수증기가 되어</a></li>
+            <li class="indent2"><a href="#section3-3-2">대체 텍스트: 같이 읽기 위해</a></li>
+
+            <li class="indent"><a href="#section3-4">자유를 위한 문서</a></li>
+            <li class="indent2"><a href="#section3-4-1">눈에 보이는 것 이상을 원한다면</a></li>
+            <li class="indent2"><a href="#section3-4-2">스스로 자유를 찾아야 해</a></li>
+
+            <li><a href="#section4">제작기: 이론에서 실천으로</a></li>
+            <li class="indent"><a href="#section4-1">도구들</a></li>
+            <li class="indent2"><a href="#section4-1-1">쓰기와 편집</a></li>
+            <li class="indent2"><a href="#section4-1-2">디자인과 제책</a></li>
+            <li class="indent2"><a href="#section4-1-3">도구집</a></li>
+
+            <li class="indent"><a href="#section4-2">제작기</a></li>
+            <li class="indent2"><a href="#section4-2-1">쓰기</a></li>
+            <li class="indent2"><a href="#section4-2-2">편집하기</a></li>
+            <li class="indent2"><a href="#section4-2-3">디자인하기</a></li>
+            <li class="indent2"><a href="#section4-2-4">공유하기</a></li>
+
+            <li><a href="#section5">마치며</a></li>
+            <li><a href="#section6">인덱스</a></li>
+        </ul>
+
+        <ul class="toc">
+            <li><a href="#section_1">Introduction</a></li>
+
+            <li><a href="#section_2">The imagined future</a></li>
+
+            <li class="indent"><a href="#section_2-1">Statement</a></li>
+
+            <li><a href="#section_3">Theory of Free Documentation</a></li>
+            <li class="indent"><a href="#section_3-1">A Document</a></li>
+            <li class="indent2"><a href="#section_3-1-1">Reappropriation of a root</a></li>
+            <li class="indent2"><a href="#section_3-1-2">After the Hybrid</a></li>
+
+            <li class="indent"><a href="#section_3-2">Flowing document</a></li>
+            <li class="indent2"><a href="#section_3-2-1">Paper under the glass</a></li>
+            <li class="indent2"><a href="#section_3-2-2">Liquid Layout</a></li>
+            <li class="indent2"><a href="#section_3-2-3">Adobe’s Fluidization</a></li>
+            <li class="indent2"><a href="#section_3-2-4">After it starts to flow</a></li>
+
+            <li class="indent"><a href="#section_3-3">Connected Document</a></li>
+            <li class="indent2"><a href="#section_3-3-1">Hypertext: Drift, float, become vapor</a></li>
+            <li class="indent2"><a href="#section_3-3-2">Alt-text: To read together</a></li>
+
+            <li class="indent"><a href="#section_3-4">Liberated Document</a></li>
+            <li class="indent2"><a href="#section_3-4-1">If you want more than meets the eye</a></li>
+            <li class="indent2"><a href="#section_3-4-2">Find your own freedom</a></li>
+
+            <li><a href="#section_4">Production:From theory to practice </a></li>
+            <li class="indent"><a href="#section_4-1">Tools</a></li>
+            <li class="indent2"><a href="#section_4-1-1">Writing and Editing</a></li>
+            <li class="indent2"><a href="#section_4-1-2">Designing and Binding</a></li>
+            <li class="indent2"><a href="#section_4-1-3">Toolbox</a></li>
+
+            <li class="indent"><a href="#section_4-2">Production Record</a></li>
+            <li class="indent2"><a href="#section_4-2-1">Writing</a></li>
+            <li class="indent2"><a href="#section_4-2-2">Editing</a></li>
+            <li class="indent2"><a href="#section_4-2-3">Designing</a></li>
+            <li class="indent2"><a href="#section_4-2-4">Sharing</a></li>
+            <li><a href="#section_5">Outro</a></li>
+            <li><a href="#section_6">Index</a></li>
+        </ul>
+
+
+        <p id="head-text">
+            현재의 공유 가능한 텍스트는 거의 대부분 스크린 속의 기술을 통해, 그리고 기계에 의해 구성되는 과정 속에 있다. 우리가 읽는 수많은 텍스트들의 모습은 특정 테크놀로지 또는 소프트웨어, 그리고 출력 기계에 의해 결정되어 우리 앞에 놓여진다. 그러나 텍스트 아래에 그를 담는 그릇이 존재하며, 그 그릇에 의탁하여 텍스트가 존재한다는 명제는 너무 자주 무시되고는 한다.</p>
+        <p id="head-text">Today’s shareable text is almost entirely in the process of being constructed through technology on the screen and by machines. The appearance of countless texts we read placed in front of us, is determined by specific technology or software and output machines. However, the proposition that there is a container beneath the text, and that the text exists by relying on the container, is too often ignored.</p>
+
+        <p id="head-text">
+            <em>프리 도큐먼트 포맷</em>에서는 현재의 공유 가능한
+            텍스트와 문서 형식이 대체 가능함과 동시에 더 나은 방식으로 구현될 수 있다고 생각한다. 이는 자유로운 문서와 책을 위한 변화를 요구하는
+            것으로 이어진다. 출판 방식과 그 결과물인 문서는 어떻게 달라져야 하고 또 달라질 수 있을까? 이 질문에 답변하기 위해, <em>프리 도큐먼트 포맷</em>은 지금까지 제작되어 온 다른 전자 출판 형식들을 통해 새로운 문서 공유 형식을 만들어 보고, 비평하고, 그 과정을 문서로 기록한다. 텍스트는 또 다시 공유되고, 자유로운 문서에 대한 새로운 질문은 새롭게 흐를 것이다.
+        </p>
+
+        <p id="head-text">
+            <em>Free Document Format</em> believes that current shareable text and document formats can be implemented in a way that is both alternative and better. This leads to demands for change for free documents and books. How should the publishing method and the resulting document change and be different? To answer this question, <em>Free Document Format</em> creates, critiques, and documents the process of creating a new document sharing format through other electronic & open source publishing formats that have been produced so far. Texts will be shared again, and new questions about free documents will flow anew.
+        </p>
+
+
+        <h2 id="section1">들어가며</h2>
+        <h2 id="section_1">Introduction</h2>
+
+
+        <p>여기 기록되고 전달되려는 하나의 텍스트가 있다. 보편적인 방식으로 타이핑을 통해 작성되었다. 이 텍스트가 다수에게 공유되기 위해서는 대략 두 가지 방법이 있다. 누군가 이 텍스트를 서버에 업로드하고 그 위치 좌표(링크)를 공유하여 누구나 스크린을 통해 위치 좌표에 접속해 보도록 하거나, 마찬가지로 스크린 위에서 책의 출력 데이터를 제작한 뒤 복제본을 대량 인쇄하여 물성이 있는 매체를 공유해야 한다.</p>
+
+        <p>Here is a text to be recorded and delivered. It was written in the plain and universal way, by typing. There are roughly two ways to share this text with a large number of people. Someone uploads this text to a server and shares its location coordinates so that anyone can access the link (location coordinates) through a screen, or the text must be transferred to the physical medium by mass production starting from exporting a print data on the screen.</p>
+
+        <p>
+            공유 텍스트<span class="n1"><span class="n2">기록되고 전달되고자 하는, 즉 공유되고자 하는 텍스트를 뜻하는 용어로 글에서 축약해 사용한다.</span></span> ‘문서’라는 형식은 익숙한 종이의 이미지를 부여한다. 하지만 이 모든 과정은 스크린 속에서 이루어진다. 인쇄되어 물질로 손에 남더라도, 그전까지 결국 컴퓨터라는 기계를 통해 디지털상으로 생성된 결과물이다. 달리 말하면, 현재의 공유 가능한 텍스트는 대부분 스크린 너머의 기술과 기계를 통해 구성되는 과정 속에 있다. 우리가 읽는 수많은 텍스트의 모습은 특정 테크놀로지 또는 소프트웨어, 그리고 출력 및 디스플레이 기계에 의해 결정된 채 구현되어 우리 앞에 놓인다. 그러나 텍스트 아래에 그를 담는 그릇이 존재하며, 그 그릇에 의탁하여 텍스트가 존재한다는 명제는 자주 무시된다.
+        </p>
+        <p>The shared text<span class="n1"><span class="n2">It is a word that refers to the text that is to be recorded and transmitted to others, that is, to be shared.</span></span>, the form of the ’document’, gives a familiar impression of paper. However, all of this process takes place on the screen. Even if it is printed and left in the hand as a material, it is the result of being digitally created through a machine called a computer until then. In other words, the current shareable text is almost always in the process of being composed by technology beyond the screen and through machines. The appearance of numerous texts we read is placed in front of us, determined and embodied by specific technologies or softwares as well as output and display machines. However, the proposition that there is a vessel to contain it under the text, and that the text exists by relying on the vessel, is often ignored.</p>
+
+
+        <p>게다가 오늘날의 대부분의 책은 결국 하나의 소프트웨어(프로그램)를 통해 동일한 방식으로 제작되고 있다. 그것도 그를 실제로 사용하는 이는 이해하지 못하는, 원리가 숨겨진 구조로 작동하는 소프트웨어로 말이다. 이 독점 소프트웨어 장치의 설계와 UI는 작업자가 자신이 사용하는 도구인 소프트웨어를 완전히 마스터할 수 있는 가능성을 닫아버렸기에, 작업자는 도구에서 분리되어 체인의 끝에 배치되고 만다.</p>
+        <p>Moreover, most of today’s books are eventually produced in the same way through one software (program). It is also a software that operates in a structure with a hidden principle that those who actually use it do not understand. The design and UI of this proprietary software device closes the possibility of the operator fully mastering the software that is the tool they use, leaving the operator disconnected from the tool and placed at the end of the chain.</p>
+
+
+        <p><em>프리 도큐먼트 포맷</em>에서는 현재의 공유 가능한 텍스트와 문서 형식이 대체 가능함과 동시에 더 나은 방식으로 구현될 수 있다는 생각에서 시작했다. 이는 문서와 책의 자유를 향한 변화 요구로 이어진다. 출판 방식과 그 결과물인 문서 그리고 포맷<span class="n1"><span class="n2">형식이나 구성, 형태 등 보다 더 넓은 범위를 포함하는 단어로 사료되어 직역하지 않고 포맷이라는 용어를 유지한다.</span></span>은 어떻게 달라질 수 있는가. 우리는 스크린 속을 떠다니는 현재의 문서의 포맷과 포맷을 만드는 방식에 의심을 갖고 질문해야 한다.</p>
+        <p>In <em>Free Document Format</em>, I believe that current shareable text and document formats can be implemented in a way that is both alternative and better. This leads to demands for change for free documents and books. How can the publishing method, the resulting document, and the format be different? We should be critical and question the format of the current document floating on the screen and the way it is formatted.</p>
+
+
+        <p>실질적인 도구의 사용자임에도 주권을 빼앗긴 사용자들은 어떻게 다시 창작의 자유를 소생시키고 지킬 수 있을까? 자유롭기 위한 노력은 스스로를 위한 것이다. 도구의 민주화가 필요하다. 자신이 사용하는 기술과 형식을 제대로 알고 이해하고 쓸 수 있게 된다면 우리는 앞으로 어떤 다른 고민을, 상상을 할 수 있을까.</p>
+        <p>How can we, who have been deprived of our sovereignty even though we are users of actual tools, revive and protect the freedom of creation again? The effort to be free is for oneself. We need democratization of tools. If you can properly understand and use the technology and format you use, what other concerns and ideas can we have in the future?</p>
+
+        <p>이 질문들을 따라, <em>프리 도큐먼트 포맷</em>은 지금까지 제작되어 온 다른 전자 출판 형식들을 통해 새로운 문서 공유 형식을 만들어 보고, 비평하고, 그 과정을 문서로 기록한다. 현재의 독점적 문서 포맷을 벗어난 다양한 문서 형식과 시스템을 탐구하고 또 고안한다. 하지만 가장 큰 목적은 새로운 해결방식을 제안하는 것이 아니라 선택지를 쥐어주는 것이다. 가능성을 향한 텍스트는 또다시 공유되고, 자유로운 문서에 대한 새로운 질문이 흐를 것이다.</p>
+        <p>Following these questions, <em>Free Document Format</em> creates, critiques, and documents the process of creating a new document sharing format through other electronic publishing formats that have been produced so far. We will explore and devise various document formats and systems beyond the current proprietary one, but the biggest purpose is not to impose a new solution, but to give you a choice. The text toward possibility will be shared again, and new questions about free documents will flow anew.</p>
+
+
+        <h2 id="section2">상상한 미래</h2>
+        <h2 id="section_2">The imagined future</h2>
+
+
+        <p>선언문이 작성되었다.<br>이후의 문서는 그 전과는 같을 수 없었다.<br>
+            사람들은 물었다. 의심하고 자각하기 시작했다.<br>
+            왜 지금까지는 그러지 못했지?</p>
+        <p>A Manifesto was written.<br>
+            Subsequent documents could no longer be the same as before.<br>
+            People started asking. Began to doubt and realize.<br>
+            Why haven’t we done that until now?</p>
+
+
+        <p>자유로운 문서는 소프트웨어의, 포맷의, 형태의 번역이 불필요해 누구나 접근 가능한 콘텐츠라는 이상을 이루는 수 있는 그릇이 되었다. 링크로 연결된 공동체, 인터넷에서 이뤄지는 공용 플랫폼을 만들려는 노력 그리고 유토피아적이며 범언어적인 꿈을 완벽하게 반영하며 상응했다.</p>
+        <p>Free documentation has become a vessel to achieve the ideal of content that is accessible to anyone, without the need for translation of software, format, or form. It perfectly mirrors and corresponds to the linked community, the effort to create a common platform on the Internet, and the utopian, translingual dream.</p>
+
+        <p>종이의 모방이 아닌 디지털 문서, 인쇄물과 디지털을 결합한 판본은 옛 언젠가는 새로웠을 테다. 새롭고 진정한 하나의 문서, 순수한 하이브리드의 꿈이 사람들을 자극하고 불타오르게 했던 갈망의 시기! 하지만 지금은 이미 너무도 과거의 유물이 되어버렸다. 모든 이가 이제 문서가 하나의 형식 안에 자리 잡지 않았다는 테제를 공유하기 때문이다. 다름을 볼 수 없기 때문에 결합이라는 개념도 없다. 텍스트는 무한으로 확장하는 문서 포맷 안에 존재하며, 문서 포맷은 하나이자 무한이다. </p>
+        <p>Digital documents, not imitations of paper, and editions that combine print and digital must have been new at some point in the past. There was a time of longing when a new and true document, a pure hybrid dream, stirred and inflamed people! But now it has become a relic of the past. Because everyone now shares the thesis that documents do not sit within a single form. There is no concept of union because you cannot see a difference between them. Text exists in a document format that can be expanded infinitely, and the document format is one and infinite</p>
+
+
+        <p>한가지 틀에 맞춰지지 않은 채 자유로워진 문서는 형식과 내용이 서로 바라보면서 서로에 맞춰, 서로에 따라 자라났다. 어떤 모습이든 될 수 있었기 때문에 가능한 일이었다. 이제 문서는 내용의 완전한 구현이자 그 자체로, 내용이다. </p>
+        <p>Documents that were freed from being confined to one frame grew up according to each other, reflecting each other in form and content. It was possible because it could be anything. Documents are now the complete embodiment of content, and in themselves, content.</p>
+
+        <p>이 모든 것은 그 누구의 독점도, 제한도 없이 구성되었다. 이젠 누구나 어디서든 공동체에 접속해 그 무엇도 설치하지 않고도 문서를 작성하고, 저장하고, 공유할 수 있다. 모든 페이지는 바다 같은 서버 안에서 헤엄치며, 연결되어 있다. 한순간엔 오직 나만이, 다른 한순간엔 모두가 같은 문서를 볼 수 있다. 문서는 모든 형태로의 변환이 가능한 액체와도 같다. 선형적이었다가, 비선형적이었다가, 마치 공기 입자처럼 퍼져 있다가도 또 흐르는 물과 같이 움직인다.</p>
+        <p>All of this was constructed without anyone’s monopoly or restrictions. Now anyone can access the community from anywhere and create, save and share documents without having to install anything. All pages are connected, swimming in a sea of ​​servers. One moment only me, another moment everyone can see the same document. A document is like a liquid that can change into any form. It was linear, then it was non-linear, it spreads like air particles, and then moves like flowing water.</p>
+
+        <p>제한되지 않고 모든 형식으로 탈바꿈할 수 있는 자유로운 문서는 수많은 독해를 각자의 방식으로 수용할 수 있게 확장 가능성을 가진다. 선택에 따라 변형되고 확장되는 문서를 통한 적극적 읽기를 통해, 사람들은 진정으로 문서와 관계를 맺고 텍스트 속에서 새로운 자신을 발견하며 변화하는 역동적 존재<span class="n1"><span class="n2">여수현. (2020). <em>읽기의 리좀(rhizome)적 특성 고찰</em>. 한국초등교육, 31(1), 233-243.</span></span>가 되었다. 이는 텍스트와 문서에 또한 마찬가지였다. 미래는 끊임없는 새로운 생성을 맞이한다.</p>
+        <p>Free documents that can be transformed into any format without restrictions have the potential to be expanded to accommodate numerous readings in their own way. Through active reading thanks to documents that are transformed and expanded according to choices, people have become dynamic beings who truly relate to documents, discover new selves in the text, and change.<span class="n1"><span class="n2">Soohyun Yeo. (2020). <em>A study on rhizome characteristics of reading</em>, Korean Elementary Education, 31(1), 233-243.</span></span> The same was true for texts and documents. The future faces endless new creation. </p>
+
+        <p>글자를 읽는 방법 또한 셀 수 없다. 어떤 이는 문서를 빠르게 한 장씩 틀어 흐르는 영상의 모습으로 만들어 보다가, 눈이 아파지면 눈을 감고 텍스트를 틀어 귀로 듣는다. 다른 이는 인쇄해서 옷으로 지어 입다가, 가상공간 안에 있는 자신의 집 소파 위에 앉아 인쇄된 신문 포맷에 담긴 텍스트를 읽기도 하고, 갑자기 그것이 지겨워지면 아예 집 전체의 벽지를 점자 텍스트로 발라서 만지며 읽기도 했다. </p>
+        <p>The ways of reading letters are also innumerable. Some people quickly turn documents one by one to make them look like flowing images, and when their eyes hurt, they close their eyes and turn the text as audio to listen. Others print it out into clothes and read through wearing it, sit on the sofa at home in a virtual space and read the text in the printed newspaper format, or when they suddenly got tired of all of it, they paint the entire house with braille text and read it through touching it.</p>
+
+        <p>읽는 사람에 의해 조작되고 또 새로운 이야기가 생기는 세계. 우리의 문서는 타자를 인식으로 환원하지 않으며 환대하는 다중체이다. 그것은 안에 있으며 동시에 바깥에 있다. 어디에나 있는 동시에 아무 데도 없으며, 언제나 있는 동시에 존재하지 않는 것이다. 링크로 서로 아름답게 연결된 문서들, 문서 간의 경계, 작가와 독자 간의 경계는 희미해지고 리좀<span class="n1"><span class="n2">프랑스의 대표적 현대 철학자 들뢰즈(Gilles Deleuze, 1925~1995)는 사물들이 접속과 일탈을 반복하면서 관계의 장(場)을 만들어 가는 형태를 ‘리좀’이라고 정의한다. 리좀은 원래 식물학에서 온 개념으로 잔뿌리를 내리며 뻗어가는 땅속의 구근 혹은 덩이줄기를 말한다. 한 곳에 뿌리를 내린 고정된 나무와 다르게 덩이줄기는 뿌리가 따로 있지 않고, 줄기가 닿는 접점마다 새로운 뿌리를 만들어 그물처럼 이어진다. 리좀 형태는 이런 덩이줄기처럼 위계나 이원론을 따르지 않고 자유롭게 퍼져 나가면서 새로운 지식을 탄생시키는 사고 방식을 뜻한다.</span></span>의 형태처럼 단일체가 아닌 잔뿌리의 형태가 되어 각자의 외부를, 확장을 지향한다. 4차원 공간에서 모든 방향으로 동시 확장하고 수축하며 촘촘하게 연결된 뿌리로 이어진 글자들의 세계다.</p>
+        <p>A world that is manipulated by the reader and creates new stories. Our document is a multiplex that welcomes others without reducing them to recognition. It is inside and outside at the same time. It is everywhere and nowhere, always present and non-existent. Documents are beautifully connected to each other by links, the boundaries between documents, and the boundaries between writers and readers are blurred, and like the form of a rhizome, they become a network of small roots rather than a single entity, aiming for their own growth and expansion. It is a world of letters that are simultaneously expanded and contracted in all directions in a four-dimensional space and are connected by densely connected roots.</p>
+
+        <p>끈질기게 환상으로 삼던 미래가 다가왔을 때, 사람들은 자신의 상상력을 탐험하기 시작했다. 액체는 상상력의 뿌리를 따라 계속해서 흐른다.</p>
+        <p>When the future we had been persistently fantasizing about arrived, people began to explore their own imaginations. The liquid continues to flow along the roots of imagination.</p>
+
+        <h3 id="section2-1" style="text-align:center; transform: none;">선언문</h3>
+
+        <h3 id="section_2-1" style="text-align:center;">Statement</h3>
+
+        <p class="fullP">미래의 문서 포맷은 다음과 같은 방식이어야 한다.</p>
+        <p class="fullP">Free document formats of future should be in the following way.</p>
+
+        <p class="fullP">제한되지 않고 모든 형식으로, 결과적으로 모든 매체로 확장될 수 있어야 한다.</p>
+        <p class="fullP">It must be unrestricted and expandable to all formats and consequently to all media.</p>
+
+        <p class="fullP">확장은 하나의 텍스트에서 출발되어야 한다.</p>
+        <p class="fullP">Expansion must start from one text.</p>
+
+        <p class="fullP">개인이 방식을 가꾸고 변경해나갈 수 있는 통로를 열어두어야 한다. </p>
+        <p class="fullP">The avenues for individuals to cultivate and change their ways must be left open. </p>
+
+        <p class="fullP">즉, 오픈 소스이고 또 오픈 소스로 구성되어야 한다.</p>
+        <p class="fullP">In other words, it must be made open source, and it must be open source itself.</p>
+
+        <p class="fullP">대안이 아닌, 새로운 대상이 되어야 한다.</p>
+        <p class="fullP">It should be a new object, not an alternative.</p>
+
+        <p class="fullP">인지된 제약이 잠재력을 제한하는 것을 허용하지 않아야 한다.</p>
+        <p class="fullP">Perceived limitations should not be allowed to limit potential.</p>
+
+        <p class="fullP">정보를 공유하려는 욕구라는 문서의 가장 중요한 목적에 가장 부합하려는 형태여야 한다.</p>
+        <p class="fullP">It should be in a format that best meets the most important purpose of the document, the desire to share information.</p>
+
+        <p class="fullP">문서 형식의 가장 중요한 덕목인, 잘 읽히고자 하는 용도에 가장 부합하려는 형태여야 한다.</p>
+        <p class="fullP">It should be the most suitable format for the most important virtue of the document format, being read well.</p>
+
+        <p class="fullP">내용이 형식에, 형식이 내용에, 그 모든 것이 기술과 소프트웨어에 구속되지 않아야 한다.</p>
+        <p class="fullP">Content should not be constrained by form, form by content, and neither of them should be bound by technology and software.</p>
+
+        <p class="fullP">무엇으로부터든 자유로워야 한다.</p>
+        <p class="fullP">Must be free from anything.</p>
+
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+
+
+
+
+
+        <h2 id="section3">자유로운 문서에 대한 이론</h2>
+        <h2 id="section_3">Theory of Free Documentation</h2>
+
+        <p>지금 당장의 현실 속 자유로운 문서란 대체 무엇인가? 무엇으로부터 자유로워야 하는 것일까? 그것은 어떻게 만들어질 수 있는가? 질문에 대한 실마리를 잡아가기 위해, 가장 먼저 지금까지의 주 문서 공유 포맷인 PDF를 분석하고 해석해보고자 한다. 지금 문서 방식의 보이지 않는 메커니즘을 들춰보자. 본질적인 단점에도 불구하고 현재의 형식이 자리 잡은 이유와, 큰 개편 없이 유지되는 까닭은 무엇일까? 문서 포맷이 현재까지 어떤 변화를 거쳐왔는지, 앞으로 무엇이 되거나 되지 않을 수 있는지 살펴본다.</p>
+        <p>What is a free document in reality right now? What should it be free from? How can it be made? In order to get a clue of the answer, I first want to analyze and interpret PDF, the main document sharing format so far. Let’s take a look at the invisible mechanism of the current document method. Why is the current format established despite its inherent flaws, and why is it maintained without major reforms? We’ll take a look at what the document format has gone through to date, and what it may or may not be in the future.</p>
+
+        <p>그 후 자유로운 문서에 대한 가능성을 이야기하는 이론들을 들여다본다. 현재의 문서 포맷으로는 실현이 불가능하지만, 앞으로의 새로운 문서 형식이 갖출 수 있는 특성과 기능이 있을까? 아니면 이미 그런 것들은 존재했고 논의되어 왔지만, 우리가 발견하지 못한 채 놓치고 있었던 것일까?</p>
+        <p>After that, I will take a look at the theories that evoke the possibility of free documentation. Are there characteristics and functions that cannot be accomplished with the current document format, but that the new document format of the future could possess? Or do they already exist and have been discussed? Have we been missing out on discovering them?</p>
+
+
+
+        <h3 id="section3-1">단 하나의 문서</h3>
+        <h3 id="section_3-1">A Document</h3>
+
+        <h4 id="section3-1-1">뿌리의 재전유</h4>
+        <h4 id="section_3-1-1">Reappropriation of a root</h4>
+
+        <p>DTP는 탁상 출판<sup>Desktop Publishing</sup>의 약자로, 개인 컴퓨터로 단행본이나 사전 등의 출판물을 디자인하는 작업을 말한다. 현대의 일반적인 탁상 출판은 마이크로소프트 워드(.doc) 같은 위지윅<sup>WYSIWYG</sup> 워드 프로세서/텍스트 편집기를 통해 글을 작성하고, 레이아웃 프로그램인 인디자인<sup>InDesign</sup>으로 편집 및 디자인한 후 PDF로 내보낸 뒤 그를 인쇄하는 과정으로 이루어진다.</p>
+        <p>DTP stands for Desktop Publishing, and refers to the work of designing publications such as books or dictionaries on a personal computer. A typical modern desktop publication is created via a WYSIWYG word processor/text editor such as Microsoft Word (.doc), edited and designed with a layout program such as InDesign, then exported to PDF and printed.</p>
+
+        <p>현재로서는 제조 과정에서든 유통 과정에서든 디지털 개입 없이 제작된 문서는 상상하기 어렵다. 기술적 매개를 통해 우리의 감각에 도달하는 거의 모든 것은 디지털 ‘통과’를 거친다. 당신은 이 문서를 촉감과 함께 도달하는 인쇄본으로 읽고 있을 수 있지만, 이 문서를 쓰고 편집하는 모든 과정은 스크린 너머 디지털 속에서 이루어졌다. 하지만 ‘문서’라는 형식과 용어는 공유되는 텍스트에 너무도 익숙한 사각형 종이의 이미지를 부여하기에, 문서 및 책과 우리의 읽기 행위의 디지털 성질은 쉽게 무시된다.</p>
+        <p>At present, it is difficult to imagine a document produced without digital intervention, whether in manufacturing or distribution. Almost everything that reaches our senses through technological mediation goes through a digital ‘pass-through’. You may be reading this document in a tactile, printed version, but the entire process of writing and editing this document was done digitally beyond the screen. However, the format and term ‘document’ gives shared texts the familiar image of a rectangular piece of paper, so the digital nature of documents, books and our reading behavior is easily ignored.</p>
+
+
+        <p>문서가 디지털 환경에서 제작된다고 해서 디지털 문서가 우선시 되어야 한다는 이야기는 전혀 아니다. 애초에 ‘책’을 만들기 위해서는 디지털 문서가 필수적이라는 얘기를 하는 것이다. 책과 디지털을 대척점의 양 끝에 두고 비교하는 일은 이제는 너무나도 지겨운 일이다. 이런 비교는 더 이상 존재할 필요가 없다. 디지털 문서가 생긴다고 해서 책이 사라지지 않고, 그렇다고 디지털 문서가 다시 소멸하지도 않을 것이다.<span class="n1"><span class="n2">디지털으로 생산되는 문서를 결국 인쇄하는, 책 물성화 방식을 유지하는 이유가 궁금해진다면, 그 의문에 대해서는 적어 나열하기에도 너무 많은 이유가 있다. 현대의 어떤 웹 대안도 아름답게 제작되고 인쇄된 책을 들고 있을 때 얻는 즉각적인 신뢰감과 소중함을 따라갈 수 없기 때문이다.</span></span> 책이 우선이냐, 디지털 문서가 우선이냐가 아닌, 이분법적인 구분 자체가 문제이다. 디지털 텍스트, 문서를 인쇄판의 대안으로 생각하는 고착화된 관념은 이제 버려야 한다. 둘은 본질적으로 연결되어 있으며, 하나의 뿌리에서 자라난 두 개의 가지일 뿐이다.</p>
+        <p>Just because documents are produced in a digital environment does not mean that digital documents should be prioritized. In the first place, it is said that digital documents are essential to create a ‘book’. Comparing books and digital on both ends of the opposite pole is now terribly boring. This comparison need not to exist any more. Books will not disappear just because digital documents exist, nor will digital documentslag behind books and disappear again.<span class="n1"><span class="n2">If you are curious about the reason why digitally produced documents are eventually printed and maintained as a book, there are too many reasons to write down and list the matter. Because no modern web alternative can match the instant trust and value you get when holding a beautifully crafted and printed book.</span></span> It is not a matter of whether books or digital documents come first, but rather the dichotomous distinction itself. The fixed notion of thinking of digital texts and documents as an alternative to printed editions must be abandoned. The two are intrinsically linked, just two branches growing from a single root.</p>
+
+
+        <h4 id="section3-1-2">하이브리드 이후</h4>
+        <h4 id="section_3-1-2">After the Hybrid</h4>
+
+        <p>두 개의 가지는 서로 다른 특성과 장점을 갖고 있기에, 요즘의 출판물은 일반적으로 모두를 포기하지 않기 위하여 하나의 텍스트를 기반으로 두 가지 형식을 다 제작한다. 그리고 그에서 조금 벗어나고자 하는, 더 발전한 상상력을 가진 문서는 양극의 특성을 혼합한 문서 포맷을 만들려는 노력을 해왔다. 알레산드로 루도비코는 디지털 프린트 이후의 출판에 대해 논의하는 그의 저서 《포스트 디지털 프린트》에서 앞으로 디지털과 인쇄물이 결합한, ‘하이브리드’라고 불리는 혼합물이 더욱 많아질 것이라고 주장했다. 본질적, 태생적으로 연결된 문서의 형식들은 더욱더 서로에게 영향을 주며 새롭게 혼합된 형태를 만들어 낼 것이고, 그를 더 이상 ‘인쇄물’ 또는 ‘전자 출판물’로 분명하게 분류할 수 없을 때 비로소 진정한 혼합 형태의 출판물이 도래할 것이라고 보았다. 루도비코는 2012년 책에서 하나의 예시로 음악이나 비디오 샘플링과 유사한 형태로 맞춤형 콘텐츠(모음집)를 만들 수 있는 ‘프린트 샘플링’을 상상하기도 했다.<span class="n1"><span class="n2"> 알레산드로 루도비코, <em>포스트 디지털 프린트</em> (미디어버스, 2017), p.155</span></span> 지금의 E-book 리더기나 Web2Print 시스템들을 본다면, 당대의 상상은 이미 현실이자 현상이 되고 있다는 것을 가깝게 느낄 수 있다.</p>
+        <p>These days publications generally produce both formats based on one text in order not to give up both. And documents with a more developed creativity, which want to deviate a little from the norm, have made efforts to create a document format that combines the characteristics of both polarities. Alessandro Ludovico, in his book <em>Post Digital Print</em>, which discusses publishing after digital print, argues that in the future there will be more mixtures of digital and print, called hybrids. He said that the forms of documents that are intrinsically and inherently connected will influence each other and create a new mixed form, and only when it can no longer be clearly classified as ‘print’ or ‘electronic publication’ is a true mixed form of publication. As an example in his 2012 book, Ludovico also talked about imagining ‘print sampling’, which allows you to create custom content (compilations) in a form similar to music or video sampling.<span class="n1"><span class="n2"> Alessandro Ludovico, <em>Post Digital Print</em>, p.155</span></span> If you look at the current E-book readers or Web2Print systems, you will be able to feel strongly that the imagination of the
+            time is already becoming a reality and a phenomenon.</p>
+
+        <p>그런데 이에 더해서 정말로 모두가 둘은 다른 수목이 아니라 근원적으로 연결된 가지라는 것, 즉 하나의 나무라는 인식을 공유한다면 어떤 변화가 일어날까? ‘하이브리드’를 초월한 그다음엔 무엇이 우리를 기다리고 있을까? </p>
+        <p>But in addition to this, what kind of change could happen if everyone really shared the perception that the two are not different trees, but fundamentally connected branches, which is eventually a single tree? After transcending ‘hybrid’, what awaits us?</p>
+
+
+        <h3 id="section3-2">흐르는 문서</h3>
+        <h3 id="section_3-2">Flowing document</h3>
+
+        <h4 id="section3-2-1">유리 아래의 종이</h4>
+        <h4 id="section_3-2-1">Paper under the glass</h4>
+
+        <p>Portable Document Format, 이하 PDF는 미국 어도비 시스템즈<sup>Adobe Systems</sup>에서 만든 문서 파일 포맷(유형)이다. 1993년 어도비사는 PDF 1.0 버전과 아크로뱃 1.0 버전을 발표했다. 결과적으로 현재 PDF는 대항 세력이 없는, 온라인 상의 인쇄용 문서의 실질적 산업 표준이 되었다. PDF의 장점으로는 대부분의 문서를 그대로 표현할 수 있고, 암호화 및 압축 기술을 통해 내용의 변조가 어려우며, 사용권을 다양하게 부여할 수 있다는 점, 그리고 다양한 프로그램에서 지원 가능하다는 점 등이 있다.</p>
+        <p>Portable Document Format, hereinafter PDF, is a document file format (type) created by Adobe Systems, USA. It appeared in 1993 when Adobe released PDF 1.0 version and Acrobat 1.0 version. As a result, PDF is now the de facto industry standard for printable documents online, with no rivals. Advantages of PDF include that most documents can be expressed as they are, content cannot be tampered with through encryption and compression technology, licenses can be granted in various ways, and that various programs can support it.</p>
+
+        <p>PDF의 본질은 형태를 ‘그대로’ 공유할 수 있다는 점에 있다. 무결성에서 오는, 원본과 동일하다는 믿음의 감각. 사진과 동일한 미학이다. 하지만 이 아름다운 무결성을 가독성이라는 렌즈로 바라본다면 PDF를 보는 시선이 크게 달라진다. Acrobat을 필두로 한 PDF 파일은 사실 조판용 텍스트를 완벽하게 나타내는 일종의 데이터 덩어리이다. 이 데이터의 구조에 위계는 없다. 그러나 어도비는 이 조판 덩어리가 문서를 저장하고 읽는 데 가장 적합한 형식이라고 전 세계를 설득하면서 놀라운 맥락 전환을 성공시켰다. 마치 사진 같이 정지된 PDF는 읽기에 매우 재바르지 못한데다 주석을 달 수 없는 <em>‘유리 아래 종이’</em><span class="n1"><span class="n2"> Ted Nelson, <em>Geeks Bearing Gift: How the computer world got this way</em> (2008), p.127 <a href="http://thetednelson.com/geeksbearinggifts.php">http://thetednelson.com/geeksbearinggifts.php</a></span></span>의 완벽한 시뮬레이터이다. 얻을 것 하나 없이, 종이는 유리 아래에 갇혀 종이 자체의 힘과 매력을 잃는다. 결국 사람들은 종이 형식의 PDF 파일을 다시 현실의, 유리 아래 갇히지 않은 종이 위에 출력하여 텍스트를 읽는 방식을 선택한다. 읽기 위해 인쇄하는 게 아닌, 반드시 인쇄해야 하는 시스템이다.</p>
+        <p>The essence of PDF lies in being able to share the form ‘as is’. A sense of trust that comes from integrity, that it is identical to the original. It is the same aesthetic as the photo. However, if you look at this beautiful quality of integrity through the lens of readability, the way you see PDFs will change dramatically. A PDF file, spearheaded by Acrobat, is in fact a chunk of data that perfectly represents the typesetting text. There is no hierarchy in the structure of this data. But Adobe has managed a surprising turn of context, convincing the world that this block of typesetting is the best format for storing, sharing and reading documents. A still PDF, like a photograph, is a perfect simulator of <em>“paper under glass”</em><span class="n1"><span class="n2"> Ted Nelson, </em>Geeks Bearing Gift: How the computer world got this way</em>(2008), p.127 <a href="http://thetednelson.com/geeksbearinggifts.php">http://thetednelson.com/geeksbearinggifts.php</a></span></span> that is very imprecise to read and impossible to annotate. With nothing to gain, the paper gets trapped under the glass and loses its own strength and charm. After all, people read the
+            text by
+            printing the PDF file, which is already in the form of paper, onto another paper in the real world – which is not trapped under glass. It is a system that not only prints to read, but must.</p>
+
+
+        <h4 id="section3-2-2">액체 레이아웃</h4>
+        <h4 id="section_3-2-2">Liquid Layout</h4>
+
+        <p class="indent">정보 디자인에 대한 글을 쓰는 에드워드 터프티는 물리적인 세계와 그것을 표현하는 방식 사이의 부조화를 인식하며 웹 디자인 상황에서 직면하는 문제를 설명하고자 했다. “우리는 3차원 공간의 지각 세계를 매일 탐색하고 수학적으로 쉽게 더 높은 차원의 영역에 대해 때때로 추론하지만, 우리의 정보 디스플레이에 묘사된 세계는 종이와 비디오 화면의 끝없는 평지의 2차원성에 사로잡혀 있다.”<span class="n1"><span class="n2"> Dan Rubin, <em>“Off Page”</em>, Back Office 3. <a href="http://www.revue-backoffice.com/en/issues/03-writing-the-screen/02_rubin">http://www.revue-backoffice.com/en/issues/03-writing-the-screen/02_rubin</a></span></span></p>
+        <p class="indent">
+            Edward R. Tufte, who writes about information design, seeks to explain the problems he faces in the context of web design, recognizing the mismatch between the physical world and the way it is represented. “While we daily explore the perceptual world of three-dimensional space, and sometimes reason about higher-dimensional realms with mathematical ease, the world depicted on our information displays is haunted by the two-dimensionality of the endless plains of paper and video screens.”<span class="n1"><span class="n2"> Dan Rubin, <em>“Off Page”</em>, Back Office 3. <a href="http://www.revue-backoffice.com/en/issues/03-writing-the-screen/02_rubin">http://www.revue-backoffice.com/en/issues/03-writing-the-screen/02_rubin</a></span></span></p>
+
+        <p>웹이 인쇄물을 대체하기 위해 존재한 적은 없다. 물론 웹의 이 모든 과도기적 형상이 진화적인 단계였기에 일어나고 있을지 모르지만, 웹이 몇 가지 장식적인 부가 기능을 갖는 디지털로 분산된 물질계의 클론이 아니라는 사실은 분명하다. </p>
+        <p>The web has never been intended to replace print. Of course, all of this may be happening because it was an evolutionary step, but what is clear is that the Web is not a clone of a digitally distributed material world with a few decorative add-ons.</p>
+
+        <p>앞서 전자 문서 형식인 PDF가 문서 공유 포맷으로서 실질적 산업 표준임을 이야기했다. 사실 PDF뿐만이 아니라, 우리는 넓은 세계로 상상되는 웹 자체도 결국 낱장의 사각형인 ‘웹 페이지’로 치환하여 이해한다. 월드 와이드 웹 또한 하나의 페이지의 묶음, 거대한 코덱스와 같은 개념으로 작동하고 있는 것이다. 이 페이지 개념은 그 역사상 너무도 익숙하고 자연스러운 것이라, 눈치챌 새도 없이 본인의 역사와 의미를 웹 상으로 침투시켰고, 이는 우리의 전체 사고 과정에 그의 의지를 부과하고 있다. 그리고 이렇게 페이지 개념을 웹에 매핑하는 것은 창작자가 내용을 설계하고, 만들고, 편집하고, 큐레이션 하는 방식에 지대한 영향을 미쳐왔다. 현재의 웹에서 페이지 패러다임을 털어내고 우리의 물리적인 세계와 같은 문서 지각 세계를 구현하려면 아주 오랜 시간이 걸릴 것이다. 지금 당장 현재의 페이지 개념을 벗어날 수 없다면, 우선적으로 웹에서 페이지의 경계를 올바르게 정의하는 방법을 새롭게 고민해야 하지 않을까?</p>
+        <p>Earlier, I mentioned that PDF, an electronic document format, is a de facto industry standard as a document sharing format. In fact, we understand not only the PDF, but also the web itself, which is imagined as a wide world that goes beyond two dimensions, by substituting each of them with a ‘web page’, which is a rectangular piece of paper. The World Wide Web(WWW) also operates on the same concept as a bundle of pages and a huge codex. The concept of the page is so familiar and natural in its history that, without even noticing, it connected history and meaning to the Web, which imposes on our entire thought process. And this mapping of the concept of a page to the web has had a profound impact on the way creators design, create, edit, and curate content. It will take a very long time to shed the page paradigm from the current web and implement a world of document perception like our physical world. If you can’t get away from the current page concept right now, shouldn’t you first think about how to properly define the boundaries of a page on the web.</p>
+
+        <p>댄 루빈은 기존 활판 인쇄 프로세스의 고정형 블록과 다르게 가능한 크기, 예를 들어 종이 또는 웹 브라우저 창의 치수에 따라 레이아웃이 재조정되는 디지털 컴포지션을 설명하며 <em>액체 레이아웃</em>이라는 용어를 사용한다. 액체 레이아웃에서는 페이지 내부에서 다시 페이지를 재현해 경계를 매기고, 경계에 글을 다시 짜 맞춰 가두는 익숙한 방식을 버린다. 고정된 레이아웃에 갇혀 꼼짝할 수 없는 글과 달리, 액체 레이아웃에서 글은 물처럼 흐르며 요건에 따라, 선택에 맞춰 자유롭게 변화한다. 글은 우리가 매일 접하는 수많은 매체에 맞춰, 문서의 가장 중한 목적인 정보 공유와, 문서의 가장 중요한 덕목인 가독에 가장 부합하는 형태로 변화한다. 액체처럼 흐르는 레이아웃은 상상 가능한 미래이자 현실이다. 이렇게 문장을, 문단을, 문서가 자유롭게 흐를 수 있는 패러다임 전환이 찾아오면 앞으로의 문서는 어떻게 변화할까? 종이 밖으로 흐르는 문서는 멀리멀리 떠나, 2차원의 경계까지 넘을 수 있을까?</p>
+        <p>Dan Rubin uses the term <em>liquid layout</em> to describe digital compositions whose layouts are readjusted according to possible sizes, such as the dimensions of a sheet of paper or a web browser window, as opposed to the fixed blocks of the traditional letterpress process. In liquid layout, we abandon this familiar method of recreating the page inside the page to draw a border and re-composing the text on the border. Unlike text that is stuck in a fixed layout, text in a liquid layout flows like water and changes freely according to requirements and choices. Writing adapts to the many media we encounter every day, and changes into a form that best suits the most important purpose of a document, the desire to share information, and the most important virtue of a document, the purpose of being well-read. A layout that flows like a liquid is both an imaginable future and a reality. How will documents change in the future if we experience a paradigm shift in which sentences, paragraphs, and documents can flow freely? Can documents that flow out of paper go far and get beyond the borders of two-dimensionality?</p>
+
+
+        <h4 id="section3-2-3">어도비의 유체화</h4>
+        <h4 id="section_3-2-3">Adobe’s Fluidization</h4>
+
+        <p>2020년 어도비는 아크로뱃 리더기에 리퀴드 모드 <sup>Liquid Mode</sup>라는 새로운 읽기 모드를 추가했다. PDF 문서를 AI가 자동으로 뜯어 재배치해 작은 화면에서 흐르는 문서로 편하게 볼 수 있게 하는 기능으로, 자체 AI인 Sensi를 사용했다. 어도비 소프트웨어 내부에서도 이러한 문서에 동일하게 흐르는 문서, ‘액화’라는 비유를 사용한 것은 해당 비유가 유용하다는 방증으로 보인다. 모드를 실행하면 자동으로 하이퍼링크로 작동하는 목차가 생성되며, 사용자가 원하는 대로 글자 크기, 자간과 행간을 조정할 수 있는 커스터마이징 기능 또한 적용되었다. </p>
+        <p>In 2020, Adobe added a new reading mode for Acrobat Reader called Liquid Mode. It is a function that AI automatically rips and rearranges PDF documents so that they can be viewed comfortably as documents flowing on a small screen, and it is said that Sensi, its own AI, was used. (The use of the metaphor of liquid, a document that flows equally in these documents inside Adobe software, would prove that the metaphor is useful.) When the mode is activated, a table of contents that works as a kind of hyperlink is automatically created, and a customizing function that allows the user to adjust the font size, character spacing, and line spacing as desired is also configured. In our tests, converting from horizontal text-heavy PDFs is shockingly fast, and it works pretty smoothly.</p>
+
+        <p>고정형 페이지를 기반으로 한 PDF를 읽고 다루는 것이 제 능력이자 목적인 Acrobat Reader 내부에 이런 액화 문서 형식을 강조하는, 즉 원래 그렇게 태어나지 않았던 문서를 강제로 개조하는 형식을 통해서라도 이런 텍스트 포맷을 추가한 이유는 자명하다. PDF 자신도 본인이 최선의 모습이 아니며, 더 나은 읽기 방식을 제공하지 못함을 파악하고 있다는 일종의 증명이다.</p>
+        <p>The original ability and purpose of ‘Acrobat Reader’ is to read and handle PDF based on fixed pages. However, it is obvious why the text sharing (viewing) format adds the act of emphasizing this liquefied document format inside Acrobat, that is, the format of forcibly remodeling even though it is a document that was not originally born that way. It’s proof that the PDF itself knows that it’s not in its best shape and doesn’t offer an optimal reading experience.</p>
+
+
+        <p>어도비는 2022년 1월 14일 지원 페이지에 ‘유동적 레이아웃 및 대체 레이아웃’이라는 가이드를 올렸다.<span class="n1"><span class="n2"> 한국어 가이드는 2022년 1월 14일, 영어 버전은 2021년 7월 23에 작성되었다.</span></span> ‘[대체 레이아웃] 및 [유동적 레이아웃] 페이지 규칙은 유연하기 때문에 효율적으로 여러 가지 페이지 크기, 방향 또는 종횡비를 설계할 수 있고, 여러 형식 및 크기로 출판할 경우 프로젝트에 가장 적합한 디자인 전략을 선택할 수 있으며, 인디자인은 채택된 전략에서 비용과 제어의 균형을 조절할 수 있도록 여러 가지 개선 기능을 제공한다’고 설명하지만, 바로 아래 ‘참고’ 표시와 함께 ‘자동 유동적 레이아웃 기반 출판은 호환 뷰어 기술이 없기 때문에 아직 사용할 수 없습니다.’라고 적어두었다.<span class="n1"><span class="n2">독점 유료 소프트웨어의 안타까운 점이다. 기계 및 기술 회사가 상품을 제작하고 공개하기 전까지는 (사실 그 후에도) 작업자는 생산 라인의 끝에서 노동하며, 발전이나 호환에 영향을 끼치는 것은 매우 어렵거나 불가능하다.</span></span></p>
+        <p>On July 23, 2022, Adobe posted a guide called ‘<a href="https://helpx.adobe.com/indesign/using/alternate-layouts-liquid-layouts.html">Liquid Layouts and Alternate Layouts</a>’ on its support page. It says –“Alternate layouts and Liquid Layout page rules, give you the flexibility to efficiently design for multiple page sizes, orientations, or aspect ratios. <br> For publishing for multiple formats and sizes, you can choose a design strategy that suits a project best: Hand crafted, semi-automated, or fully automated. The degree of design control decreases as you rely on automated workflows. InDesign provides several enhancements for your adopted strategy to balance cost and control.” But also they noted that Automatic Liquid Layout based-publishing is not possible yet, because of the unavailability of compliant viewer technologies.<span class="n1"><span class="n2">This is a disappointing feature of proprietary paid software. Until (and even after) machine and technology companies build and release products, real workers work at the end of the production line, and it’s very difficult or impossible to influence development or compatibility.</span></span></p>
+
+        <p>당장 자각한 현실이 이렇다고 해도, 문제를 파악하고, 해결하려는 것은 긍정적인 시작점일 테다. 하지만 PDF의 본성은 아주 강력하기에 이러한 변화는 두 가지 질문을 마주해야 한다.</p>
+        <p>Even if they are aware of this reality, figuring out the problem and trying to solve it would be an advantage and a starting point. However, the very nature of PDF is so strong that such a change must face two questions.</p>
+
+        <p class="indent"><em>무결성의 존엄은 어디로 가는가?<br>
+                달걀보다 닭이 먼저야 하는 것 아닌가?</em></p>
+        <p class="indent"><em>Where does the dignity of integrity go?<br>
+                Shouldn’t the chicken come before the egg?</em></p>
+
+        <p>무결성이 지켜져야 하는 분야도 분명히 있다. 서명이 필요한 문서, 공식적인 폼과 일치성이 필요한 문서, 변별을 위해 동일한 형태와 크기로 공유되어야 하는 문서들도 존재한다. 그리고 이러한 문서들은 현재의 정적인 고정 포맷에 만족하며, 그 단단함에 기반을 두고 공유된다. 그런데 어도비와 어도비의 액화 모드는 이러한 고민을 어디까지 진출시켰을까? 우선 현재 어도비 크레이티브 클라우드 Creative Cloud 프로그램으로 PDF를 만드는 경우, 이 ‘액화 모드’로 문서 보기 모드가 전환될 수 있는 것의 허락 여부를 묻는 경우는 없다. 보기를 달리하면 이는 굉장히 날카로운 갈등의 시작이다. 현재 제작되고 공유되는 수많은 PDF는 고유한 제작 및 데이터 처리 방식에 따라 제작자가 설정한 위계와 가이드라인이 드러나지 않거나 아예 생성되지 못한 문서이기 때문에, 다른 방식으로 문서가 변환되어 보여질 수 있다. 그렇다면 믿었던 것에 대한 상실은 오히려 신뢰의 농도만큼 큰 배신의 충격이 될 것이다.</p>
+        <p>There are clearly areas where integrity must be maintained. There are also documents that require signatures, documents that require consistency with official forms, and documents that need to be shared in the same shape and size to avoid discrimination. And these documents are satisfied with the current static fixed format, and are shared based on their rigidity. But how far did Adobe and Adobe’s liquefaction mode respond to these concerns? First of all, when creating a PDF with the current Adobe Creative Cloud Creative Cloud program, there was no case of asking permission for the document viewing mode to be switched to this ‘Liquid Mode’. If you look at it differently, this is the beginning of a very sharp conflict. Many PDFs that are currently created and shared are documents that do not reveal or do not have the hierarchy and guidelines set by the creators according to their unique creation and data handling methods, so the documents are converted depending on different criteria than that specified by the creator. If so, the loss of what you believed in will rather be the shock of betrayal as great as the concentration of trust.</p>
+
+        <p>두 번째 질문은 근원에 대한 것이다. 자연스럽게 해결방식의 순차에 의문이 생긴다. 문서를 바꾸기 위해서 문서 제작 방식을 바꾸는 것이 아니라 이미 다르게 제작된 문서를 강제로 뜯어 해체해서 재조립하는 과정을 어떻게 납득해야 하는가? 부가적인 업데이트가 명확한 목적지를 가리키는 지금, 특정 소프트웨어 프로그램의 변화나 근본적인 시스템을 넘어 우리의 인지 방식의 수정이 요구된다. 아주 바닥부터 시작한다고 하더라도, 어렵지 않다면, 왜 돌아가는 길을 선택하겠는가?</p>
+        <p>The second question is about the source. It follows naturally that the sequence of solutions is very wrong. Rather than modifying the way documents are produced in order to change them, how should we be persuaded of the process of forcibly tearing apart and reassembling documents that have already been produced differently? Now that additional updates are proving that the destination of change is clear, a change in a specific software program or a fundamental system is required to modify our cognition. Even if you don’t dream too big and start from the very begenning, if it’s not difficult, why would you choose the other way around?</p>
+
+
+        <h4 id="section3-2-4">흐르기 시작한 후에는</h4>
+        <h4 id="section_3-2-4">After it starts to flow</h4>
+
+        <p>유리 아래 종이의 사각 틀에서 벗어나 흐르기 시작했을 때, 고려할 것들이 생긴다. 대부분의 디지털 읽기 경험에서는 종이책을 읽을 때와 같은 본능적이고 체험적인 ‘물리적’ 단서를 얻지 못한다. 종이책을 읽을 때, 우리는 산책할 때 도시를 매핑하는 것처럼 각 스프레드(페이지)의 물리적 공간을 매핑한다. 예를 들면, 누구나 가장 좋아하는 인용문이 책의 4분의 3쯤의 왼쪽 상단에 있었다는 정도의 구체적인 정보를 감각으로 기억할 수 있다.<span class="n1"><span class="n2">Arthur Attwell, <em>“Why you love reading on paper (and what it means for ebooks)”</em>, Electric Book Works, 2021.09.21, <a href="https://electricbookworks.com/thinking/reading-on-paper/">https://electricbookworks.com/thinking/reading-on-paper/</a></span></span></p>
+        <p>When it starts to flow out of the rectangular frame of the paper under the glass, there are things to consider. In most digital reading experiences, we don’t get the visceral, experiential ‘physical’ cues we get from reading a paper book. When reading a paper book, our minds map the physical space of each spread (page), just as we map a city when we take a walk. For example, anyone can sensibly recall information as specific as a favorite quote was in the top left corner about three-quarters of the way through the book.<span class="n1"><span class="n2">Arthur Attwell, <em>“Why you love reading on paper (and what it means for ebooks)”</em>, Electric Book Works, 2021년 9월 21일, <a href="https://electricbookworks.com/thinking/reading-on-paper/">https://electricbookworks.com/thinking/reading-on-paper/</a></span></span></p>
+
+        <p>하지만 유리를 통해 보는 평평한 화면에는 지형이 없기 때문에, 책을 매핑하기 위한 자동반사적인 노력은 고난을 겪는다. 지금 나의 읽기가 어디에 있고 어디로 가야 하는지 파악하기 어려워진다. 그렇다면 페이지, 페이지네이션이 없는 문서에는 ‘읽는 감각’을 어떻게 형성해야 할까? 새로운 읽기 감각은 어떻게 건설되고 디자인되어야 할까? 이러한 상상을 시작할 수 있는 첫 단계로 마커가 있다. 물성이 제거된 유리 아래의 문서, 페이지네이션을 초월한 스크롤과 함께하는 문서를 위해 마커는 지금까지와는 다른 원리와 모습을 가져야 할 것이다. 인덱스 시스템 또한 좋은 예시이다. 인덱스 생성의 판도를 바꾸는 사고 접근이 필요하다. 좋은 색인은 매우 유용하다. 잘 만들어진 색인은 개념의 분류 체계, 즉 책에 있는 아이디어의 지도가 되어준다. 자동으로 업데이트되는 위치에 하이퍼링크를 걸어서 본문과 인덱스 사이의 연결을 생성한다면 막대한 노동을 요구했던 인덱스 시스템을 활성화할 수 있을 것이다.</p>
+        <p> But since there is no topography on a flat screen viewed through glass, the reflexive effort to map the book in one’s mind struggles. It becomes difficult to figure out where our reading is now and where to go. In documents without pagination, how should the ‘reading sense’ be formed? How can a new reading sense be constructed and designed? It seems that markers can be cited as the first step to start this imagination. Documents under glass with physical properties removed, and markers for documents with scrolls that transcend pagination should have a different principle and look. An index system can also be a good example. A game-changing approach to index creation is needed. A good index is very useful. A well-crafted index can also serve as a taxonomy of concepts, a map of the ideas in a book. If you move the hyperlink to the automatically updated location, you will be able to activate the index system that required a lot of labor for marking.</p>
+
+        <p>궁극적으로, 댄 루빈은 질문을 시초의 상상력으로 회귀시키고자 한다.</p>
+        <p>Ultimately, Dan Rubin wants to bring the question back to the root of imagination.</p>
+
+        <p class="indent">우리는 경험, 감성 디자인, 콘텐츠 전략, 시각적 문법, 심리학, 사용성 및 표준에 대해 길게 이야기하지만, 그 어느 것도 우리가 일하는 방식, 우리가 실제로 할 수 있는 것에 대한 더 큰 개념을 생각하는 방식에 도전하지 않는다. [...] 우리의 책임은 웹 디자인의 고유한 어휘에서 페이지를 대체하는 것이 아니라, 우리가 현재 이해하는 웹 디자인의 의미가 가능성의 우주에서 단지 하나의 순간에 불과함을 인정하는 것이다.” 우리는 여전히 실제로 가능성의 표면을 훑어보고 있을 뿐이다.</p>
+        <p class="indent">We talk at length about experience, emotional design, content strategy, visual grammar, psychology, usability, and standards, but none of them really challenge the way we work, the way we think about the larger concept of what we’re actually capable of doing with this incredible network of wires, satellites, servers, ideas, and people.[...] Our responsibility is not to replace “page” in our unique vocabulary of Web design but to acknowledge that our current understanding of what it means to design for the Web is just a single blip in a universe of possibilities. We are still only scratching the surface of what is actually possible.</p>
+
+
+        <h3 id="section3-3">연결된 문서</h3>
+        <h3 id="section_3-3">Connected Document</h3>
+
+        <h4 id="section3-3-1">하이퍼텍스트: 표류하고, 부유하고, 수증기가 되어</h4>
+        <h4 id="section_3-3-1">Hypertext: Drift, float, become vapor</h4>
+
+        <p class="indent">‘텍스트의 선형성을 항구적으로 변화시키는 것은 컴퓨터 자체가 아니라, 추상적인 디지털 공간에서 기능적이고 완전히 새로운 텍스트 구조, 즉 하이퍼텍스트를 생성해내는 소프트웨어의 가능성이다.’</p>
+        <p class="indent">‘It is not the computer itself that permanently changes the linearity of the text, but the software’s ability to create a functional and entirely new text structure in an abstract digital space: hypertext.’</p>
+
+        <p>링크를 클릭해서 다른 글이나 이미지로 옮겨갈 수 있게 만든 문서를 ‘하이퍼텍스트’라 부른다. 웹 문서의 동의어가 된 하이퍼텍스트는 정보의 추가제공과 문서 간의 상호참조를 돕기 위해 고안된 기술이다. 웹은 처음부터 문서 중심으로 제작되었다. 팀 버너스 리가 정보 공유가 용이하도록 월드 와이드 웹을 고안했을 때, 그 정보의 형식은 하이퍼텍스트 문서였다.</p>
+        <p>A document that allows you to move to another text or image by clicking on a link is called ‘hypertext’. Hypertext, which has become synonymous with web documents, is a technology designed to help provide additional information and cross-reference between documents. The web has been built around documents from the beginning. When Tim Berners-Lee devised the World Wide Web(WWW) to facilitate information sharing, the format of that information was a hypertext document.</p>
+
+
+        <p>종이책의 구성은 수 세기를 거치며 체계화되었다. 문장은 논리적으로 결합하여 문단을 구성하고, 문단은 서론, 본론, 결론의 형태로 완결된 구조를 갖는다. 추가 정보는 주석으로 처리해 흐름이 끊기지 않게 한다. 글은 왼쪽이나 오른쪽 어느 한 방향에서 시작해 반대편에서 마무리되는 방향성 또는 선형성을 갖는다.</p>
+        <p>The composition of paper books has been systematized over the centuries. Sentences are logically combined to form paragraphs, and paragraphs have a complete structure in the form of an introduction, body, and conclusion. additional information is commented out to keep the flow intact. A text has a directivity or linearity that begins in either the left or right direction and ends in the opposite direction.</p>
+
+        <p>그런데 하이퍼텍스트는 이런 선형성을 파괴한다. 하이퍼텍스트는 근본적으로 종이로 된 책은 짤/짜일 수 없는 텍스트들의 짜임으로 이루어진, 문자 시대의 특성인 선형적 텍스트를 벗어나 비선형적으로 존재하는 상호텍스트이다. 인쇄를 통해 효과적으로 재현될 수 없는, 처음으로 등장한 디지털 베이스의 고유한 성질이다. 문학 평론가들은 하이퍼텍스트의 특성과 후기 구조주의와 포스트모더니즘의 유사성을 들며 몇 가지 특성을 지적한다.<span class="n1"><span class="n2">김재국, <em>사이버리즘과 사이버 소설</em> (2001), 국학자료원.</span></span></p>
+        <p>However, hypertext destroys this linearity. Hypertext is fundamentally an intertext made up of texts that cannot be woven/made in a paper book. It can be said that it is an inherent property of the first digital base that cannot be effectively reproduced through printing. Literary critics point out several characteristics, citing the characteristics of hypertext and similarities between post-structuralism and postmodernism (Kim Jae-guk, 2001). <span class="n1"><span class="n2"></span>Jaeguk Kim (2001), <em>Cyberism and Cyber Novels</em>, National Institute of Korean Studies.</span></p>
+
+        <ol type="1">
+            <li>표상 혹은 재현 체계의 유동성과 부정확성</li>
+            <li>전위적 실험성과 일탈성, 참여 행위의 중요성</li>
+            <li>파편화 현상 및 임의성과 유희성</li>
+            <li>위계적 질서의 재편성과 주변부의 권력화</li>
+            <li>비종결성과 불확정성</li>
+            <li>장르의 융합과 확산</li>
+        </ol>
+        <ol type="1">
+            <li>Fluidity and imprecision of representation or representation systems</li>
+            <li>The importance of avant-garde experimentation, deviance, and participation</li>
+            <li>Fragmentation, Randomness and Playfulness</li>
+            <li>Reorganization of the hierarchical order and empowerment of the periphery</li>
+            <li>Indeterminacy and Uncertainty</li>
+            <li>Convergence and spread of genres</li>
+        </ol>
+
+        <p>개별 몸체들의 연결로 이루어진 하이퍼텍스트는 무한하게 탈중심화할 수 있는 동시에 재중심화할 수 있다. 정보끼리의 연결 속에서, 표류하는 문서가 되어 만나고 연결되는 것. 하이퍼텍스트에서의 중심은 존재 그 자체가 아니라 기능으로 존재한다. 접속은 두 항이 등가적으로 만나서 제3의 것, 새로운 무언가를 생성함을 뜻한다. 접속에는 어떤 귀결점도 없고, 호오의 선별도 없다. 링크로 서로 아름답게 연결된 문서들은 리좀의 잔뿌리의 형태가 되어 각자의 외부를, 확장을 지향하며 이야기를 만든다. 이는 우리의 ‘읽는 방법’을 급진적으로, 그리고 완전히 바꿀 정립이다.</p>
+        <p>Hypertext, which is made up of connections between individual bodies, can be infinitely decentralized and recentered at the same time. The center in hypertext exists as a function, not as a matter itself. In the connection between information, meeting as a drifting document. Conjunction means that two terms meet equally to create a third, something new. There is no consequence in connection, and there is no selection of likes or dislikes. Documents that are beautifully connected to each other with links form the roots of rhizome and create stories while oriented to the outside and in expansion of each other. It is an entity that radically and completely changes the way we read.</p>
+
+        <p>디지털 텍스트의 주요 기능은 표 또는 목차, 주석, 상호 참조, 책갈피 또는 기타 리소스 여부와 관계없이 결국 하이퍼링크이다. 사실 목차, 주석, 책갈피 등 모든 것은 결국 하이퍼링크로 귀결되기 때문이다. 큰 섹션, 작은 섹션의 구분 없이 단락, 페이지에 링크를 걸고 연결할 수 있고, 더욱 재미있게 서로 간에 링크를 만들 수도 있다. 소스 하나에서 이동할 수 있는 대상은 하나뿐이지만 동일한 대상으로 이동하는 소스는 여러 개일 수 있다. 이를 이용해서 정보의 그물망을 만들 방법은 무궁무진하다.</p>
+        <p>The primary function of digital text, whether it be tables or tables of contents, annotations, cross-references, bookmarks or other resources, will eventually be hyperlinks. In fact, the table of contents, annotations, and bookmarks are all elements that end up as hyperlinks. You can link and connect paragraphs and pages without distinguishing large and small sections, and you can create links between them even more fun. Only one target can move from one source, but there can be multiple sources moving to the same target. There are endless ways to use this to create a knitted net of information.</p>
+
+
+        <p>우리는 여전히 시초에 상상했던 아찔하고 독특한 방식의 하이퍼텍스트 시스템을 문서에 접목하지 못했다. 하이퍼텍스트는 아직 우리의 읽기 패러다임을 바꾸지는 못하였지만, 하이퍼텍스트를 처음으로 고안한 테드 넬슨이 이야기했듯 ‘컴퓨터의 궁극적인 지향점은 인간의 자유’라는 가치관은 지속되어야 한다.</p>
+        <p>We have yet to incorporate the hypertext system into documents in the dizzying and unique way we imagined at the beginning. Hypertext has not yet changed the paradigm of how we read. But ultimately, as Ted Nelson -who first devised hypertext- said, ‘the ultimate goal of computers is human freedom’, the values ​​should be maintained.</p>
+
+
+        <h4 id="section3-3-2">대체 텍스트:같이 읽기 위해</h4>
+        <h4 id="section_3-3-2">Alt-text: To read together</h4>
+
+        <p>대체 텍스트<sup>Alt-Text</sup>는 웹사이트에 내장된 텍스트 설명 시스템으로 시각 장애인, 저시력 또는 특정 인지 장애가 있는 사람이 시각 콘텐츠에 접근할 수 있도록 한다. 시각 장애인은 종종 화면 판독기라는 소프트웨어를 사용하여 디지털 디스플레이에 접근한다. 화면 판독기는 화면의 텍스트를 합성 음성 또는 새로 고칠 수 있는 점자 디스플레이로 출력한다. 스크린 리더는 탐색 표시줄의 옵션을 읽은 다음 제목, 단락 순으로 읽어 간다. 이미지를 만나면 이미지는 읽을 수 없기에, 대신 코드에 포함된 이미지의 관련 설명인 ‘대체 텍스트’를 찾아 읽어준다. 하이퍼링크에도 동일하게 적용된다. 따라서 보이지 않거나, 겉으로 드러나지 않는 요소들이 어떻게 작동하는지 설명하는 대체 텍스트가 포함되어야 한다. 대체 텍스트는 이렇게 하나의 문서에 대한 비시각적 대안으로 작동한다.</p>
+        <p>Text alternatives are text description systems embedded in websites that make visual content accessible to people who are blind, have low vision, or have certain cognitive disabilities. Blind people often use software called screen readers to access digital displays. Screen readers output text on the screen as synthesized speech or a refreshable braille display. The screen reader reads the options in the navigation bar, then headings, then paragraphs. When it encounters an image, it cannot “read” the image. Instead, it finds and reads the “alternative text” associated with the image included in the code. The same applies to hyperlinks. Alternate text should be included that explains how invisible or non-visible elements work. Alternative text works like this as a non-visual alternative to a document.</p>
+
+        <p>이런 요청은 새로운 상상력과 창작 그 자체가 되기도 한다. 대표적인 예시로 <em><a href="https://alt-text-as-poetry.net/">Alt-text as poetry</a></em> 프로젝트가 있다. Alt-Text as Poetry는 아티스트 보자나 코클리아트와 섀넌 피네건의 협업으로, ‘최소한의 노력으로 해결해야 하는 달갑지 않은 부담으로 종종 무시되는’ 대체 텍스트에 어떻게 신중하고 창의적으로 접근할지를 질문하는 프로젝트이다. 프로젝트는 워크숍을 통해 다 같이 모여 대체 텍스트를 일종의 시로 재구성하고 그것에 대해 이야기하고 쓰기 연습을 할 기회를 제공한다. 이들은 이렇게 그동안 간과되던 ‘대체’ 텍스트를 쓰는 경험이 새로운 창작이자 시가 될 수 있다고 말한다.<span class="n1"><span class="n2">Alt-Text as Poetry Workbook, <a href="https://alt-text-as-poetry.net/">https://alt-text-as-poetry.net/</a></span></span></p>
+        <p>Such a request can also become a new imagination and creation itself. A representative example is the <em><a href="https://alt-text-as-poetry.net/">Alt-text as poetry</a></em> project. Alt-Text as Poetry, a collaboration between artists Bojana Coklyat and Shannon Finnegan, is a project that questions how to approach alternative text thoughtfully and creatively, “often ignored as an unwelcome burden to solve with minimal effort.” The project brings together a workshop to reframe the alternative text into a kind of poetry, talk about it, and provide an opportunity to practice writing. They say that the experience of writing an ‘alternative’ text that has not been written in writing can be a new creation and poetry.<span class="n1"><span class="n2">Alt-Text as Poetry Workbook, <a href="https://alt-text-as-poetry.net/">https://alt-text-as-poetry.net/</a></span></span></p>
+
+        <p>문서의 구성 또한 프로젝트의 강령을 형식으로 표현하고 있는 듯했다. 작가들이 직접 녹음한 인사말이 음성으로 첨부되었고, 전체 문서는 웹사이트에 더해 오디오북을 포함한 매우 다양한 확장자로 배포되었다. 또한 장치에 관계없이 다양한 사용자가 발견할 수 있도록 여러 보기를 제공하고, 우측에 항상 크게 목차와 앵커를 배치해 섹션에서 섹션으로 빠르게, 비선형적으로 이동할 수 있게 했다. 대체 텍스트 같은 대안 방식에 더해, 정보의 위계 설정, 시각적인 구조를 통해서도 문서의 접근성을 확장할 수 있음을 보여준다.</p>
+        <p>The organization of the document also seemed to express the project’s mandate in its form. The greetings were attached with voices recorded by the authors themselves, and documents were distributed in a wide variety of document extensions, including audiobooks. It also provides multiple views for discovery by a wide range of users, regardless of device, and always has a large table of contents and anchors on the right side for quick, non-linear movement from section to section. In addition to alternative methods such as alternative text, it shows that the accessibility of documents can be expanded through information hierarchy and visual structure.</p>
+
+        <p>대체 텍스트는 문서를 더 쉽게 접근 및 이용할 수 있는 문서로 만들어 준다. 선택지의 확장이다. 그러나 이러한 대체 텍스트도 웹 접근성에 대한 고려 방법 중 극히 일부분이라는 것을 아는 것 또한 중요하다. 문서의 접근 가능성은 작가, 편집자, 결과적으로 생산자로서 기존의 틀과 규정에 갇히거나 안주하지 않고 적극적으로 고민해야 할 사항이다.</p>
+        <p>Alternative text makes documents more accessible and usable. It is an extension of options. However, it is also important to know that these alternative texts are also part of the web accessibility considerations. The accessibility of documents is something that writers, editors, producers should actively and consequently think about without being confined to or settling for existingregulations.</p>
+
+
+        <h3 id="section3-4">자유를 위한 문서</h3>
+        <h3 id="section_3-4">Liberated Document</h3>
+
+        <p>구조를 따라 텍스트를 흐르게 함으로써, 디자인 과정을 해방한다.<span class="n1"><span class="n2">‘결과적으로 디지털 출판의 잠재력은 해방 담론과 연결되며, 기존의 출판 산업에 대한 의존도를 낮추고 예술적 자율성을 가능케 한다. 일찍이 1990년대 말부터 자가출판 예술가들은 인쇄출판물을 대체하는 디지털의 출판의 발전을 원치 않는 기존의 한계들로부터 벗어나 더 자율적으로 작업할 기회로 여겼다.’, Sylvie Boulanger, <em>NO-ISBN: On Self-publishing</em>, p.329</span></span> 웹의 논리는 진정으로 매력적이다. 구조와 형식이 구별되고 형식이 소프트웨어에 종속되지 않는다. 특정 도구에 의존하지 않은 문서 생성, 수정, 공유, 개선은 얼마든지 가능하다. 우리 스스로가 기술에서 누락되지 않아야 함을 인식해야 한다. 기술에 접근하고 소프트웨어에 의존하지 않으려는 욕구를 통해 도구는 민주화되고, 출판 관행은 새로운 전환기를 맞이할 것이다.</p>
+        <p>By letting the text flow along the structure, it liberates the design process.<span class="n1"><span class="n2"> ‘As a result, the potential of digital publishing is linked to liberating discourse, reducing reliance on the existing publishing industry and enabling artistic autonomy. As early as the late 1990s, self-publishing artists saw the development of digital publishing as an opportunity to work more autonomously, free from unwanted limitations.’, Sylvie Boulanger, <em>NO-ISBN: On Self-publishing</em>, p.329</span></span> The logic of the web is truly fascinating. Structure and format are distinct, and format format is not dependent on software. It is possible to create, modify, share, and improve documents without relying on a specific tool. We must recognize that we ourselves must not be left out in technology. With access to technology and a desire to avoid reliance on software, tools will be democratized and publishing practices will face a new transition.</p>
+
+
+        <h4 id="section3-4-1">눈에 보이는 것 이상을 원한다면</h4>
+        <h4 id="section_3-4-1">If you want more than meets the eye</h4>
+
+        <p>현대의 일반적인 탁상 출판은 마이크로소프트 워드 같은 위지윅 워드 프로세서/텍스트 편집기로 작성되어 인디자인으로 편집 및 디자인 된 후 PDF로 내보내져 인쇄된다고 앞서 언급하였다. 위지윅<sup>WYSIWYG</sup>는 ‘What You See Is What You Get’의 약자로, 데스크탑 출판에서 우리가 갖게 될 에디션이 워크스테이션의 비주얼에 표시되는 것과 정확히 일치함을 의미한다. 위지윅은 사용자가 실시간으로 업데이트된 미리 보기를 통해 인라인으로 텍스트를 직접 작성 하고 스타일을 지정하는 현재 텍스트 편집 응용 프로그램의 지배적인 패러다임이다.<span class="n1"><span class="n2">위지윅에 대한 비판적인 설명,<em>‘From Word to Markdown to InDesign’</em>, Wouter Soudan. <a href="http://rhythmus.be/md2indd/#fn4">http://rhythmus.be/md2indd/#fn4</a></span></span> 마치 카메라로 촬영된 이미지처럼, 단 하나의 인쇄된(것만 같은) 버전이 생성된다. PDF 내 인쇄의 뿌리는 너무도 깊어 우리는 한계에서 벗어나기를 생각할 수 조차 없다. </p>
+        <p>As mentioned earlier, a typical modern desktop publishing is created via a WYSIWYG word processor/text editor such as Microsoft Word(.doc), edited and designed with InDesign, then exported to PDF and printed. WYSIWYG stands for ‘What You See Is What You Get,’ meaning that in desktop publishing, the edition we’ll have is exactly what the visuals on the workstation look like. WYSIWYG is the dominant paradigm for current text-editing applications, where users directly compose and style text inline with real-time updated previews. <span class="n1"><span class="n2">Critical explanation of WYSIWYG, Wouter Soudan, <em>‘From Word to Markdown to InDesign’</em>. <a href="http://rhythmus.be/md2indd/#fn4">http://rhythmus.be/md2indd/#fn4</a></span></span> Just like an image captured by a camera, only one printed version is created. The roots of printing(in paper) within PDF are so deep that we can’t even think of escaping the limits.</p>
+
+        <p>전자책 및 웹 사이트로 변환하는 것, 즉 다른 매체에서 보이거나 다른 읽기 방식을 통해서 보여야 하는 경우 위와 같은 방식을 따른다면 새로운 ‘이미지’를 완전히 새롭게 구성해야 한다. 구조화된 데이터가 아니라 낱장의 종이가 남았기 때문이다. 이것이 불편한 과정임을 알지만 페이지마다 마치 바느질 같은 공예 작업을 해야 하는 이유는 우리가 매일 사용하는 툴에서 다른 방식은 보여주지 않기 때문이다. 유리 아래 종이에 너무 익숙해졌기 때문이며, 거기선 사용자가 (자유로운 문서 세계에선 필수적인) 서식과 구조를 구분할 필요가 없기 때문이다. 사용자가 아닌, 사용자에게 제공되는 인터페이스 때문이다. 위지윅에서도 수동으로 서식을 적용하는 대신 스타일 정의를 사용하여 구조화된 방식으로 작업할 수 있지만, 그러한 가능성이 말소된 듯한 UI만이 남아있을 뿐이며, 서식과 구조는 실제로 처리 및 공유되는 데이터로 남지 않는다. 그렇기 때문에 PDF 생성 이후에 그를 (자동화된 읽기 시스템을 통해) 억지로 뜯어 재구성 혹은 변환해야 한다. 결국 인디자인에서 책을 만들고 전자책 및 웹 사이트로 변환하는 것은 제아무리 경험 많은 훌륭한 조판자라도 피를 흘리고 파산하게 만드는 험난한 여정이 될 뿐이다.</p>
+        <p>If you want to proceed with the conversion process to e-books and websites in order to be viewed in other media or through other reading methods according to the above method, a new ‘image’ must be completely reconstructed. This is because there is not structured data, but a sheet of paper. Although we all know this is an inconvenient process, the reason we have to craft like stitches page by page is because the tools we use every day don’t show it any other way. It’s because we’ve gotten so used to paper under glass, where users don’t have to differentiate between formatting and structure (essential in the free document world). Not because of the user, but because of the interface presented to the user. Even in WYSIWYG it is possible to work in a structured way using style definitions instead of manually applying formatting, but you are left with a UI that seems to have eliminated that possibility, and not the data that actually stores the structure. For this reason, after PDF creation, it has to be forcibly torn apart (via an automated reading system) and reconstructed or converted. </p>
+
+        <p>변화하고 있는 부분도 분명히 있다. Adobe의 추가적인 기술 개발을 통해, Microsoft Word 및 인디자인을 함께 사용하여 PDF 형식의 ‘대화형’ 출판물을 만들 수 있게 되었다. 이를 EPUB 혹은 HTML으로 자동 변환하는 것도 가능하다. 그러나 결국 이것은 일부 대화형 레이어로 업그레이드된 정적 인디자인 문서이며, 여전히 디지털 문서 포맷의 가능성에 비해 너무도 제한된 버전이었다. 이와 관련해서 최근에 인디자인에서 PDF에 구조를 추가하는 기능 또한 업데이트되었다.</p>
+        <p>There are obviously some things that are changing. Further development of the technology by Adobe has allowed it to be used with Microsoft Word and InDesign to create ‘interactive’ publications in PDF format. It is also possible to automatically convert it to EPUB or HTML. But in the end, it was a static InDesign document upgraded with some interactive layers, and still a very limited version compared to the possibilities of the digital document format. Well, the additional ability to add structure to PDFs in Indesign has since been updated as well.</p>
+
+
+        <p class="indent">Indesign 내의 [Adobe PDF 내보내기] 대화 상자의 [일반] 영역에서 [태그 있는 PDF 만들기] 옵션을 선택하여 Adobe PDF를 내보내는 경우, 내보낸 페이지에 내용을 설명하고 헤드라인, 스토리, 그림 등의 페이지 항목을 식별하는 일련의 구조 태그가 자동으로 첨부됩니다. 문서를 내보내기 전에 태그를 추가로 지정하거나 기존 태그를 보다 자세하게 지정하려면 InDesign의 [태그] 패널을 사용합니다.<br>
+            InDesign 문서를 내보내기 전에 태그를 추가함으로써 Adobe PDF 문서의 액세서빌러티와 재사용을 향상시킬 수 있습니다. PDF 문서에 태그가 없는 경우 Adobe Reader 또는 Acrobat에서 사용자가 문서를 읽거나 리플로우하면 태그가 자동으로 문서에 첨부될 수 있지만 결과가 만족스럽지 않을 수도 있습니다.
+        </p>
+        <p class="indent">When you export to Adobe PDF with the [Create Tagged PDF] option selected in the [General] area of the Export Adobe PDF dialog box, the exported pages are automatically tagged with a set of structure tags that describe the content, identifying page items such as headlines, stories, and figures. To add additional tags or to fine-tune existing ones before you export, you can use the [Tags] panel in InDesign. The Structure pane (View > Structure > Show Structure) reflects the changes.
+            <br>
+            You can improve the accessibility and reuse of Adobe PDF documents by adding tags to the InDesign document before you export. If your PDF documents don’t contain tags, Adobe Reader or Acrobat may attempt to automatically tag the document when the user reads or reflows it, but the results may be disappointing.
+        </p>
+
+        <p class="indent">문서를 PDF로 내보내기 전에 태그를 적용하면 다음과 같은 이점이 있습니다.</p>
+        <p class="indent">The following is an explanation of the advantages that can be had by using tags like this.</p>
+
+        <ul>
+            <li>InDesign 단락 스타일 이름을 태그 있는 Adobe PDF 단락 스타일로 매핑하여 핸드헬드 장치와 기타 미디어에서 볼 수 있는 리플로우 가능한 PDF 파일을 만듭니다.</li>
+            <li>인쇄 가공물, 텍스트 및 이미지를 표시하거나 숨겨서 Acrobat에서 리플로우할 때 표시되지 않도록 합니다. 예를 들어, 페이지 항목에 [Artifact] 태그를 지정하면 이 페이지 항목은 핸드헬드 장치, 소형 디스플레이 또는 모니터에서 태그 있는 Adobe PDF 문서의 내용을 큰 확대율로 리플로우할 때 표시되지 않습니다.</li>
+            <li>그림에 대체 텍스트를 추가하여 시각 장애인이 화면 판독 소프트웨어를 통해 텍스트 내용을 소리로 들을 수 있도록 합니다.</li>
+            <li>화려한 단락 시작표시문자 등의 그래픽 문자를 읽을 수 있는 문자로 대체합니다.</li>
+            <li>일련의 아티클에 제목을 붙이거나 스토리와 그림을 아티클로 그룹화합니다.</li>
+            <li>스토리와 그림을 정렬하여 읽기 순서를 지정합니다.</li>
+            <li>표, 서식 있는 목록 및 목차를 인식합니다. 어떤 내용 블록이 다른 스토리에 속하는지 인식합니다.</li>
+            <li>문자의 유니코드 값, 단어 사이의 간격, 소프트 하이픈 및 하드 하이픈 인식 등의 텍스트 서식 정보를 포함합니다.</li>
+        </ul>
+        <ul>
+            <li>By applying tags to your document before exporting to PDF, you can do the following:</li>
+            <li>Map InDesign paragraph style names to Acrobat tagged Adobe PDF paragraph styles to create a reflowable PDF file for viewing on handheld devices and other media.</li>
+            <li>Mark and hide printing artifacts, text, and images so that they won’t appear when reflowed in Acrobat. For example, if you tag a page item as Artifact, the page item will not be displayed when you reflow the contents of a tagged Adobe PDF document on a handheld device, a small display, or a monitor at a large magnification.</li>
+            <li>Add alternative text to figures so that the text can be read aloud to the visually impaired with screen-reading software.</li>
+            <li>Replace graphic letters, such as ornate drop-caps, with readable letters.</li>
+            <li>Provide a title for a set of articles, or group stories and figures into articles.</li>
+            <li>Order stories and figures to establish a reading order.</li>
+            <li>Recognize tables, formatted lists, and tables of contents. Recognize which content blocks belong to the different stories.</li>
+            <li>Include text formatting information such as Unicode values of characters, spacing between words, and the recognition of soft and hard hyphens.</li>
+        </ul>
+
+
+        <p>다르게 설명하거나 강조할 필요도 없이, 구조를 바탕으로 하는 액체 레이아웃의 장점이 깔끔하게 정리되어 있다. 단순히 유연하게 잘 보이는 문서가 아닌, 다양한 활용성을 갖고 명확하게 포지셔닝 된 정확하고 정밀한 문서를 만들 수 있다. 그리고 그렇게 구조화된 문서는 대체 텍스트, 커스터마이징 등을 통해 더 많은 사람이 접근할 수 있는 옵션을 열어준다.</p>
+        <p>There is no need to explain or emphasize otherwise, the benefits of structure-based liquid layout are so neatly summarized. It can be seen that it is not simply expressed as a document that is flexible and well-visible, but that it is possible to create accurate and precise documents that are more clearly positioned in addition to various uses. And such structured documentation can also open up options for more people to access through alternative text, customization, and more.</p>
+
+        <p>우리는 페이지 중심의 책 인쇄 문화에서 탈피한 패러다임의 전환을 이해해야 한다. 유리 아래의 종이를 벗어난 액체 레이아웃에서 다시 사고를 시작해야 한다. 이는 디자인과 형식의 위치를 재인식하고 전복하도록 이끈다. 디자이너가 아니라 사용자가 장치를 정하고 선택하는 상황에서, 장치마다 재설계를 하는 것이 아니라 모든 장치에서 같은 층위와 구조를 통해 잘 읽을 수 있게 하는 구조 디자인이 필요한 것이다. 구조를 사용하여 콘텐츠를 수집하고 그를 구조화하는 도구를 만든다. 맥락은 구조가 되고, 구조는 맥락이 된다. 책 전체가 나무처럼 줄기, 가지, 잎사귀로 이루어지듯 책의 모든 기능을 계층 구조에 배치한다. 투자할 수 있는 모든 여건은 좋은 금형을 설계하고 만드는 데 쓰는 것이다.</p>
+        <p>It is necessary to understand the paradigm shift away from the page-oriented book printing culture. You have to start thinking again in the liquid layout out of the paper under the glass. This leads to a re-recognition and subversion of the position of design and form. In a situation where a user, not a designer, decides and selects a device, it is necessary to design a structure that allows reading through the same layer and structure in all devices, rather than redesigning for each device. Create tools that use structures to gather content and structure it. Context becomes structure, and structure becomes context. Arrange all the functions of a book in a hierarchical structure, as if the whole book were a tree with trunk, branches, and leaves. All the conditions that can be invested are spent on designing and making good molds.</p>
+
+        <p>전자적으로 바르게 작성되고 편집된 문서는 하나의 글을 다양한 형태로 표현하고 공유할 수 있을 뿐만 아니라, 다양한 방식으로 무한히 사용하고 재사용할 수 있다. 더 쉬운 방식은 전혀 아니다. 동일한 콘텐츠가 다양한 형식과 장치에서 사용되기에 체계는 더욱 명확하고 날카로워야 한다. 이러한 새로운 가능성에는 잠재적인 노력 및 편집 전략이 필요할 것이다. 하지만 수행되어야 할 노력이자 고민일 것이다.</p>
+        <p>Documents that have been properly written and edited electronically can not only be expressed and shared in various forms, but can also be used and reused infinitely in various ways. There is no easier way at all. As the same single piece of content is used in many different formats and devices, the structure needs to be clearer and sharper. These new possibilities will require potential effort and editorial strategies. However, it will be an effort and concern to be carried out.</p>
+
+
+        <h4 id="section3-4-2">스스로 자유를 찾아야 해</h4>
+        <h4 id="section_3-4-2">Find your own freedom</h4>
+
+        <p>모든 책이 결국 하나의 소프트웨어를 통해 제작되는 현재의 시스템은 누가 봐도 기형적이다. 마치 전 세계의 사람이 모두 같은 연필과 노트를 사용하는 것과 다름없다. 게다가 우리는 그 연필과 노트가 어떤 방식으로 제작되는지, 그것이 어떤 원리로 어떻게 작동하는지 제대로 이해하지 못한 채 사용하고 있다.</p>
+        <p>If you consider that all of today’s books are eventually created through a single piece of software, you’ll find that the current system is crazy. It is as if people all over the world are using the same pencil and notebook. In addition, we are using the pencil and notebook without properly understanding how they were made, how they work, and how they work.</p>
+
+        <p>지금도 수행되고 있는 출판 노동을 자세하게 들여다보자. 작업자는 일하는 기계 체인의 전산화와 함께 작업을 위한 실행적인 노하우와 분리되었고, 그 도구(및 기계)는 출판사 밖에서 제삼자에 의해 설계되고 숙달된다. 인쇄 공장에서 작업자는 기계를 구상하고, 만들고, 수리할 수 있었다. 그러나, 위지윅 인터페이스를 거치면서, 장치의 설계와 UI는 작업자(디자이너)가 자신이 사용하는 도구인 소프트웨어를 완전히 마스터할 가능성을 닫아버린다. 작업자는 도구에서 분리되어 체인의 끝에 배치되고 만다. 이런 상황에서 어떻게 창작의 자유를 계속 부여받을 수 있을까?<span class="n1"><span class="n2">Morgane Velut,<em>“Éditer ensemble: renouveler l’organisation technique et sociale de la chaîne éditoriale”</em>, 2021, <a href="http://morganevelut.fr/editer-ensemble/">http://morganevelut.fr/editer-ensemble/</a></span></span></p>
+        <p>Let’s take a closer look at the publishing labor that is still being carried out. The operator has been separated from the practical know-how for the job, with the computerization of the working machine chain, and its tools (and machines) are designed and mastered by third parties outside the publishing house. In a printing plant, workers could conceive, build, and repair machines. However, going through the WYSIWYG interface, the design and UI of the device closes the possibility that the operator (designer) can completely master the software that is the tool they use. The operator is separated from the tool and placed at the end of the chain. How can we continue to be granted creative freedom in these circumstances?<span class="n1"><span class="n2">Morgane Velut,<em>“Éditer ensemble: renouveler l’organisation technique et sociale de la chaîne éditoriale”</em>, 2021, <a href="http://morganevelut.fr/editer-ensemble/">http://morganevelut.fr/editer-ensemble/</a></span></span></p>
+
+        <p>출판 체인에서 PDF에서 EPUB에 이르기까지 여러 형식을 동시에 생성하는 것은 이제 피할 수 없는 변화이다. 그리고 이러한 작업을 올바르게 수행하기에 단일 소프트웨어는 신뢰할 수 없다. 품질이 좋지 않고, 도구 의존도가 너무 높고, 기술적 부채가 크다는 대략적인 세 가지 단점이 지금의 일반적인 독점 소프트웨어 아래에서 모두 발생하고 있다.</p>
+        <p>The need to create multiple forms and formats simultaneously, from PDF to EPUB, in the publishing chain is now also an inevitable change. And no single software can be trusted to do these things right. Poor quality, too much reliance on tools, and a lot of technical debt are probably three possible downsides, all occurring simultaneously under common proprietary software today.</p>
+
+        <p>사용에서의 자유를 되찾아야 한다. 이 자유는 스스로 도구를 다룰 수 있는 것, 스스로 자유롭게 할 수 있는 것을 기반으로 한다. 오픈 소스의 중요한 특징은 우리가 소프트웨어를 열어 수정한 뒤 새롭게 다시 결합할 수 있다는 점이다. 또한 오픈 소스를 사용해서 문서를 만들고 그를 이용해서 새로운 시스템과 결과물을 만드는 것은 결과적으로 다시 오픈 소스 커뮤니티 및 운동을 확산하고 활발하게 만든다.<span class="n1"><span class="n2">오픈 소스를 활용한 출판은 독자에게 투명한 콘텐츠 퍼블리싱 프로세스를 말한다. 오픈 액세스 운동에서 비롯된 이 논리는 폐쇄으로 간주되는 전통적인 출판 시스템에 대한 반응으로, 출판된 문서를 더 많은 방시긍로 접근 가능한 상태로 만들고자 한다.</span></span> 또한 진정으로 자유로운 문서는 그 자체의 얽매이지 않는 태도에 더해, 무료이기도 하다. 제품이나 서비스 제공에 비용을 받지 않는 것. 자본, 기업, 시스템의 제한과 한계 아래 존재하지 않는 것. 무료는 자유롭다는 말과 상응한다.</p>
+        <p>Freedom of use must be restored. This freedom is based on being able to handle tools for oneself, being able to do things oneself freely. An important feature of open source is that we can open the software, modify it, and then combine it again. Also, using open source and using it to create new systems and results results in spreading and revitalizing the open source community and movement.<span class="n1"><span class="n2">Publishing using open source refers to the process of publishing content that is transparent to readers. This logic, which originates from the open access movement, is a response to the traditional publishing system being viewed as closed, seeking to make published documents more accessible.</span></span> Also, truly free documentation, in addition to its own unfettered attitude, is also free (of charge). Not being paid for providing a product or service. What does not exist under the limits and limits of capital, corporations, and systems.</p>
+
+        <p>공유되는 문서는 공유하는 것, 즉 보여주는 자유도 필요하다. 현재의 편집 체인은 일종의 피라미드, 수직 구조로 형성되어 있으며 그 꼭대기에는 작품의 구상부터 배포까지 작품을 통제할 수 있는 출판사가 있다. 출판되어야 할 것과 출판하지 말아야 할 것을 분리하는 사람, 출판의 방식과 형식을 규정하는 사람의 역할과 권능은 무시할 수 없었다. 그러나 새로운 웹 환경은 대형 상업 출판사와 달리 출판을 위한 완전한 독립 플랫폼 및 환경이 돼주었다. 웹은 공유에 있어 자유롭기만 한 것이 아니라 무료이고, 즉각적인 개방·분산형(immediate, open, distributed) 실시간 게시 플랫폼이 된다.</p>
+        <p>Shared documents also require the freedom to share, that is, to show. The current editorial chain is formed in a kind of pyramid, a vertical structure, at the top of which is the publisher who can control the work from conception to distribution. The role and authority of a person who separates what should be published from what should not be published and who defines the method and format of publication cannot be ignored. However, the new web environment has become a completely independent platform and environment for publishing, unlike large commercial publishers. The web is not only free to share, but also to be an immediate, open, distributed real-time publishing platform.</p>
+
+        <p>민주화! 문서를 만드는 도구와 그를 보여주는 도구(플랫폼, 혹은 웹)의 민주화는 자유로운 문서 형식의 해결점이, 열린 출판 시스템은 발행인에게 편집 프로덕션 권한이 중앙 집중화되는 문제의 해결점이 되어 줄 것이다. 이 민주화가 앞으로 생산될 문서들, 편집 및 디자인 작업 노동과 삶에 어떤 영향을 미칠 수 있을까?</p>
+        <p>Democratization! The democratization of tools for creating documents and tools for displaying them (platform or web), a free document format, and an open publishing system will solve the problem of centralized editing and production rights by publishers. How will this democratization affect the future publishing production, editing and design work and finally, life?</p>
+
+
+
+
+
+        <!-- 파트 2 -->
+
+
+        <h2 id="section4">제작기: 이론에서 실천으로</h2>
+        <h2 id="section_4">Production: From theory to practice</h2>
+
+        <p>자유로운 문서와 그 시스템을 만드는 과정은 크게 두 장으로 나뉘었다. 첫째는 이론에 관한 글, 그리고 두 번째는 이론을 토대로 한 실천에 관한 글이다. 앞서 자유로운 문서의 가능성을 이야기하는 이론들을 살펴보았다. 그를 통해 현재의 문서 포맷으로는 실현이 불가능하지만, 앞으로의 새로운 문서 형식이 갖출 수 있는 특성과 기능에 대한 힌트들을 발견해보고자 했다. 앞장까지의 글이 이 부분에 해당한다. </p>
+        <p>The process of creating free documents and systems was divided into two chapters. The first is a text about theory, and the second is a text about practice based on theory. Previously, we looked at theories that talk about the possibility of free documents. Through him, we tried to find hints about the characteristics and functions that the new document format in the future can have, even though it is impossible to realize with the current document format. The text up to the previous chapter corresponds to this part.</p>
+
+        <p>지금부터의 글은 앞의 이론을 토대로 한 실천에 해당한다. 새로운 방식에 대한 가능성과 그에 동반하는 의구심과 두려움에 답하기 위해, 문서 제작 도구들을 경험해보고 새로운 포맷을 직접 제작해보려고 한다. 가장 먼저 현재의 주류 문서 포맷을 벗어나 그 밖에서 같은 역할을 수행하고자 했던 다른 문서 방식과 형식들을 살펴볼 것이다. 대중적으로 사용되지 않았던 다른 방식과 시스템을 찾고 분석해보면서, 그러한 문서 포맷이 가지고 있는 장단을 살피고 분석해 상상할 수 있는 미래 포맷의 주요 근거로서 사용하려고 한다. 그런 다음 그 근거들을 바탕으로 새로운 시스템을 설계하고 그를 따라 문서 포맷을 만들어보며 이러한 도구들이 결과물인 문서에 부여하는 가능성과 한계, 영향을 더 정확하게 관찰할 것이다. 이러한 탐험은 현대 편집 체인의 새로운 형태를 가볍게나마 형성해보는 것이기도 하다.</p>
+        <p>The writings from now on correspond to the practice based on the previous theory. In order to answer the possibility of a new method and the doubts and fears that accompany it, I try to experience document production tools and create a new format myself. First, we’ll look at other document methods and formats that have tried to fill the same role outside of the current mainstream document format. While looking for and analyzing other methods and systems that have not been popularly used, we will examine and analyze the advantages and disadvantages of such document formats and use them as the main basis for imaginable future formats. Then, based on the rationale, we will design a new system and create a document format based on it, observing more precisely the possibilities, limitations and impacts these tools have on the resulting document. This exploration is also an attempt to lightly shape a new form of the modern editing chain.</p>
+
+
+
+        <h3 id="section4-1">도구들</h3>
+        <h3 id="section_4-1">Tools</h3>
+
+        <p>자세한 제작 과정을 풀어 내려가기에 앞서, 이 문서와 문서의 포맷을 만들 때 참고했거나 사용한 프로그램<span class="n1"><span class="n2">클래스, 코드, 라이브러리, 함수, 소프트웨어 등 다양한 기술들이 사용되고 또 다른 이름으로 불리지만, 여기서는 이해의 편의를 위해 ‘처리 방법과 순서를 기술하여 컴퓨터에 주어지는 일련의 명령문 집합체’로 정의되는 프로그램이라는 용어로 통일한다.</span></span>, 즉 도구들을 소개하려고 한다. 사용해봤거나 탐험한 모든 도구를 싣지는 않았다. 실제로 이 글을 작성하고 문서화하는 수단으로 쓰였거나, 이론적인 가이드가 된 것들만 정리했다. 또한 이렇게 도구를 추려갈 때도 앞서 작성한 선언문 중에서 바로 적용이 가능한 몇 가지 문장들을 바탕으로 명확한 기준을 설정하였다. 그는 다음과 같다.</p>
+        <p>Prior to unraveling the detailed production process, I would like to introduce the tools, that is, the programs that were referenced or used when creating this document and its format.<span class="n1"><span class="n2">Various technologies such as classes, codes, libraries, functions, and software are used and called by different names, but here, for convenience of understanding, the term program is unified. It is defined as a set of instructions given to a computer describing the method and order of processing.</span></span> I haven’t listed every tool I’ve used or explored. List is compiled with only those that actually served as a means of writing and documenting this article, or that served as a theoretical guide. In addition, clear standards were set when selecting tools like this. The criteria were set based on several sentences that can be immediately applied among the previously written statements. The rules are:
+        </p>
+
+        <ul>
+            <li>모든 기술 혹은 소프트웨어는 오픈 소스로, 수수료를 지불하거나 복잡한 서버를 유지하지 않고도 사용 가능해야 한다.</li>
+            <li>순수한 기능 그 자체의 ‘도구’로 작동해야 한다.</li>
+            <li>개인이 방식을 가꾸고 변경해나갈 수 있도록 (직접 커스터마이징 하거나 개발할 수 있도록) 정보가 공개되어 있어야 한다.</li>
+            <li>대안이 아닌, 새로운 방식을 위한 도구여야 한다.</li>
+        </ul>
+        <ul>
+            <li>All technologies, programs and software must be open source and available without paying fees or maintaining complex servers.</li>
+            <li>It should work as a ‘tool’ of pure function itself.</li>
+            <li>Information must be made public so that individuals can cultivate and change the way they do (customize or develop their own).</li>
+            <li>It should be a tool for a new way, not an alternative.</li>
+        </ul>
+
+        <p>도구는 기능에 따라 쓰기와 편집, 디자인과 제책, 그리고 그를 한 번에 포함하고 있는 라이브러리, 일명 도구집으로 나누어 정리했다. 카테고리 안의 도구들은 사용하거나 설치하게 될 순으로 기록했다. 아래의 도구와 도구로 향하는 길이 연결된 링크는 2022년 12월 1일을 마지막으로 작동을 확인한 것이다.</p>
+        <p>According to the function, the tools are divided into writing and editing, printing and binding, and a library that includes them at once, aka tool collection. Tools within a category are listed in the order in which they will be used or installed. The link below with the tool and the path to it was last seen working on December 1st, 2022.</p>
+
+
+        <h4 id="section4-1-1">쓰기와 편집</h4>
+        <h4 id="section_4-1-1">Writing and Editing</h4>
+
+        <p>문서를 구성하려면 먼저 글이 있어야 할 것이다. 이 글을 웹페이지에서 보이게 웹이 ‘읽을 수 있는’ 상태로 구성하기 위해서는 최소 HTML과 CSS 언어가 필요하다. 우선 HTML은 우리가 보는 웹페이지가 어떻게 구조화되어 있는지 브라우저가 알 수 있도록 하는 마크업 언어이다. HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미를 나타낼뿐만 아니라 링크, 인용과 그 밖의 항목으로 구조적 문서를 만들 방법을 제공한다. 그리고 이미지와 객체를 내장하여 대화형 양식을 생성하는 데 사용될 수 있다. HTML은 웹 페이지 콘텐츠 안의 꺾쇠괄호에 둘러싸인 ‘태그’로 되어있는 HTML 요소 형태로 작성한다. HTML은 웹 브라우저와 같은 HTML 처리 장치의 행동에 영향을 주는 자바스크립트, 본문과 그 밖 항목의 외관과 배치를 정의하는 CSS 같은 스크립트를 포함하거나 불러올 수 있다. 일반적으로 코드 에디터를 통해 코드를 작성하고, 파일을 본인의 컴퓨터에서 저장한 뒤, 웹 브라우저로 열어서 확인한다. 타인과 공유하고 싶은 경우, 파일을 서버에 업로드해서 웹 페이지 링크를 공유한다.</p>
+        <p>To organize a document, you will first need a text. HTML and CSS languages ​​are required to compose this article in a ‘readable’ state for the web to be displayed on a web page. First of all, HTML is a markup language that allows the browser to know how the web page we see is structured. HTML provides a way to create structured documents with links, citations, and other items, as well as representing structural semantics for body text, such as headings, paragraphs, and lists. And it can be used to create interactive forms by embedding images and objects. HTML is written in the form of HTML elements that are ‘tags’ surrounded by angle brackets in the web page content. HTML may contain or invoke scripts, such as JavaScript, which affect the behavior of HTML processing devices, such as web browsers, and CSS, which define the appearance and layout of body and other items. Generally, you write code through a code editor, save the file on your computer, and open it with a web browser to check it. If you want to share it with others, upload the file to a server and share a link to the web page.</p>
+
+        <p>웹페이지 코드를 접해보지 않은 사람도 작성할 수 있게 하기 위한 하나의 대안 방법으로는 마크다운이 있다. 마크다운 문법은 특수문자를 활용해 각 행과 텍스트를 스타일링한다. 마크다운은 마크업 언어 중 가장 보편적으로 널리 쓰이는 언어이다. 완벽하지 않지만, 구조화된 텍스트를 쓰기에 가장 작업하기 편하여 전자 출판 시에 주 언어로 선택된다. 마크다운의 장점은 기본 텍스트를 처리할 수 있는 모든 소프트웨어 응용 프로그램에서 작성하고 편집할 수 있다는 점이다. 마이크로소프트 워드 또는 기타 워드 프로세서의 독점 파일 형식과 달리 마크다운은 간단한 텍스트 편집기를 사용하여 열 수 있다. 그러나 텍스트 지향 문서에는 특히 적합하지만, 이미지 등의 다양한 데이터를 포함하는 시각적 지향 문서를 만드는 데는 상당히 제한적인 부분이 있어 대화형 출판 형식을 만드는 데에는 우회해야 하는 부분이 있는 어려움도 갖는다. </p>
+        <p>One alternative way to make web pages usable by people who have never coded is Markdown. Markdown syntax uses special characters to style each line and text. Markdown is one of the most widely used markup languages. It’s not perfect, but it’s the easiest to work with for writing structured text, making it the primary language of choice for electronic publishing. The beauty of markdown is that it can be written and edited in any software application that can handle basic text. Unlike proprietary file formats in Microsoft Word or other word processors, Markdown can be opened using a simple text editor. However, although it is particularly suitable for text-oriented documents, it has a fairly limited part for creating visually oriented documents containing various data such as images, so it also has difficulties that must be bypassed to create an interactive publication format. </p>
+
+
+        <p>마크다운을 설명하는 이유는 대부분의 CMS<span class="n1"><span class="n2">Content Management System의 약자인 CMS, 저작물 관리 시스템은 디지털 채널을 통해 콘텐츠를 제작하고 관리하고 전달할 수 있는 소프트웨어 애플리케이션을 말한다.</span></span>에서 마크다운을 사용하기 때문이다. 예를 들면 가장 보편적인 워드프레스<sup>Wordpress</sup>(지구상의 70% 웹사이트는 워드프레스를 통해 만들어진다고 한다), 뒤에 설명할 타입밀<sup>Typemill</sup> 같은 출판 목적이 뚜렷한 오픈 소스 CMS에서도 범용적으로 쓰이고 있다. 직접 출판 체인을 구성하게 될 때 CMS를 사용하게 된다면, 마크다운을 알아두는 편이 좋을 것이다. </p>
+        <p>The reason for explaining markdown is that most CMS<span class="n1"><span class="n2">A content management system is a software application that can create, manage and deliver content through digital channels.</span></span> systems use markdown. For example, wordpress, the most common wordpress (it is said that 70% of websites on the planet are created through wordpress), is also widely used in open source CMS with clear publishing purposes, such as Typemill, which will be described later. If you’re going to use a CMS when you’re building your own publishing chain, you’d better be familiar with markdown. </p>
+
+        <p>마크다운은 구조화된 텍스트를 쓰기에 가장 쉬운 선택지로 널리 알려졌기 때문에 오픈 소스 출판 시스템에 빈번하게 사용된다. 하지만 유일한 선택지는 아니다. XML, 레이텍 LaTex과 같이 마크다운이 아닌 다른 선택지도 많이 존재한다. 마크다운은 익숙한 만큼 응용 방식도, 응용한 프로그램들도 많다. <a href="https://easy-markdown-editor.tk/">Easy Markdown Editor</a>과 같이 마치 위지윅 에디터처럼 쓰면서 볼 수 있게 만든 에디터도 존재한다. 여러 우회 방법들을 거친다면, 마크다운으로 쓴 문서를 인디자인을 통해 편집하는 방식도 가능하다.<span class="n1"><span class="n2">Rhythmus, <em>‘From Word to Markdown to InDesign: Fully automated typesetting’</em>, <a href="http://rhythmus.be/md2indd/">http://rhythmus.be/md2indd/</a> </span></span><br>다음은 글을 작성하고 구조를 지을 수 있는 프로그램 혹은 코드 중 이 책에서 활용한 도구들을 모은 것이다.</p>
+        <p>Markdown is frequently used in open source publishing systems because it is widely regarded as the easiest option for writing structured text. But it’s not the only option. There are many other non-markdown options, such as XML and LaTex. As much as markdown is familiar, there are many application methods and applications. There are also editors like <a href="https://easy-markdown-editor.tk/">Easy Markdown Editor</a> that allow you to see while using it just like the WYSIWYG editor. If you go through several bypass methods, it is also possible to edit a document written in Markdown through InDesign.<span class="n1"><span class="n2"></span>Rhythmus, <em>‘From Word to Markdown to InDesign: Fully automated typesetting’</em>, <a href="http://rhythmus.be/md2indd/">http://rhythmus.be/md2indd/</a></span>
+
+            <br>The following is a collection of tools used in this book among the programs or codes that allow writing and structure.
+        </p>
+
+
+        <p>Visual Studio Code,<br>
+            <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><br>
+            마이크로소프트 사의 오픈 소스 에디터이며 무료이다. 간결한 디자인, 빠른 실행 속도, 플러그인 제공 등으로 보편적으로 자주 쓰이는 코드 에디터이다. 이번 문서를 만들 과정에서는 라이브 서버 기능과 마크다운 미리보기 확장 프로그램을 제공해서 사용하였다.
+        </p>
+        <p>Visual Studio Code, <br>
+            <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><br>
+            It is an open source editor from Microsoft and is free. It is a commonly used code editor due to its simple design, integration with Github, fast execution speed, and provision of plug-ins. In the process of creating this document, a live server function and a markdown preview extension were provided and used.
+        </p>
+
+        <p>PanDoc,<br>
+            <a href="https://pandoc.org/">https://pandoc.org/</a><br>
+            판독 <sup>PanDoc</sup>은 존 팩프랜드가 하스켈 언어로 제작한 오픈 소스로 하나의 문서를 여러 다른 형태의 문서로 변환하는 유틸리티다. 판독으로 마크다운, HTML, LaTeX, Word docx, epub 등 다양한 형식으로 문서를 변환할 수 있다.
+            오픈 소스 ‘범용 문서 변환기’로서, 모든 종류의 텍스트 문서 형식을 입력으로 사용하고 이러한 파일을 내용의 정규화된 직렬화로 구문 분석한 다음 많은 출력 형식으로 작성할 수 있다.
+        </p>
+        <p>PanDoc, <br>
+            <a href="https://pandoc.org/">https://pandoc.org/</a><br>
+            written by John Macfarlane in the Haskell language, is an open-source utility that converts one document into several different types of documents. With pandoc, you can convert documents to a variety of formats, including Markdown, HTML, LaTeX, Word docx, and epub. As an open-source ‘universal document converter’, it can take any kind of text document format as input, parse these files into a normalized serialization of the content, and then write to many supported output formats.
+        </p>
+
+
+        <h4 id="section4-1-2">디자인과 제책</h4>
+        <h4 id="section_4-1-2">Designing and Binding</h4>
+
+        <p>위의 도구들을 통해 쓰고 묶은 디지털 텍스트를 ‘문서’로 만들기 위해서는 편집 및 디자인이 필요하다. 문서에는 구조와 위계가, 그리고 그를 시각적으로 구현할 디자인이 있어야 한다. HTML에서의 모든 시각적 선택과 결정은 모두 CSS라는 스타일 언어를 통한다. CSS는 종속형 시트 또는 캐스케이딩 스타일 시트<sup>Cascading Style Sheets</sup>로 불리며, 마크업 언어가 실제 표시되는 방법을 기술하는 스타일 언어이다.<span class="n1"><span class="n2">1994년 하콤 비움 리가 처음 제안하였다. CSS의 생성은 시각적 렌더링에서 문서의 내용 및 의미 구조를 분리하려는 야망을 기반으로 한다. 실체와 형태의 분리라는 이 원칙은 잘 알려진 컴퓨팅 원칙이지만 이 아이디어를 구현한 환경은 지금까지 웹이 유일하다. 하콤은 CSS가 종이를 포함한 모든 미디어를 위해 설계되었다고 밝혔다. 이는 CSS가 음성 및 점자와 같은 방식들을 포함해 종이와 같은 많은 출력 매체를 지원할 가능성이 있다는 것을 알려준다.</span></span> CSS는 오늘날에도 여전히 문서의 시각적 표현과 웹 페이지의 그래픽 렌더링에 전적으로 사용되는 유일한 언어이다. 기술적으로 특정 스타일 규칙을 적용해야 하는 유형의 장치와 화면 크기를 표현할 수 있는 것은 미디어의 역사에서 지금까지 상상하지 못했던 도전에 응답하는 것은 컴퓨터 분야의 독특한 발명품이다. 따라서 인쇄된 구성을 포함하여 모든 유형의 문서 레이아웃에 완벽하게 적합한, 특수한 ‘그래픽 언어’라고도 부를 수 있다.<span class="n1"><span class="n2">Julie Blanc, <em>‘Si Jan Tschichold avait connu les feuilles de style en cascade : plaidoyer pour une mise en page comme programme; Jan Tschichold가 캐스케이딩 스타일 시트를 알고 있었다면: 프로그램으로서의 레이아웃에 대한 탄원’</em>, Design Arts Medias. <a href=https://journal.dampress.org/issues/systemes-logiques-graphies-materialites/si-jan-tschichold-avait-connu-les-feuilles-de-style-en-cascade-plaidoyer-pour-une-mise-en-page-comme-programme">https://journal.dampress.org/issues/systemes-logiques-graphies-materialites/si-jan-tschichold-avait-connu-les-feuilles-de-style-en-cascade-plaidoyer-pour-une-mise-en-page-comme-programme</a></span></span><br> 다음은 CSS로 레이아웃을 디자인하는 것을 돕거나, 물질적인 책을 만들 수 있게 페이지 분할, 인쇄, 제본 등을 돕는 프로그램 혹은 라이브러리 중 이 책에서 활용한 도구들을 모은 것이다.</p>
+        <p>Editing and design are required to make the digital text written and bound through the above tools into a ‘document’. Documents must have structure and hierarchy, and a design that visually implements them. All visual choices and decisions in HTML are made through a style language called CSS. CSS, also called Cascading Style Sheets or Cascading Style Sheets, is a style sheet language that describes how markup languages are actually displayed.<span class="n1"><span class="n2">It was first proposed by Håkon Wium Lie in 1994. The creation of CSS is based on the ambition to separate the content and semantic structure of a document from its visual rendering. This principle of separation of substance and form is a well-known computing principle, but the Web has so far been the only environment in which this idea has been implemented. Hacom said that CSS is designed for all media, including paper. This indicates that CSS has the potential to support many output media such as paper, including formats such as speech and braille.</span></span> CSS is still the only language used today exclusively for the visual presentation of documents and the rendering of graphics on web
+        pages. It is a unique invention in the computer field that answers a hitherto unimagined challenge in the history of media: being able to express the types of devices and screen sizes that technically require certain style rules to apply. It can therefore also be called a special ‘graphic language’, perfectly suited to the layout of all types of documents, including printed compositions.<span class="n1"><span class="n2">Julie Blanc, <em>‘Si Jan Tschichold avait connu les feuilles de style en cascade : plaidoyer pour une mise en page comme programme’</em>, Design Arts Medias. <a href="https://journal.dampress.org/issues/systemes-logiques-graphies-materialites/si-jan-tschichold-avait-connu-les-feuilles-de-style-en-cascade-plaidoyer-pour-une-mise-en-page-comme-programme">https://journal.dampress.org/issues/systemes-logiques-graphies-materialites/si-jan-tschichold-avait-connu-les-feuilles-de-style-en-cascade-plaidoyer-pour-une-mise-en-page-comme-programme</a></span></span>
+
+            <br>The following is a collection of tools used in this book among programs or libraries that help design layouts with CSS, divide pages, print, and bind to create physical books.
+        </p>
+
+
+            <p>paged.js, <br><a href="https://pagedjs.org/">https://pagedjs.org/</a><br>
+                줄리 블랑이 개발한 자바스크립트 라이브러리로, HTML 콘텐츠에서 브라우저에서 콘텐츠에 페이지를 매겨서 PDF 출력을 생성할 수 있게 하는 오픈 소스 코드이다. 현재 오픈 소스를 이용한 하이브리드 문서 포맷을 구성하는 데 활발하게 쓰인다.<br>
+                Paged.js는 CSS 및 HTML 명령으로 그래픽 생성 작업이 수행되지만, 결과는 브라우저에서 일종의 위지윅처럼 표시될 수 있다고 제안한다. 즉, 작성자는 웹 언어로 된 파일에서 작업하지만, 실시간으로 수정된 파일은 브라우저에서 해석되어 인디자인 같은 소프트웨어가 제공하는 것처럼 각 페이지를 나타내기 때문에 편집에 모자람이 없다. 사용은 웹 언어(HTML, CSS, 자바스크립트)를 기반으로 하며, 브라우저에서 실행된다. 이러한 웹의 특성은 호환성이나 라이선스 제약 없이 그것을 사용하고자 하는 모든 사람이 읽을 수 있는 라이트 파일을 전송하는 것을 가능하게 하는 중요한 지점이다.<span class="n1"><span class="n2">Morgane Velut, <em>‘Éditer ensemble :renouveler l’organisation technique et sociale de la chaîne éditoriale’</em>, <a href="http://morganevelut.fr/editer-ensemble/">http://morganevelut.fr/editer-ensemble/ </a></span></span></p>
+                <p>paged.js, <br><a href="https://pagedjs.org/">https://pagedjs.org/</a><br>
+                A Javascript library developed by Julie Blanc, is open-source code that allows you to create PDF output from HTML content by paginating the content in the browser. It is a code that is actively used to construct a hybrid document format using open source. <br>
+                Paged.js suggests that the graphic creation is done with CSS and HTML commands, but the result can be displayed in the browser as a kind of WYSIWYG. That is, authors work on files in the language of the web, but in real time, modified files are interpreted by the browser to present each page as software such as InDesign can deliver, enabling seamless editing. Usage is based on web languages ​​(HTML, CSS, Javascript) and runs in the browser. This nature of the web is an important point in making it possible to transmit light files that can be read by anyone who wants to use them without compatibility or license restrictions.<span class="n1"><span class="n2">Morgane Velut, <em>‘Éditer ensemble :renouveler l’organisation technique et sociale de la chaîne éditoriale</em>’, <a href="http://morganevelut.fr/editer-ensemble/">http://morganevelut.fr/editer-ensemble/</a></span></span></p>
+
+            <p>Bindery.js,<br><a href="https://bindery.info/">https://bindery.info/</a><br>
+            Bindery.js 또한 HTML과 CSS로 인쇄 가능한 책을 만드는 자바스크립트 라이브러리이다. 2017년에 에반 브룩스가 2014년에 로드 아일랜드 스쿨 오브 디자인의 ‘HTML Output’ 코스에서 진행했던 출판 작업을 발전시킨 결과물이다.<br> Bindery.js에서 콘텐츠는 여러 페이지에 걸쳐 분할된다. 여기서 각 페이지에 맞는 내용에 따라 실행 중인 헤더, 스프레드 및 각주를 생성하는 규칙을 설정하거나, 링크를 페이지 번호로 전환하여 목차 또는 인덱스 작성할 수 있다. 인쇄할 준비가 되면 도련, 자르기 표시 및 책자 순서를 구성한다. </p>
+            <p>Bindery.js, <br><a href="https://bindery.info/">https://bindery.info/</a><br>
+            Bindery.js is also a JavaScript library for creating printable books in HTML and CSS. It is a 2017 development of Evan Brooks’ publishing work in his 2014 ‘HTML Output’ course at the Rhode Island School of Design.
+            <br>In Bindery.js, content is split across multiple pages. Here you can set rules to create running headers, spreads, and footnotes based on what fits on each page, or you can create a table of contents or index by turning links into page numbers. When you’re ready to print, configure the bleeding, crop marks, and book order.
+            </p>
+    
+
+            <p>multilingual.js,<br>
+                <a href="https://github.com/multilingualjs/multilingual.js">https://github.com/multilingualjs/</a><br>
+                multilingual.js는 어도비 인디자인의 합성 글꼴 기능처럼, HTML/CSS 환경에서 보다 섬세하게 다국어 섞어쓰기를 제어하기 위한 오픈 소스 자바스크립트 라이브러리이다. 현재는 제이쿼리<sup>jQuery</sup> 플러그인의 형태로 깃허브<sup>GitHub</sup>에 소스가 공개되어 있다.
+            </p>
+            <p>multilingual.js, <br>
+                <a href="https://github.com/multilingualjs/multilingual.js">https://github.com/multilingualjs/</a><br>
+                multilingual.js is an open-source JavaScript library for finer control of multilingual writing in HTML/CSS environments, such as Adobe InDesign’s composite font function. to be. Currently, the source is open on GitHub in the form of a jQuery jQuery plug-in.
+            </p>
+
+
+            <p>Print CSS,<br> <a href="https://printcss.live/">https://printcss.live/</a><br>
+                웹사이트로, 웹 브라우저 상에서 paged.js로 구획된(페이지로 분할된) 문서의 CSS 레이아웃을 수정하고 미리보기를 제공한다. 이 미리보기를 출력용 PDF로 변환하여 인쇄할 수 있는 기능도 제공한다. </p>
+            <p>Print CSS, <br><a href="https://printcss.live/">https://printcss.live/</a><br>
+                Print CSS is a website, which modifies and previews the CSS layout of paged.js-partitioned documents (divided into pages) in a web browser. It also provides the ability to convert this preview to a PDF for output and print it. </p>
+
+            <p>Paperman,<br> <a href="http://guhochoi.com/paperman/">http://guhochoi.com/paperman/</a><br>
+                책 제작을 위한 종이 사용량 계산기 모바일 앱. 책등 두께나 종이 평량 등을 계산할 수 있다.</p>
+            <p>Paperman, <br><a href="http://guhochoi.com/paperman/">http://guhochoi.com/paperman/</a><br>
+                Paperman is a paper usage calculator mobile app for book production. You can calculate the thickness of the spine or the basis weight of paper.</p>
+
+
+
+        <h4 id="section4-1-3">도구집</h4>
+        <h4 id="section_4-1-3">Toolbox</h4>
+
+        <p>일종의 클래스와 라이브러리의 모음집으로, 제공하는 가이드라인만 따라가면 한꺼번에 자유로운 문서 포맷을 만들 수 있는 도구를 소개한다. 현재 읽고 있을 이 문서는 특정 프레임워크<span class="n1"><span class="n2">프레임워크는 복잡한 문제를 해결하거나 서술하는 데 사용되는 기본 개념 구조이다. 보편적으로 ‘애플리케이션 프레임워크’를 말하는 것으로 쓰이는데, 이는 프로그래밍에서 특정 운영 체제를 위한 응용 프로그램 표준 구조를 구현하는 클래스와 라이브러리 모임이다.</span></span>를 통해 제작되지는 않았지만, 여기 설명된 도구들이 갖는 기술의 연결 링크를 참고해서 제작했다. </p>
+        <p>As a collection of classes and libraries, it introduces tools that can create free document formats all at once by following the guidelines provided. This document, which you are currently reading, was not created using a specific framework<span class="n1"><span class="n2">Frameworks are basic conceptual structures used to solve or describe complex problems. It is commonly used to refer to an ‘application framework’, which in programming is a collection of classes and libraries that implement the standard structure of an application for a particular operating system.</span></span>, but was created by referring to the technical links of the tools described here. </p>
+
+            <p>Quire,<br>
+                <a href="https://quire.getty.edu/">https://quire.getty.edu/</a><br>
+                콰이어<sup>Quire</sup>는 지속 가능한, 발견 가능성 및 학문을 위해 설계된 현대적인 다중 형식 출판 도구이다. 단 하나의 단순한 텍스트 파일 세트를 사용하여 보편적인 인쇄물처럼 권위 있고 영구적인 동시에, 웹처럼 생동감 있고 기능이 풍부한 책을 만들 수 있게 돕는다. 콰이어는 다음과 같은 프로그램이 연결된 모음이다.
+            </p>
+            <p>Quire, <br>
+                <a href="https://quire.getty.edu/">https://quire.getty.edu/</a><br>
+                Quire is a modern multi-format publishing tool designed for sustainability, discoverability and scholarship. Quire uses a single set of simple text file to create books that are as lively and feature-rich as the web, while being as authoritative and permanent as the ubiquitous print. Quire is a collection of linked programs such as:
+            </p>
+
+            <ul>
+                <li>PrinceXML,<br><a href="http://www.princexml.com/">http://www.princexml.com/</a>: 출판물의 PDF/인쇄 버전을 생성.</li>
+                <li>Pandoc, <a href="https://github.com/jgm/pandoc/releases/">https://github.com/jgm/pandoc/releases/</a>, Kindle Previewer <a href="https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765261">https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765261</a> : EPUB 혹은 MOBI를 생성.</li>
+                <li>Hugo, <a href="https://gohugo.io/">https://gohugo.io/</a>: 출판물의 게시물의 온라인 버전을 만드는 정적 사이트 생성기. </li>
+            </ul>
+            <ul>
+                <li>PrinceXML, <a href="http://www.princexml.com/">http://www.princexml.com/</a>: creates PDF/print versions of publications.</li>
+                <li>Pandoc, <a href="https://github.com/jgm/pandoc/releases/">https://github.com/jgm/pandoc/releases/</a>, Kindle Previewer <a href="https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765261">https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765261</a> : Create EPUB or MOBI.</li>
+                <li>Hugo, <a href="https://gohugo.io/">https://gohugo.io/</a>: A static site generator that creates an online version of a publication’s posts.</li>
+            </ul>
+
+
+            <p>Typemill,<br>
+                <a href="https://typemill.net/">https://typemill.net/</a><br>
+                타입밀<sup>Typemill</sup>은 웹 사이트와 전자책을 만들기 위한 오픈 소스 플랫 파일 CMS이다. CMS의 장점 중 하나는 관리자 권한을 가진 새 사용자를 추가할 수 있다는 것인데, 이를 통해 특정한 설치 없이 공동 작업이 가능해진다. 내부 플러그인으로 E-book 생성 플러그인을 제공하는데, 이를 위해서 paged.js를 사용한다. 타입밀은 다음과 같은 프로그램이 연결된 모음이다.
+            </p>
+            <p>Typemill, <br>
+                <a href="https://typemill.net/">https://typemill.net/</a><br>
+                Typemill is an open source flat file CMS for creating websites and ebooks. One of the advantages of CMS is that you can add new users with administrative privileges, which allows them to collaborate without any specific setup. E-book creation plug-in is provided as an internal plug-in, and paged.js is used for this purpose. Typemill is a collection of linked programs such as:
+            </p>
+
+            <ul>
+                <li>Twig, <a href="https://twig.symfony.com/">https://twig.symfony.com/</a>: PHP용 최신 템플릿 엔진.</li>
+                <li>paged.js, <a href="https://pagedjs.org/">https://pagedjs.org/</a>:E-book 생성.</li>
+                <li>Vue.js, <a href="https://vuejs.org/">https://vuejs.org/</a>: 웹 애플리케이션의 사용자 인터페이스를 만들기 위해 사용하는 오픈 소스 프로그레시브 자바스크립트 프레임워크.</li>
+            </ul>
+            <ul>
+                <li>Twig, <a href="https://twig.symfony.com/">https://twig.symfony.com/</a>: A modern templating engine for PHP.</li>
+                <li>paged.js<a href="https://pagedjs.org/">https://pagedjs.org/</a>:E-book creation.</li>
+                <li>Vue.js, <a href="https://vuejs.org/">https://vuejs.org/</a>: An open-source progressive JavaScript framework used to create user interfaces for web applications. </li>
+            </ul>
+
+
+            <p>Bookdown,<br> <a href="https://bookdown.org/home/">https://bookdown.org/</a><br>
+                소프트웨어 엔지니어 <a href="http://yihui.org">Yihui Xie</a>가 제작한, 하나의 간단한 소스 형식(R Markdown)을 책 및 긴 형식의 기사/보고서으로 쉽게 작성할 수 있게 하는 오픈 소스 출판 패키지이다. <a href="https://www.r-project.org">R</a>, 마크다운 및 <a href="http://pandoc.org">판독</a>의 조합을 통해 확장 가능한 문서 포맷으로 구성한다. 우선 마크다운 언어를 통해 섹션, 단락, 목록, 링크 및 이미지 등과 같은 요소를 포함하는 비교적 간단한 문서를 작성하고, Pandoc을 통해 HTML, LaTeX/PDF, Word 및 슬라이드를 포함한 출력 문서로 확장하는 시스템이다. 북다운은 다음과 같은 프로그램이 연결된 모음이다. </p>
+                <p>Bookdown, <br> <a href="https://bookdown.org/home/">https://bookdown.org/</a><br>
+                Created by software engineer <a href="http://yihui.org">Yihui Xie</a>, it is an open-source publishing package that makes it easy to write books and long-form articles/reports in one simple source format (R Markdown). It consists of extensible document formats through a combination of R, markdown and reading. First of all, it is a system for creating relatively simple documents containing elements such as sections, paragraphs, lists, links and images via the Markdown language, and extending them to output documents including HTML, LaTeX/PDF, Word and slides via Pandoc. Bookdown is a collection of the following programs.</p>
+
+            <ul>
+                <li>R Markdown, <a href="https://rmarkdown.rstudio.com/">https://rmarkdown.rstudio.com/</a>: 마크다운 작성을 위한 저작 프레임워크.</li>
+                <li>Pandoc, <a href="https://github.com/jgm/pandoc/releases/">https://github.com/jgm/pandoc/releases/</a>: 마크다운을 여러 확장 가능 포맷으로 변환.</li>
+            </ul>
+            <ul>
+                <li>R Markdown, <a href="https://rmarkdown.rstudio.com/">https://rmarkdown.rstudio.com/</a> An authoring framework for writing markdown.</li>
+                <li>Pandoc<a href="https://github.com/jgm/pandoc/releases/">https://github.com/jgm/pandoc/releases/</a>: Convert markdown to several extensible formats.
+                </li>
+            </ul>
+
+
+
+            <h3 id="section4-2">제작기</h3>
+            <h3 id="section_4-2">Production Record</h3>
+
+                <p>이론을 통해 얻은 아이디어와 발견한 도구들을 연결해서 시스템을 구성해볼 차례가 되었다. 문서와 포맷을 제작할 때 가장 염두에 두었던 점은 이것이 대안이 아니어야 하며, 모사가 아닌 웹을 통한 오픈 소스 출판만의 분명하게 새롭고 더 나은 점을 보여주어야 한다는 것이었다. 그렇기에 다양한 도구를 탐험하고 실험해본 데이터를 가지고 최대한 장점을 드러내기 위한 방식들을 고안하면서, 현재로서 가장 합리적이고 쉽게 확장 가능하고 자유로운 문서를 제작하는 방법을 설정해보고자 했다.
+                </p>
+                <p>Now, I will construct a system by connecting the ideas gained through the theories and the tools I have discovered. The main thing in mind when creating the document and format was that it should not be an alternative, and that it should clearly show the new and better aspect of open source publishing through the web, not a copy. Therefore, I tried to establish the most reasonable, easily scalable, and free document production method at present, while devising ways to maximize the advantages with data that have been explored and experimented with various tools.</p>
+
+                <p>문서를 제작한 과정은 다음과 같다. 먼저 이론들을 검토하는 과정에서 찾은 문서 형식과 문서 제작 시스템들을 바탕으로, 새로이 발견한 특성이 있는 포맷을 어떤 기술과 도구를 통해 만들 것인지 기획하는 설계도를 그렸다. 설계도를 완성하고 난 뒤, 일종의 연결된 (도구) 체인인 설계도를 따라서 스스로 정의하는 현재의 ‘자유로운 문서 포맷’ 형태로 구상하고 제작했다. 그리고 마지막으로 설계를 통해 일종의 편집 도구 체인을 연결한 다음, 글을 작성하고 문서와 문서 포맷의 편집 디자인을 거쳐 문서를 완성했다. 문서가 물성이 있는 매체를 통해 출력되는 경우, 인쇄 및 제본 등을 통해 물성화하는 과정도 진행되었다. 아마 당신은 구현될 수 있는 수많은 그릇 중 하나, 직접적으로는 수많은 판형 중 물체화된 하나의 모습으로 이 텍스트를 읽게 될 것이다.</p>
+                <p>The process of creating the document is as follows. First, based on the document formats and document production systems found in the course of reviewing theories, a blueprint was drawn to plan which technologies and tools would be used to create the format with newly discovered characteristics. After completing the blueprint, I conceived and produced it in the form of the current <em>‘Free Document Format’</em> that I define ourselves by following the blueprint, which is a kind of connected (tool) chain. And finally, through the design, I connected some kind of editing tool chain, and then I wrote the article, went through the editing design of the document and the document format, and completed the document. When a document is output through a medium with physical properties, the process of materializing it through printing and binding was also carried out. Perhaps you will read this text as one of the numerous forms that can be embodied, in other words, as an objectified figure among numerous editions.</p>
+
+                <p>작업 과정의 카테고리를 분리하기 위해 행위를 쓰기, 편집하기, 디자인하기, 공유하기, 이렇게 네가지로 나누었다. 그러나 이 순서대로 선형적으로 작업이 진행된 것은 아니다. 편집하기를 통해 설정된 구조 규칙에 의해 쓰기 과정이 변하기도 하였다. 읽기를 위한 브라우저 디자인을 하다가 페이지화된 책에서 시각적인 영감을 받기도 했고, 그 것을 다시 글로 정리해서 쓰기에 첨부하기도 했다. 이런 비선형성과 모든 역할의 재분배는 마치는 말에 가장 잘 드러나는데, 이 문서의 마치는 말은 글을 모두 작성한 뒤가 아닌, 편집과 공유, 그리고 공유를 통한 읽기를 모두 거치고 나서 작성되어 모든 과정이 끝난 후에 업데이트 되었다.</p>
+                <p>In order to separate the categories of work processes, the actions are divided into three categories: writing, editing, and reading. However, the work did not proceed linearly in this order. The writing process was also changed by the structure rules established through editing. While designing a browser for reading, I received visual inspiration from an edited book, and also organized it into writing and attached it to writing. This non-linearity and redistribution of all roles is most evident in the closing remarks. The closing words of this document are not written after all the writing, but edited, shared, and read through sharing, and updated after all the processes are finished.</p>
+
+
+
+                <h4 id="section4-2-1">쓰기</h4>
+                <h4 id="section_4-2-1">Writing</h4>
+
+                <p>문서를 구성하기 위해선 가장 먼저 글을 작성해야 했다. 일반적으로 쓰인 텍스트를 구조를 부여하고 문서로 구성하기 위해서, 우선 전체 글을 하나의 문서에 정리했다(어떤 포맷이든, 확장자든 상관 없다. 이 글의 경우 도구 테스트 중에 작성되었기 때문에 여러 프로그램이 뒤섞여가며 쓰여졌다). 그 다음, 글 내용을 따라 파트 1과 파트 2로 나누었다. 파트 1을 바탕으로, 그를 이용해서 지금 작성하고 있는 글의 내용을 작성해야 했기 때문이다. 그래서 이 전체 문서는 우선 파트 1을 작성하고, 파트 1을 문서의 본문으로 설정해서 ‘자유로운 문서 포맷’ 시스템을 실험하고 만들어본 뒤, 그 과정을 기록한 것, 그 과정에서 알게 된 것들을 다시 파트 2로 기록하는 과정을 거쳤다. </p>
+                <p>In order to organize a document, the first thing to do was to write an article. To give structure to commonly written text and organize it into a document, first of all, the entire text was organized into a single document (It doesn’t matter which format or extension. In the case of this article, it was written during a tool exploration, so it was written in a jumble of several programs). Then, it was divided into Part 1 and Part 2 according to the contents of the article. This is because I had to write the contents of the article I am writing now based on Part 1. So, this whole document went through the process of first writing part 1, setting part 1 as the body of the document, experimenting and creating a ‘free document format’ system, and recording the process again as part 2.</p>
+
+                <p>글을 쓰는 방식은 명령형 마크업부터 마크다운, 위지윅까지 여러 방식을 경험해보고 총 3가지로 나누었다. 명령형 언어를 처음 접하는 사람도 문서 제작을 시도하고자 한다면 과정을 따라 할 수 있도록 이런 단계 방식을 택했다. 각자 장단이 있기 때문에 자유로운 문서 포맷 만들기를 시도해볼 경우 원하는 연결 통로를 선택하면 된다.</p>
+                <p>As for the writing method, I experienced various methods from imperative markup to markdown and WYSIWYG, and divided it into three types. This step-by-step method was chosen because the goal is to explain the process so that even those new to imperative language can follow the process if they want to try document production. Since each step has its own strengths and weaknesses, if you read this document and try to create a free document format, you can select the desired connection path.</p>
+
+
+                <p>1번, 위지윅<sup>WYSIWYG</sup><br>
+                첫 번째는 위지윅 텍스트 에디터로 부터 작성을 시작하는 것이다. 이 글에서는 ‘구글 독스’를 선택했다.<span class="n1"><span class="n2">구글 독스는 ‘페이지 설정’란을 에서 페이지 또는 페이지 없음을 선택하여 일반적인 고정형 레이아웃 스타일의 용지 또는 ‘페이지 없음’을 선택할 수 있다. 이후에 책의 형식으로 문서를 편집하는 과정에서 페이지를 나누게 될 것이기 때문에, 이 단계에선 불필요한 페이지네이션이 없는 페이지 없음 상태로 글을 작성했다.</span></span> 구글독스는 구글에서 제공하는 온라인 문서 편집기로, 기능하는 방식이 유사한 오픈 소스로는 <a href="https://www.libreoffice.org/">LibreOffice</a> 같은 프로그램을 사용할 수 있다. 구글 독스는 많은 워드 프로그램 중에서도 모든 사람이 구글에 익숙하다는 점에서 오는 친밀감, 다양한 파일 전환 형식을 내포하고 있다는 점, 크롬 웹 브라우저가 있다면 굳이 프로그램을 설치하지 않아도 된다는 점에서의 범용성, 공유와 수정이 유리하다는 점 등을 장점으로 꼽을 수 있을 것 같다. </p>
+                <p>No. 1, WYSIWYG<br>
+                The first is to start writing from the WYSIWYG text editor. In this article, I chose ‘Google Docs’. Google Docs is an online document editor provided by Google, and programs such as LibreOffice can be used as open source programs that are similar in functioning. Among many word programs, Google Docs has the intimacy that comes from the fact that everyone is familiar with Google, the fact that it contains various file conversion formats, the versatility in that you do not need to install the program if you have a Chrome web browser, and sharing and editing. It seems that the advantages and the like can be cited as advantages.<span class="n1"><span class="n2">In Google Docs, you can choose either a regular fixed-layout style paper or “no page” by selecting page style in the “Page Settings” field. Later, in the process of editing the document in the form of a book, the pages will be divided at that point, so at this stage, I wrote the article with no pages without unnecessary pagination.</span></span></p>
+
+                <p>구글 독스는 문서를 HTML 언어로 전환하는 기능을 제공하지만, 구조를 명확히 설정하기 어려운 위지윅으로 글을 작성하는 시스템이기 때문에 HTML으로 전환하는 경우에도 문서를 작성한 그대로 마치 사진을 찍은 것처럼 보여주는데 집중하기 때문에, 코드를 뜯어 보았을 때 뒤죽박죽으로 구조나 형식을 쉽게 파악할 수 없는 문서가 생성된다. 그래서 내장 기능을 사용하지 않고 확장 프로그램을 활용해서 변환할 것이다. </p>
+                <p>Google Docs provides a function to convert a document into HTML language, but since it is a system that writes text in WYSIWYG, which makes it difficult to clearly set the structure of the text. So even when converting to HTML, it focuses on showing the document as it is written as if it were a photo. In the end when you look at the code, you end up with a jumbled document with no structure or format. So, I will use an extension program to convert without using the built-in function. </p>
+
+                <p>이때 주의해야 할 점은 문서를 작성할 때 꼭 지정 스타일로 작성해야 한다는 점이다. 스타일로 위계를 설정하는 것이기 때문에, 이 단계를 거치지 않으면 다른 포맷(확장자)으로 변환할 때 요소 간의 위계를 인식하지 못해 중요도, 크기 등에서 모두 같은 데이터값을 가진 것으로 번역된다. (이 스타일 구조는 이후에 시맨틱 HTML에 그대로 적용될 것이다) 제대로 스타일을 설정해서 글을 작성했다면, 구글 독스 확장 프로그램 ‘Docs to Markdown’을 설치하고 그를 사용해서 작성한 문서를 마크다운으로 변환해준다. 이후의 과정은 2번과 같다. </p>
+                <p>At this time, it is important to note that when writing a document, it must be written in a designated style. Since the hierarchy is set by style, if this step is not set properly, when converting to another format (extension), the hierarchy between elements will not be recognized, and all will be translated as having the same data value in importance, size, etc. (This style structure will be applied to Semantic HTML later) Once you have properly set the style and wrote the text, install the Google Docs extension ‘Docs to Markdown’<span class="n1"><span class="n2">Docs to Markdown, <a href="https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607">https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607</a></span></span> and use it to convert the written document into markdown. The subsequent process is the same as step 2. </p>
+
+                <p>2번, 마크다운<sup>Markdown</sup><br>
+                    두 번째는 마크다운 언어부터 시작하는 것이다. 앞서 소개한 플랫 파일 CMS인 타입밀은 마크다운 언어를 자동으로 html 언어로 구성해서 웹 브라우저로 출력해준다. 마치 위지윅 에디터처럼, 블로그에 글을 쓸 때처럼 무언가를 새로 익힐 필요 없이 간편하게 사용할 수 있다.
+                    이런 마크다운 에디터를 내장하고 있는 CMS를 사용하지 않는 경우 직접 코드 에디터로 정적 파일들을 생성하면 된다. ‘.md’ 확장자를 가진 마크다운으로 작성한 글을 판독을 이용해서 HTML 문서로 변환해준다. 명령어를 조정해서 입력하면 설정해둔 레이아웃 파일에 글이 자동으로 전환되어서 HTML 문서를 새로 구성하게 할 수도 있다. 이후의 과정은 3번과 같다.</p>
+                    <p>No. 2, Markdown<br>
+                        The second is to start with the Markdown language. Typemill, the flat file CMS introduced earlier, automatically configures the markdown language as html language and outputs it to the web browser. Just like the WYSIWYG editor, you can use it easily without having to learn anything new like writing on a blog. If you do not use a CMS that has a built-in markdown editor, you can directly create static files with a code editor. Text written in markdown with the ‘.md’ extension is converted into HTML documents by reading. If you adjust and input the command, the text is automatically converted to the layout file you have set up, and you can configure the HTML document anew. The subsequent process is the same as step 3. </p>
+
+                <p>3번, HTML<br>
+                    세 번째는 바로 코드 에디터를 통해 구조를 지정하는 데 HTML을 사용해서 문서를 작성하는 것이다. 이 문서는 3번 방식을 통해 작성되고, 디자인되었다. 컴퓨터에 구조를 명확하게 전달하기 위해 시맨틱 마크업으로 작성되었다. 목록, 제목 및 기타 시맨틱 마크업을 올바르게 사용한 웹사이트는 모바일 사용자나 장애가 있는 사용자의 접근성을 더 향상하고, 검색 엔진이 웹 사이트를 빠르게 식별할 수 있고 중요한 정보에 적절한 가중치를 부여하게 만들 수 있기에 지키는 것이 좋다.</p>
+                    <p>No. 3, HTML<br>
+                        The third is to create a document using HTML to specify the structure through a code editor. This document was written and designed through Method 3. It is written with Semantic markup to clearly convey the structure to the computer. Websites that use listings, titles, and other semantic markup correctly can make websites more accessible to mobile users or users with disabilities, and can make search engines quickly identify your website and give important information appropriate weight. </p>
+
+
+
+                <h4 id="section4-2-2">편집하기</h4>
+                <h4 id="section_4-2-2">Editing</h4>
+
+                <p>글을 모두 작성했으면 알맞은 확장자 또는 형식으로 저장하는 것이 필요하다. 폴더를 만들어서 HTML으로 작성한 문서를 <em>text.html</em>의 형식으로 그 안에 저장했다. 폴더는 묶음이자 문서, 페이지 전체를 아우르는 일종의 집으로 존재한다. 앞으로 더하는 모든 요소는 이 폴더 안에 배치해 서로 연결한다. </p>
+                <p>Once you have written all of your writing, you need to save it with an appropriate extension or format. I created a folder and saved the document written in HTML in the format of <em>text.html</em> in it. A folder exists as a kind of home that encompasses all of the bundles, documents, and pages. All the elements I add going forward will be placed in this folder and connected to each other. </p>
+
+                <p>하나의 문서를 페이지로 분할해서 보여주기 위한 도구로는 ‘paged.js’와 ‘Bindery.js’가 있었다. 각자 장단점이 있었지만, Bindery.js가 처음부터 웹 디자인 및 자바스크립트에 처음인 사람을 목적으로 한 도구이기에 접근하기가 더 쉽다고 판단되어 이 글은 Bindery.js를 사용하여 페이지화하였다. 웹에서 ‘Bindery.js’ 코드를 내려받아 폴더에 추가하고 글이 있는 HTML파일과 연결해 페이지화를 시작했다. Bindery.js는 콘텐츠에 페이지를 매겨서 후에 종이 위에 얹을 수 있도록 문서를 분할해서 보여주는 역할을 한다. 파일은 수정될 때마다 브라우저에 바로 해석되어 보이기 때문에, 페이지화된 문서를 각자 사용하던 브라우저를 통해서 실시간으로 확인하면서 앞으로 편집을 진행하면 된다. 이 문서의 경우 자유로운 문서 포맷을 보여주는 일종의 결과물로 다양한 판형의 책들을 출력할 예정이었기 때문에, 모든 판형을 아우를 수 있는 글의 구조가 형성되어 있는 하나의 <em>text.html</em> 파일과 <em>Bindery.js</em>를 포함한 자바스크립트 파일, 스타일을 지정할 <em>style.css</em> 파일, 브라우저에서 메인으로 읽어낼 (페이지화 되지 않은) 액체 레이아웃 보기의 <em>index.html</em><span class="n1"><span class="n2">index.html 페이지는 방문자가 사이트를 요청할 때 다른 페이지가 지정되지 않은 경우 웹 사이트에 표시된 기본 페이지에 사용되는 가장 일반적인 이름이다. 이렇게하면 URL에 파일 이름을 입력하지 않아도 독자가 해당 디렉토리로 이동할 때 페이지 를 볼 수 있으므로 404 페이지를 찾을 수 없음 오류가 표시되지 않기에 폴더 안에 index.html은 작성하는 것이 좋다.</span></span> 파일, 그리고 판형마다 텍스트 파일을 불러와서 글을 얹을 수 있도록 책 판형 값이 지정된 레이아웃 파일<em>(format1.html, format2.html…)</em> 여러 개를 생성해서 폴더에 저장했다. 앞으로 이 파일만을 조정해서 문서를 구성해볼 것이다. </p>
+                <p>There were ‘paged.js’ and ‘Bindery.js’ as tools to divide and display a single document into pages. Each had its pros and cons, but since Bindery.js is a tool aimed at people new to web design and JavaScript from the beginning, it was judged to be easier to access, so this article was paginated using Bindery.js. After downloading the ‘Bindery.js’ code from the web, adding it to a folder and linking it with the HTML file containing the text, pagination started. Bindery.js is responsible for paginating the content and splitting up the document for later on paper. Since the file is immediately interpreted and displayed in the browser whenever it is modified, you can proceed with editing in the future while checking the paginated document in real time through the browser you are using. In the case of this document, since it was planned to output books of various editions as a kind of output showing free document formatting, one <em>text.html</em> file and <em>Bindery.js</em>, which have a text structure that can cover all editions, and <em>style.css</em> file to style, the <em>index.html</em><span class="n1"><span class="n2">The index.html page is the most
+                    common name
+                    used for the default page displayed on a website, when no other page is specified when a visitor requests the site. It’s a good idea to write index.html in a folder because this way, the reader will see the page when they go to that directory without having to put the filename in the URL, so they won’t get a 404 page not found error.</span></span> file of the (non-paged) Liquid Layout view to be read into the main browser, and a book format value designated so that text files can be loaded and written for each format was saved in the folder. I created several layout files <em>(format1.html, format2.html…)</em> and saved them in a folder, too. In the future, I will organize the document by adjusting only this file. </p>
+
+
+
+                <h4 id="section4-2-3">디자인하기</h4>
+                <h4 id="section_4-2-3">Designing</h4>
+
+
+                <p>글을 모두 작성하고 글을 담을 매체도 선택하여 보여줄 준비를 마친 후에는 이제 어떻게 보여줄 것인가를 고민해야 했다. HTML을 기반으로 하는 웹의 경우 이런 ‘디자인’의 측면에 대한 선택은 모두 CSS 스타일 시트를 통해 작성하고 보여진다. </p>
+                <p>After writing all the articles, choosing the medium to contain them, and preparing to show them, I had to think about how to show them. In the case of the HTML-based web, choices about these aspects of ‘design’ are all made and displayed through CSS style sheets.</p>
+
+                <p>확장할 수 있음을 보여주는 것이 이 문서 포맷의 장점을 드러내는 데에 가장 중요한 과제였기 때문에 최대한 여러 가지 보기 방식을 제공하고자 했다. 문서와 글은 동일한 상태이지만, 글을 보여주는 방식은 크게 책을 은유하는, 페이지가 나뉘는 버전과 그리고 웹을 은유하는, 스크롤 움직임 바탕의 액체 레이아웃 버전으로 나눌 수 있었다. 먼저 책을 은유하는 보기 방식에서는, 다양한 매체와 판형에서 자유롭게 흐르는 문서의 특징을 따라 문서를 무한대의 페이지 크기에 맞출 수 있었기에 선택이 필요했다. 그 무한대의 크기 중, 이 문서의 경우에는 특정한 5가지 판형을 설정해서 페이지 화한 모습을 보여주고자 했다. 인쇄 시의 종이 사용량의 효율을 고려해서 일반적인 책의 규격이 나뉘는 비율과 유사하게 3종을 선택하고, 비율에 따라 다른 레이아웃이 자동으로 맞춰지는 것을 강조하기 위해서 가로와 세로의 비율이 크게 달라지는 (그럼에도 가독성이 유지된다고 판단되는) 판형 2종을 추가했다. 하나는 일반적인 종이를 가로로 반을 접은 비율, 그리고 나머지 하나는 정사각형에 근접한 비율로 설정했다.</p>
+                <p>Showing that it can be expanded was the most important task in revealing the strengths of this document format, so I tried to provide as many views as possible. The document and text are the same, but the way the text is displayed can be largely divided into a page-splitting version metaphorically a book and a liquid layout based on scroll movement metaphorically a web. In the way of viewing a book as a metaphor, it was necessary to choose a document because it could fit an infinite page size according to the characteristics of a document that flows freely in various media and format. Among the infinite possible size, in the case of this document, I tried to show the pagination view by setting 5 specific formats. In consideration of the efficiency of paper usage during printing, 3 types are selected similarly to the ratio of the standard size of a general book(and paper). In order to emphasize that different layouts are automatically adjusted according to the ratio, two types of plate types were added, in which the horizontal and vertical ratios vary greatly (even so, readability is judged to be maintained). One is a standard paper folded in half
+                    horizontally, and
+                    the other is set to a ratio close to a square.</p>
+
+                <p>두 번째로는 웹을 바탕으로 하는 액체 레이아웃을 바탕으로 글이 수직적으로 흐르게 두는 보기 방식을 제작하였다. 보편적으로 웹사이트 내의 글이 자리 잡는 방식과 동일한데, 이 문서에서는 이를 그저 흐르게 두는 것이 아니라, 웹이 가지는 장점을 응용할 수 있는 요소를 포함한 레이아웃 디자인 안에 존재하도록 구성하고 싶었다. 그렇기에 하이퍼텍스트를 활용하는 요소들이 더 직관적으로 드러나고, 링크를 갖는 요소 간의 연결이 웹페이지 속에서 유연하게 작동할 수 있도록 전반적인 위계와 배치를 신중하게 설정했다. 웹에서만 구현될 수 있는, 대체 텍스트와 같은 다양한 읽기 방식을 제공하는 것 또한 꼭 필요한 요소 중 하나였다. 비시각적 요소에서 대체 텍스트 작성 규칙을 지키고, 글자 크기를 조절하는 등 독자가 원하는 대로 문서를 조절할 수 있는 접근성 탭도 배치해 읽기의 폭을 늘리고자 했다.</p>
+                <p>Second, based on the liquid layout based on the web, a viewing method was created in which the text flows vertically. It is generally the same as the way articles within a website are positioned, but in this document, I wanted to organize it so that it exists within the layout design including elements that can apply the advantages of the web, rather than just letting it flow. Therefore, the overall hierarchy and arrangement were carefully set so that the elements that utilize hypertext are revealed more intuitively, and the connections between elements with links work flexibly within the webpage. Providing various reading methods such as alternative text, which can only be implemented on the web, was also one of the essential elements. In non-visual elements, I tried to increase the range of reading by placing an accessibility tab that allows readers to adjust the document as they wish, such as observing the rules for writing alternative text and adjusting the font size.</p>
+
+                <p>이렇게 다양한 매체와 보기 방식으로 확장될 수 있는 문서를 디자인할 때 가장 흥미로웠던 부분은 글 본문 밖에 존재하는 요소들을 어떻게 구성하고 디자인하는가를 고민해나가는 과정이었다. 본문은 하나의 기둥이 되어서 유동적으로 흐르게 두면 되었지만, 본문과 상호작용하는 그 외의 요소들은 어디에, 어떤 방식으로 존재해야 하는지를 새롭게 제안해야 했다. 또한 웹 안에서도 책의 형태를 구현하고, 책 내부에서도 웹의 성질을 구현하려고 하다 보니 글을 벗어난 문서의 요소들이 자연스럽게 일종의 하이브리드 성질을 갖는 디자인을 고안하게 되었다. 예를 들어 페이지네이션 마킹 방식을 어떻게 구성하면 좋을지에 대한 고민이 있었는데, 이 문서에서는 각자의 특성을 실험하기 위해서 스크롤과 쪽 번호 모두 제작했다. 책의 인상을 가진 페이지를 웹을 통해서 볼 때 물성이 있는 책을 넘기면서 느끼는 특정한 읽는 감각을 구현하기 위해 스크롤바를 눈에 띄게 배치하고, 웹에서도 쪽 번호와 같은 기능을 할 수 있는 문단 번호를 추가해서 숫자로 바로바로 읽는 정도를 인식할 수 있게 해서 감각을 공유할 수 있게 했다. 이렇게 데이터 값을 갖는 요소를 수정하거나 새로 고안해야 하는 경우는 CSS에 더해 자바스크립트를 사용해서 작성했다. </p>
+                <p>The most interesting part of designing a document that can be extended to such various media and viewing methods was the process of thinking about how to organize and design elements that exist outside the body of the text. The text could have become a pillar and flowed fluidly, but other elements interacting with the text had to be newly proposed where and in what way they should exist. In addition, as I tried to implement the shape of a book within the web and the nature of the web within the book, I came up with a design in which the elements of the document, other than text, naturally have a kind of hybrid nature. For example, there were concerns about how to configure the pagination marking method. In this document, both scrolls and page numbers were created to experiment with their own characteristics, and even when viewing a page with the impression of a book through the web, the scroll bar was prominently displayed to realize a specific reading sensation felt while turning over a book with physical properties. I also added paragraph numbers, which can function like page numbers on the web, so that you can recognize how much you read right away
+                    with numbers.
+                    When elements with data values ​​need to be modified or newly designed like this, JavaScript was used in addition to CSS (by modifying or adding Bindery.js internal code). </p>
+
+
+
+                <h4 id="section4-2-4">공유하기</h4>
+                <h4 id="section_4-2-4">Sharing</h4>
+
+                <p>문서를 제작할 때의 모든 결정이 마무리되고 나면 이제 문서를 나와 내 컴퓨터를 넘어선 다른 사람들에게 공유해 ‘공유 가능한’ 자유로운 문서를 구성할 차례가 되었다. 안타깝게도, HTML, CSS, 자바스크립트 파일 등으로 이루어진 디지털 폴더 묶음집은 인터넷에 연결된 서버에 업로드되지 않는 이상 웹사이트가 되어서 공유될 수 없다. 문서를 내 컴퓨터를 벗어난 위치에 공유하려고 하는 경우, 링크의 이름인 도메인을 하나 설정해서 그와 연결된 서버에 이 문서를 저장 및 업로드 해야 한다. 과정은 크게 어렵지 않고 할 수 있는 방법은 매우 많다. 이 문서는 깃허브 저장소를 통해 서버로 업로드되어 공유되고 있다.
+                </p>
+                <p>After all the decisions made when creating a document have been finalized, it is time to share it with others beyond my computer to organize a ’sharable’ free document. Unfortunately, digital folder collections made up of HTML, CSS, and JavaScript files cannot be shared as websites unless they are uploaded to an Internet-connected server. If you want to share a document to a location outside of your computer, you must set a domain, the name of the link, and save and upload the document to the server connected to it. The process is not very difficult and there are many ways to do it. This document was fetched to the server through the GitHub repository and shared as a link.</p>
+
+                <p>문서를 책으로 만들어서 공유할 수도 있다. 여기서도 자유로운 문서 포맷의 확장성을 보여주는 예시로 웹 브라우저에서 보여주는 것 외에 물성을 갖고 고정된 상태로 존재하는 ‘책’의 버전을 추가로 제작했다. 문서만 제대로 준비되었다면 책으로 만드는 과정은 매우 간단하다. 브라우저에 보이는 출력 버튼을 누르면 인쇄 준비가 완료된다. 팝업창에서 웹 브라우저에 내장된 PDF 출력 기능을 사용해서 PDF 파일을 제작하거나, 컴퓨터에 연결된 프린터로 바로 인쇄하기를 선택한다. 인쇄한 종이들을 집에서 혹은 주변 인쇄소에 가져가서 재단하고 종이들을 엮어서 하나의 묶음으로 만들면 이제 책이라고 부를 수 있는 문서가 된다. 이제 링크에 더해 책이라는 물질적인 문서 묶음을 공유할 수도 있다.</p>
+                <p>You can also turn your document into a book and share it. In this article, as an example of the scalability of a free document format, a version of a ‘book’ that exists in a fixed state with physical properties, in addition to being displayed in a web browser, was additionally produced. If the document is prepared properly, the process of making a book is very simple. Press the Print button visible in the browser to prepare for printing. In the pop-up window, choose to create a PDF file using your web browser’s built-in PDF output function, or to print directly to a printer connected to your computer. When the printed papers are taken at home or to a nearby printing shop, cut, and then woven into a bundle, then it now becomes a document that can be called a book. Now, in addition to web links, you can also share material bundles of documents called books. </p>
+           
+
+                <p>이 문서는 앞에서 언급한 모든 자유로운 문서 이론과 그를 따른 규칙을 따라 공개되어 있으며, 독자는 집에서도 링크를 열어서 바로 인쇄할 수 있다. 이러한 공유 가능한 자유로운 문서를 스스로 제작하고자 할 때도, 그저 원고를 서버에 저장하고 이를 검색하고 실제 출력으로 연결할 수 있는 시스템만 갖추면 된다.</p>
+                <p>This document is open to the public following all of the free document theory and rules mentioned above, and readers can open the link at home and print it right away. If you want to create these shareable free documents yourself, you just need to have a system that allows you to store manuscripts on a server, retrieve them, and connect them to actual output.</p>
+ <!-- maintext -->
+
+
+
+
+    <h2 id="section5">마치며</h2>
+    <h2 id="section_5">Outro</h2>
+
+        <p>자유로운 문서에 대한 이론을 살펴보면서 그를 통해 현재의 문서 포맷으로는 실현이 불가능하지만, 앞으로의 새로운 문서 형식이 갖출 수 있는 특성과 기능에 대한 힌트들을 발견해보았다. 이후 이어진 제작기에서는 웹사이트이거나, 프레젠테이션이거나, 낱장의 문서이거나, 책일 수도 있는 현재 당신이 지금 읽고 있는 문서를 만든 시스템을 어떻게 제작하고 사용했는지를 자세하게 정리해보았다.</p>
+        <p>Looking at the theory of free documents, I found hints about the characteristics and functions that are not feasible with the current document format, but are expected to be equipped with the new document format in the future. In the production that followed, I detailed how to build and use the system that created the document you are reading right now, whether it be a website, a presentation, a single page document, or a book.</p>
+
+        <p>다양한 도구를 탐험하고 실험해본 데이터를 가지고 최대한 장점을 드러내기 위한 방식들을 고안하면서 현재로서 가장 합리적이고 쉽게 확장 가능하고 자유로운 문서를 제작하는 방법을 설정해보고자 했다. 그러나 오픈 소스 출판에 대한 논의와 정보가 보편적인 출판 방식보다 활발하지 않은 상황이라 직접 구현하거나 구성해야 하는 정보가 너무 많았고, 결과적으로 이 문서와 - 문서 포맷과 - 이 모든 이야기가 처음 접한 이에게 쉽게 설명했다고 하기에는 어려울지도 모르겠다. </p>
+        <p>I tried to establish the most reasonable, easily scalable, and free document production method at present, devising ways to maximize the advantages with the data I have explored and experimented with various tools. However, discussions and information on open source publishing were less active than the general publishing method, so there was too much information that had to be implemented or organized. As a result, it may have been a difficult content structure to say that this document, document format, and all of this story were easily explained to someone who was very new to it.</p>
+
+        <p>이 글의 목적은 자유로운 문서 포맷을 작성하는 방법을 알려주는 것이 아니다. 지침과 방법을 제공하는 기존 리소스는 우리가 알거나 기대했던 것보다도 많다. 도구들 파트에 나열된 것 또한 인터넷이라는 바다의 일부일 뿐이다. 책을 만들기 위해서 실험해 본 여러 도구 중 몇을 선택하여 하나의 시스템을 짜고 사용할 것이고 또 그를 통해 이 책을 만들었지만, 이것이 현재의 정답이자 솔루션이라는 것이 아니며 솔루션을 제공하기 위한 과정은 아니다.</p>
+        <p>The purpose of this article is not to teach you how to create free document formats. Existing resources providing guidance and how-tos are more than we knew or expected. What is listed in the Tools section is also just part of the Internet’s ocean. I selected some of the tools I analyzed to make a book, built a system, and made this book through it, but this is not the current answer or solution, nor is it a process to provide a solution.</p>
+
+        <p>이 출판물은 자유로운 문서 포맷을 만드는 방법에 대한 완전한 자습서를 의미하지 않는다. 오히려 독자들에게 그러한 출판물을 만드는 첫 시도를 하는 방법에 대한 기본적인 지침을 제공하고자 한다. 가장 큰 목적은 새로운 해결방식을 제안하는 것이 아니라 선택지를 쥐어주는 것이다. 문서가 자유로워지기 위해서는 앞으로도 사용하는 모든 이의 지속적인 연습, 학습 및 호기심이 분명히 필요하다. </p>
+        <p>This publication is not meant to be a complete tutorial on how to create free document formats. Rather, it aims to provide readers with basic guidance on how to make their first attempt at creating such a publication. The main purpose is not to propose a new solution, but to give you a choice. Free documentation clearly requires continued practice, learning, and curiosity from all who use it in the future.
+        </p>
+
+
+
+    <section class="info">
+        쓰기와 편집. 김다빈 <br>
+        디자인과 제책. 김다빈 <br>
+        교열. 태솔비, 이민규, Chloe Couasnon<br>
+        인쇄. 인디고월드 <br>
+        도움. 석재원 <br>
+        발행. 2022년 12월 5일 <br>
+    </section>
+    <section class="info">
+        Writing and Editing. Dabin Kiim <br>
+        Design and Binding. Dabin Kiim <br>
+        Proofreading. Solbee Tae, Mingyu Lee, Chloe Couasnon<br>
+        Printing. Indigoworld <br>
+        Adviser. Jaewon Seok <br>
+        Published. December 5, 2022 <br>
+    </section>
+
+    </div>
+</body>
+
+</html>

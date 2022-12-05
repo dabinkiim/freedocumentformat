@@ -15,13 +15,16 @@
         padding: 0 !important;
       }
       h1 { 
-        font-size: 3rem;
+        font-size: 4rem;
       }
       .📖-running-header {
         top: 6mm !important;
       }
       .📖-right .percentageMark {
-        bottom: 8mm !important;
+        bottom: 10mm !important;
+      }
+      .toc_head {
+        margin-bottom: 2rem;
       }
   
     </style>
@@ -36,7 +39,7 @@
     Bindery.makeBook({
       pageSetup: {
         size: { width: '105mm', height: '215mm' },
-        margin: { top: '17mm', inner: '16mm', outer: '11mm', bottom: '14mm' },
+        margin: { top: '17mm', inner: '18mm', outer: '10.5mm', bottom: '16mm' },
       },
       content: {
           url: '../text.html',
@@ -45,7 +48,8 @@
         rules: [
           // 페이지 나누기
           Bindery.PageBreak({ selector: '.toc', position: 'after', continue: 'next' }),
-          Bindery.PageBreak({ selector: '.toc', position: 'before', continue: 'right' }),
+          Bindery.PageBreak({ selector: '.toc', position: 'before', continue: 'left' }),
+          Bindery.PageBreak({ selector: '#info', position: 'before', continue: 'left' }),
           Bindery.PageBreak({ selector: 'h1, h2, h3', position: 'before', continue: 'next' }),
           Bindery.PageBreak({ selector: 'h4, h5', position: 'avoid', continue: 'next'}),
 
@@ -130,13 +134,14 @@
 
               // 책면에 프린트 (우측 위 좌측 아래)
               let edgePaints = document.createElement("div");
+              edgePaints.classList.add('spine');
                 if (page.isRight) {
-                edgePaints.style.background = "url('../img/side_top.svg') no-repeat";
+                edgePaints.style.background = "url('../img/side_top_f1.svg') no-repeat";
                 edgePaints.style.top = "-3mm";
-                edgePaints.style.transform = "rotateX(180deg)";// 가로로 뒤집기 ;
+                edgePaints.style.transform = "rotateY(180deg)";// 가로로 뒤집기 ;
                 }
                 else if (page.isLeft) {
-                  edgePaints.style.background = "url('../img/side_bottom.svg') no-repeat";
+                  edgePaints.style.background = "url('../img/side_bottom_f1.svg') no-repeat";
                   edgePaints.style.bottom = "-3mm";
                   edgePaints.style.transform = "rotateY(180deg)";// 가로로 뒤집기 ;
                 }
@@ -153,6 +158,7 @@
 
               // 책면에 프린트 (옆)
               let edgePaint = document.createElement("div");
+              edgePaint.classList.add('spine');
                 if (page.isRight) {
                 edgePaint.style.background = "url('../img/side_right.svg') no-repeat";
                 edgePaint.style.right = "-3mm";

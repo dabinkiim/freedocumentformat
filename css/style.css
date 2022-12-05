@@ -1,4 +1,19 @@
+/*
+@font-face {
+  font-family: Compagnon;
+  src: url('../font/Compagnon-Roman.woff2') format('woff2')
+       url('../font/Compagnon-Roman.woff') format('woff');
+}
+@font-face {
+  font-family: Eulyoo1945;
+  src: url('../font/Eulyoo1945-Regular.woff2') format('woff2'),
+       url('../font/Eulyoo1945-Regular.woff') format('woff');
+}
+*/
+
 :root {
+  --font-family-A: Compagnon, HY타자전각L, Eulyoo1945; 
+  --font-family-B: Compagnon, Eulyoo1945; 
   --font-size-s:0.8rem;
   --colorA: #898989; 
   --colorB: #C9CACA;
@@ -6,25 +21,28 @@
   --bindery-mark-length: 5mm;
 }
 
-
 html {
     font-size: 12.5px;
     word-break: keep-all;
     word-spacing: -0.05rem;
 }
 body{
-  font-family: Compagnon, Eulyoo1945; /* Compagnon, Eulyoo1945-Regular */
+  font-family: var(--font-family-B); /* Compagnon, Eulyoo1945-Regular */
     font-weight: 400;
     line-height: 1.8;
 }
 h1, h2, h3, h4, h5, #head-text {
-  font-family: Compagnon, HY타자전각L; 
+  font-family: var(--font-family-A);
   font-weight: 400;
 
 }
 h1 {font-size: 6rem; transform: skewY(10deg); text-align: center;}
 h2 {font-size: 4rem;}
-h3, .h3 {font-size: 3rem; font-family: Compagnon, HY타자전각L; }
+h3, .h3 {
+  font-size: 3rem; 
+  font-family: var(--font-family-A);
+  margin-block-end: 1.5em;
+ }
 h4 {font-size: 2rem;}
 h5, #head-text {font-size: 1.5rem;}
 h2, h3 {
@@ -88,9 +106,13 @@ section h4:first-child {
 
 
 /* 프레임 */ 
+.spine {
+  z-index: 99999;
+}
 .sidebar {
   position: absolute;
   width: 100%;
+  z-index: 99998;
 }
 .📖-left .sidebar {
   left: 0;
@@ -150,6 +172,7 @@ figcaption {
 figure {
   max-width: 40%;
   margin: 0.3rem;
+  z-index: 99997;
 }
 .📖-left figure {
   float: left;
@@ -189,6 +212,10 @@ figcaption.fullP {
 .screenshot .figcaption-counter {
   display: none;
 }
+figure.screenshot {
+  z-index: 99997;
+  position: absolute;
+}
 
 figcaption.fullP span {
   text-align: center; 
@@ -198,6 +225,9 @@ figcaption.fullP span {
   display: block;
   margin: auto;
 }
+.📖-spread.📖-left>.📖-page-background, .📖-spread.📖-right>.📖-page-background {
+  z-index: 9;
+}
 
 
 
@@ -205,6 +235,7 @@ figcaption.fullP span {
 .📖-running-header {
   font-size: var(--font-size-s) !important;
   top: 6mm;
+  z-index: 8;
 }
 .📖-page.📖-left .📖-running-header .page-number {
   margin-right:1rem;
@@ -213,6 +244,9 @@ figcaption.fullP span {
   margin-left:1rem;
 }
 .📖-running-header:last-child {
+  display: none;
+}
+#screenshot .📖-running-header {
   display: none;
 }
 
@@ -228,6 +262,15 @@ figcaption.fullP span {
 .footnote .n2 {
   display: inline;
 }
+
+.index-content {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.index-content li {
+  margin-left: 0;
+}
   
 
 
@@ -235,7 +278,7 @@ figcaption.fullP span {
 ul.toc {
   list-style-type: none;
   padding: 0;
-  font-family: Compagnon, HY타자전각L;
+  font-family: var(--font-family-A);
 }
 ul.toc li {
   border-bottom: 1px solid;
@@ -248,13 +291,14 @@ ul.toc li {
   display: inline-block;
 }
 
+
 #manifesto p {
   height: 90%;
   display: flex;
 }
 
 #manifesto .fullP, .fullP {
-  font-family: Compagnon, HY타자전각L; 
+  font-family: var(--font-family-A);
   font-size: 3rem;   
   text-align: center;
   margin: auto 0;
@@ -274,7 +318,7 @@ ul.toc li {
 }
 #info {
   font-size: var(--font-size-s);
-  margin-top: 100%;
+  margin-top: 120%;
   column-count: 2;
   display: flex;
 }

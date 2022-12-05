@@ -13,6 +13,7 @@
         max-width: 100% !important;
         margin: 0rem !important;
         padding: 0 !important;
+        float: none !important;
       }
       h1 { 
         font-size: 3rem;
@@ -22,6 +23,11 @@
       }
       .📖-right .percentageMark {
         bottom: 8mm !important;
+      }
+      #info {
+        font-size: .7rem;
+        flex-grow: 0;
+    flex-basis: 0;
       }
   
     </style>
@@ -37,7 +43,7 @@
     Bindery.makeBook({
       pageSetup: {
         size: { width: '110mm', height: '160mm' },
-        margin: { top: '15mm', inner: '17mm', outer: '10mm', bottom: '13mm' },
+        margin: { top: '15mm', inner: '17mm', outer: '10.5mm', bottom: '13mm' },
       },
       content: {
           url: '../text.html',
@@ -132,13 +138,14 @@
 
               // 책면에 프린트 (우측 위 좌측 아래)
               let edgePaints = document.createElement("div");
+              edgePaints.classList.add('spine');
                 if (page.isRight) {
-                edgePaints.style.background = "url('../img/side_top.svg') no-repeat";
+                edgePaints.style.background = "url('../img/side_top_f1.svg') no-repeat";
                 edgePaints.style.top = "-3mm";
-                edgePaints.style.transform = "rotateX(180deg)";// 가로로 뒤집기 ;
+                edgePaints.style.transform = "rotateY(180deg)";// 가로로 뒤집기 ;
                 }
                 else if (page.isLeft) {
-                  edgePaints.style.background = "url('../img/side_bottom.svg') no-repeat";
+                  edgePaints.style.background = "url('../img/side_bottom_f1.svg') no-repeat";
                   edgePaints.style.bottom = "-3mm";
                   edgePaints.style.transform = "rotateY(180deg)";// 가로로 뒤집기 ;
                 }
@@ -155,13 +162,13 @@
 
               // 책면에 프린트 (옆)
               let edgePaint = document.createElement("div");
+              edgePaint.classList.add('spine');
                 if (page.isRight) {
-                
                 edgePaint.style.background = "url('../img/side_right.svg') no-repeat";
                 edgePaint.style.right = "-3mm";
                 }
                 else if (page.isLeft) {
-                  edgePaint.style.background = "url('../img/side_left.svg') center no-repeat";
+                  edgePaint.style.background = "url('../img/side_left.svg') no-repeat";
                   edgePaint.style.left = "-3mm";
                 }
                 Object.assign(edgePaint.style, {

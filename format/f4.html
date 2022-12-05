@@ -10,12 +10,14 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css">
     <style>
       h1 {
-        font-size: 4rem;
+        font-size: 4.3rem;
       }
-  
+      h3, .h3 {
+        margin-block-end: 1em;
+      }
       section {
         column-count: 2;
-        column-gap: 2rem;
+        column-gap: 2.25rem;
       }
       #manifesto .fullP {
         height: 30%;
@@ -36,7 +38,10 @@
         top:10mm !important;
       }
       .percentageMark {
-        bottom:10mm !important;
+        bottom:12mm !important;
+      }
+      #info {
+        margin-top:100% !important;
       }
       
     </style>
@@ -50,7 +55,7 @@
     Bindery.makeBook({
       pageSetup: {
         size: { width: '200mm', height: '220mm' },
-        margin: { top: '22mm', inner: '25mm', outer: '20mm', bottom: '19mm'},
+        margin: { top: '22mm', inner: '34mm', outer: '18mm', bottom: '19mm'},
       },
       content: {
           url: '../text.html',
@@ -59,7 +64,8 @@
         rules: [
           // 페이지 나누기
           Bindery.PageBreak({ selector: '.toc', position: 'before', continue: 'right' }),
-          Bindery.PageBreak({ selector: '.toc', position: 'after', continue: 'next' }),
+          Bindery.PageBreak({ selector: '.toc', position: 'after', continue: 'left' }),
+          Bindery.PageBreak({ selector: '#info', position: 'before', continue: 'left' }),
           Bindery.PageBreak({ selector: 'h1, h2, h3', position: 'before', continue: 'next' }),
 
           // 목차
@@ -142,10 +148,11 @@
             
               // 책면에 프린트 (우측 위 좌측 아래)
               let edgePaints = document.createElement("div");
+              edgePaints.classList.add('spine');
                 if (page.isRight) {
                 edgePaints.style.background = "url('../img/side_top.svg') no-repeat";
                 edgePaints.style.top = "-3mm";
-                edgePaints.style.transform = "rotateX(180deg)";// 가로로 뒤집기 ;
+                edgePaints.style.transform = "rotateY(180deg)";// 가로로 뒤집기 ;
                 }
                 else if (page.isLeft) {
                   edgePaints.style.background = "url('../img/side_bottom.svg') no-repeat";
@@ -165,6 +172,7 @@
 
               // 책면에 프린트 (옆)
               let edgePaint = document.createElement("div");
+              edgePaint.classList.add('spine');
                 if (page.isRight) {
                 edgePaint.style.background = "url('../img/side_right.svg') no-repeat";
                 edgePaint.style.right = "-3mm";

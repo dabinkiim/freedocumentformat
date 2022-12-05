@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC>
+<html lang="en">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Format 5</title>
+    <meta name="date" content="2022-11-22">
+
+    <!-- CSS -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <style>
+      body{
+        font-family: Compagnon, HY타자전각L, Eulyoo1945;
+      }
+      .title {
+        position: absolute;
+        top: 50%;
+        font-size: 10mm;
+        color: white;
+        background: black;
+        display: inline-block;
+        max-width: 80%;
+        padding: 2.2mm;
+      }
+      .title.kr {
+        margin-top: 22mm;
+        right: 0;
+        margin-right: 0;
+      }
+      #box1 {
+        width: 220mm;
+        height: 80mm;
+        top: 100%;
+        background: black;
+      }
+      #linelogo {
+        position: absolute;
+        width: 100%;
+        transform: rotate(45deg);
+      }
+    </style>
+
+</head>
+ 
+<body>
+  <div id="content">
+    <div class="title en">
+      Free Document Format
+  </div>
+  <div class="title kr">
+    프리 도큐먼트 포맷
+</div>
+<img id="linelogo" src="../img/type_tape.png">
+<div id="box1">.</div>
+
+  </div>
+
+  <script src="../jquery.min.js"></script>
+  <script src="../bindery.min.js"></script>
+  <script>  
+    Bindery.makeBook({
+      pageSetup: {
+        size: { width: '220mm', height: '300mm' },
+        margin: { top: '0mm', inner: '0mm', outer: '0mm', bottom: '0mm'},
+      },
+      content: "#content",
+      });
+  </script>
+
+  <script>
+    $(document).ready(function(){
+    // 로고 배치 랜덤
+    var ranlogo = Math.floor(Math.random() * 360);
+    console.log(ranlogo);
+     $('#linelogo').css('transform', 'rotate(' + ranlogo + 'deg)');
+})
+  </script>
+
+
+
+</body>
+</html>
