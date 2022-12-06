@@ -19,7 +19,7 @@ body{
     font-weight: 400;
     line-height: 1.8;
     overflow: scroll;
-    overflow-x: hidden;
+    
 }
 h1, h2, h3, h4, h5, #head-text {
     font-family: Compagnon, HY타자전각L, Eulyoo1945;
@@ -142,7 +142,7 @@ ul#format {
     width: 20rem;
     font-size: 0.85rem;
     margin-bottom: 1rem;
-    margin-right: calc(-20rem - var(--spacer));
+    margin-right: calc(-22rem - var(--spacer));
   }
   img {
     width: 100%;
