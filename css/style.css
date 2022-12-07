@@ -16,7 +16,7 @@
 */
 @font-face {
   font-family: HYtajaL;
-  src: url('./font/HY타자전각L.woff2') format('woff2');
+  src: url('../font/HY타자전각L.woff2') format('woff2');
 }
 
 :root {
