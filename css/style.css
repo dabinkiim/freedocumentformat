@@ -14,9 +14,13 @@
             src: url('../font/HY타자전각L.woff2') format('woff2');
         }
 */
+@font-face {
+  font-family: HYtajaL;
+  src: url('./font/HY타자전각L.woff2') format('woff2');
+}
 
 :root {
-  --font-family-A: Compagnon, HY타자전각L, Eulyoo1945; 
+  --font-family-A: Compagnon, HYtajaL, Eulyoo1945; 
   --font-family-B: Compagnon, Eulyoo1945; 
   --font-size-s:0.8rem;
   --colorA: #898989; 
